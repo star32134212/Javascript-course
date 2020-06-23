@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+function keyDownHandler(e) {
+	e = e || window.event;
+	var msg = "(keydown) 您按的鍵是: "
+			+ String.fromCharCode(e.keyCode)
+			+ " ( fromCharCode(e.keyCode) )"
+			+ "<br> code: " + e.code
+			+ "<br> key: " + e.key
+			+ "<br> which: " + e.which
+			+ "<br> keyCode: " + e.keyCode
+			+ "<br> charCode: " + e.charCode;
+	document.getElementById("messageKeyDown").innerHTML = msg;;
+	document.getElementById("messageKeyPress").innerHTML = "";
+	
+}
+
+function keyPressHandler(e) {
+	e = e || window.event;
+	var msg = "(kepress) 您按的鍵是: "
+			+ String.fromCharCode(e.charCode) 
+			+ " ( fromCharCode(e.charCode) )"
+			+ "<br> code: " + e.code
+			+ "<br> key: " + e.key
+			+ "<br> which: " + e.which
+			+ "<br> keyCode: " + e.keyCode
+			+ "<br> charCode: " + e.charCode;
+	document.getElementById("messageKeyPress").innerHTML = msg;
+
+	// character = String.fromCharCode(e.charCode || e.keyCode)
+}
+
+if (window.addEventListener) {
+	window.addEventListener("keydown", keyDownHandler);
+	window.addEventListener("keypress", keyPressHandler);
+} else if (window.attachEvent) {
+ 	// IE8 doesn't support key events on the window.
+	document.attachEvent("onkeydown", keyDownHandler);
+	document.attachEvent("onkeypress", keyPressHandler);
+} else {
+	window.onkeydown=keyDownHandler;
+	window.onkeypress=keyPressHandler;
+}
+
+</script>
+</head>
+<body>
+<h2>UI Keyboard Events</h2>
+<hr>
+請按鍵盤任意鍵顯示按鍵代碼..
+<hr>
+<p id="messageKeyDown"></p>
+<p id="messageKeyPress"></p>
+<hr>
+</body>
+</html>

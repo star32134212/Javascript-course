@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>audio</title>
+</head>
+<body>
+<h1>audio</h1>
+<hr>
+
+<!--a href="h3-audio.mp3">MP3 下載</a-->
+
+<!--audio src="h3-audio.mp3" controls="controls" autoplay="autoplay"-->
+<!--audio src="h3-audio.mp3" autoplay>
+	你的瀏覽器不支援 HTML5 audio 功能！
+</audio-->
+
+<audio controls="controls" autoplay="autoplay">
+  <source src="h3-audio.mp3" type="audio/mpeg">
+  <source src="h3-audio.ogg" type="audio/ogg">
+  <source src="h3-audio.wav" type="audio/wav">
+	你的瀏覽器不支援 HTML5 audio 功能！
+</audio>
+
+<!--audio controls="controls" autoplay="autoplay">
+	<source src="h3-audio.mp3" type="audio/mpeg">
+	<source src="h3-audio.ogg" type="audio/ogg">
+	<object type="audio/mp3" data="h3-audio.mp3" >
+		<param name="src" value="h3-audio.mp3">
+		<param name="filename" value="h3-audio.mp3">
+		<param name="controller" value="true">
+		<param name="bgcolor" value="#FF9900">
+		<embed src="h3-audio.mp3" autostart="true" hidden="true" loop="false">
+			<noembed>
+				無法使用&lt;embed&gt;元素播放背景音樂
+			</noembed>
+		</embed>
+	</object>
+	你的瀏覽器不支援 HTML5 audio 功能！
+</audio-->
+
+<!--舊版IE, 使用 <bgsound> -->
+<!--bgsound src="xxx.wav" -->
+</body>
+</html>

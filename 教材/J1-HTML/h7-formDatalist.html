@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>選課系統</title>
+<style>
+table { border: solid 3px grey; }
+th:nth-child(1) { width: 80px; }
+th:nth-child(2) { width: 50px; }
+th:nth-child(3) { width: 100px; }
+th:nth-child(4) { width: 50px; }
+th:nth-child(5) { width: 160px; }
+th:nth-child(6) { width: 50px; }
+th:nth-child(7) { width: 50px; }
+th:nth-child(8) { width: 100px; }
+th:nth-child(9) { width: 70px; }
+th {
+	font-family: Arial;
+	color: white;
+	background-color: #800000;
+}
+td {
+	font-family: Arial;
+	text-align: center;
+}
+tr:nth-child(even) {
+	background-color: #ffc184;
+}
+tr:nth-child(odd) {
+	background-color: #ffffcc;
+}
+</style>
+</head>
+<body>
+	<fieldset>
+		<legend>HTML5 Form datalist Element </legend>
+		<!--input type="text" name="text1" list="myList"-->
+		<select name="text1" list="myList"></select>
+		<datalist id="myList">
+			<option>List Item 1</option>
+			<option>List Item 2</option>
+			<option>List Item 3</option>
+			<option>List Item 4</option>
+		</datalist>
+		<input type="text" name="text2" list="myList" >
+	</fieldset>
+	<br>
+	<fieldset>
+		<legend>HTML5 Form datalist Element </legend>
+		<form name="form1" onsubmit="" method="post" action="" >
+		<input type="submit" value="確認" >
+		<input type="reset"  value="重設" >
+		<table>
+		  <tr>
+			<th colspan="9">
+				<span style="font-size:140%;">資訊技術服務中心課程表</span>
+			</th>
+		  </tr>
+		  <tr>
+			<th>加選</th>
+			<th>課號</th>
+			<th>課程名稱</th>
+			<th>人數</th>
+			<th>上課時間及教室</th>
+			<th>學分</th>
+			<th>時數</th>
+			<th>開課教師</th>
+			<th>選別</th>
+		  </tr>
+		  <tr>
+			<td>
+				<select name="choice" id="choice" >
+					<option value="no" selected="selected" >未登記
+					<option value="yes">登記
+				</select>
+			</td>
+			<td><a href="show.asp?acy=97&sem=2&crsno=5187">3101</a></td>
+			<td>網頁設計</td>
+			<td>30</td>
+			<td>2BCD<span style="color:red;">-PC3</td>
+			<td>3</td>
+			<td>3</td>
+			<td><a href="http://it.nctu.edu.tw/">廖文宏</a></td>
+			<td>
+			  <select name="crstype">
+				<option value="12">必修
+				<option value="22" selected="selected" >選修
+				<option value="32">輔系
+				<option value="42">雙學位
+				<option value="52">通識
+				<option value="62">外語
+				<option value="72">學程
+			  </select>
+			</td>
+		  </tr>
+		  <tr>
+			<td>
+				<select name="choice" id="choice" >
+					<option value="no" selected="selected" >加選
+					<option value="yes">退選
+				</select>
+			</td>
+			<td><a href="show.asp?acy=97&sem=2&crsno=5187">3102</a></td>
+			<td>網路管理</td>
+			<td>20</td>
+			<td>4BCD<span style="color:red;">-PC3</td>
+			<td>3</td>
+			<td>3</td>
+			<td><a href="http://it.nctu.edu.tw/">廖文宏</a></td>
+			<td>
+			  <select name="crstype">
+				<option value="12">必修
+				<option value="22" selected="selected" >選修
+				<option value="32">輔系
+				<option value="42">雙學位
+				<option value="52">通識
+				<option value="62">外語
+				<option value="72">學程
+			  </select>
+			</td>
+		  </tr>
+		  <!-- rewrite crstype with input/datalist -->
+		  <datalist id="stype">
+			<option>必修
+			<option selected="selected" >選修
+			<option>輔系
+			<option>雙學位
+			<option>通識
+			<option>外語
+			<option>學程
+		  </datalist>
+		  <tr>
+			<td>
+				<select name="choice" id="choice" >
+					<option value="no" selected="selected" >未登記
+					<option value="yes">登記
+				</select>
+			</td>
+			<td><a href="show.asp?acy=97&sem=2&crsno=5187">3103</a></td>
+			<td>網頁設計</td>
+			<td>20</td>
+			<td>2BCD<span style="color:red;">-PC3</td>
+			<td>3</td>
+			<td>3</td>
+			<td><a href="http://it.nctu.edu.tw/">廖文宏</a></td>
+			<td>
+			  <input name="crstype" size=4 list="stype">
+			</td>
+		  </tr>
+		  <tr>
+			<td>
+				<select name="choice" id="choice" >
+					<option value="no" selected="selected" >加選
+					<option value="yes">退選
+				</select>
+			</td>
+			<td><a href="show.asp?acy=97&sem=2&crsno=5187">3104</a></td>
+			<td>網路管理</td>
+			<td>20</td>
+			<td>4BCD<span style="color:red;">-PC3</td>
+			<td>3</td>
+			<td>3</td>
+			<td><a href="http://it.nctu.edu.tw/">廖文宏</a></td>
+			<td>
+			  <input name="crstype" size=4 list="stype" value="選修">
+			</td>
+		  </tr>
+		</table>
+	</fieldset>
+</body>
+</html>

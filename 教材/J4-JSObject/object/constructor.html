@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Constructor Pattern</title>
+	<style>
+	h2 {text-align:center;}
+	</style>
+</head>
+<body>
+	<h2>Constructor Pattern</h2>
+	<hr>
+	<script>
+	function Student(inputName, inputStudentID, inputAge) {
+		this.name = inputName;
+		this.studentID = inputStudentID;
+		this.age = inputAge;
+		this.display = function () {
+			document.writeln(
+				"<br>大名 : " + this.name
+				+ "<br>學號 = " + this.studentID
+				+ "<br>年齡 = " + this.age
+				+ "<br>"
+			);
+		};
+	}
+
+	var student1 = new Student("Alex","0200102",23);
+	var student2 = new Student("Joey","0200103",20);
+	var student3 = new Student("Kelvin","0200104",22);
+
+	student1.display();
+	student2.display();
+	student3.display();
+
+	console.log(student1.display == student2.display);  //false        
+
+	console.log(student1 instanceof Student); //true
+	console.log(student1 instanceof Object);  //true
+	
+	console.log(student1.constructor == Student);  //true
+	console.log(student1.constructor == Object);  //false
+	
+	// test [[call]] versus [[construct]]
+	Student("Mary","0500111",21);
+	document.write("<br>name: " + name);
+	document.write("<br>this.name: " + this.name);
+	document.write("<br>window.name: " + window.name);
+	// this.name==window.name==Mary
+	// because student() execute this.name, where this==window
+	display();
+	// misc.
+	document.write("<br>JSON: ", JSON.stringify(student3), "<br>");
+	</script>
+	<hr>
+</body>
+</html>

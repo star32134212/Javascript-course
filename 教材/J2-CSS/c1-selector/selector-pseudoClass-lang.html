@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+<!-- 
+zh-hant: 正體中文
+zh-hans: 簡體中文
+-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--meta http-equiv="Content-Language" content="zh-hant" /-->
+<title>:lang Pseudo Class</title>
+<style type="text/css">
+:lang(zh-hant) {
+	color: red;
+	quotes: '\3010' '\3011';
+}
+:lang(en) {
+	color: blue; 
+	quotes: '"' '"' "'" "'";
+}
+:lang(fr) { 
+	color: green;
+	quotes: '<' '>' '«' '»';
+}
+</style>
+</head>
+<body>
+<q>今日事，今日畢</q><br>
+<q lang="en">Never put off till tomorrow what you can do today.</q><br>
+<q lang="fr">Il ne faut jamais remettre à demain ce qu'on peut faire le jour même.</q><br>
+<br>
+<q>你好, <q>早安</q></q><br>
+<q lang="en">Hello, <q>Good Morning.</q></q><br>
+<q lang="fr">Salut <q>Bonjour</q></q><br>
+</body>
+</html>

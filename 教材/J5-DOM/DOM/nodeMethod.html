@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Node Method Demo</title>
+<style>
+body {font-size: xx-large;}
+</style>
+<script type="text/javascript">
+function myAppendChild() {
+	var node1 = document.getElementById("p1");
+	var parent = node1.parentNode;
+	parent.appendChild( node1 );
+}
+function myInsertBefore() {
+	var node1 = document.getElementById("p1");
+	var node2 = document.getElementById("p2");
+	var parent = node1.parentNode;
+	parent.insertBefore( node2, node1 );
+	//var newNode = node1.cloneNode(true);
+}
+function myReplaceChild() {
+	var node3 = document.getElementById("p3");
+	var node4 = document.getElementById("p4");
+	var parent = node3.parentNode;
+	parent.replaceChild( node4, node3 );
+	//var newNode = node1.cloneNode(true);
+}
+document.write( document.documentElement.nodeName);
+document.write( document.body.nodeName);
+document.write( document.documentElement.firstChild.nextSibling.nodeName);
+</script>
+</head>
+<body>
+<p id="p1">paragraph1</p>
+<p id="p2">paragraph2</p>
+<p id="p3">paragraph3</p>
+<p id="p4">paragraph4</p>
+<input type="button" value="append paragraph 1" onClick="myAppendChild()" /><br>
+<input type="button" value="insert paragraph 2 before paragraph 1" onClick="myInsertBefore()" /><br>
+<input type="button" value="replace paragraph 3 with paragraph 4" onClick="myReplaceChild()" /><br>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<script>
+(function(){document.write("Hello, world<br>");})();
+// another syntax
+(function(){document.write("Hello, world<br>");}());
+
+(function () {
+	var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+		today = new Date(),
+		msg = "Today is " + days[today.getDay()] + ", " + today.getDate();
+	document.write(msg+"<br>");
+}());
+// another syntax
+(function () {
+	var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+		today = new Date(),
+		msg = "Today is " + days[today.getDay()] + ", " + today.getDate();
+	document.write(msg+"<br>");
+})();
+</script>

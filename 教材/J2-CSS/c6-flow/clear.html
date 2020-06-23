@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>清除浮動元素</title>
+<style type="text/css">
+<!--
+img {border: 1px solid blue;}
+p {color: green;}
+h2{border: 1px solid blue; margin-top: 20px;}
+
+-->
+</style>
+</head>
+<body>
+<p>
+  <img src="bird.jpg" alt="" style="float: left;" />
+  根據CSS的排版模型，在正常版型(normal flow)中，文字元素是由上而下，由左而右的，
+</p>
+<h2>沒有清除左邊的浮動元素</h2>
+<p>
+  <img src="bird.jpg" alt="" style="float: left;" />
+  根據CSS的排版模型，在正常版型(normal flow)中，文字元素是由上而下，由左而右的，
+</p>
+<h2 style="clear: left;">清除左邊的浮動元素</h2>
+<p>
+  <img src="bird.jpg" alt="" style="float: right;" />
+  根據CSS的排版模型，在正常版型(normal flow)中，文字元素是由上而下，由左而右的，
+</p>
+<h2>沒有清除右邊的浮動元素</h2>
+<p>
+  <img src="bird.jpg" alt="" style="float: right; margin-bottom: 20px;" />
+  根據CSS的排版模型，在正常版型(normal flow)中，文字元素是由上而下，由左而右的，
+</p>
+<h2 style="clear: right;">清除右邊的浮動元素</h2>
+</body>
+</html>

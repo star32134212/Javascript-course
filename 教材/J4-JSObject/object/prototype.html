@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Prototype Pattern</title>
+</head>
+<body>
+<script>
+	// 1. example Student
+	function Student(inputName, inputStudentID, inputAge){
+		this.name = inputName;
+		this.studentID = inputStudentID;
+		this.age = inputAge;
+	}
+	Student.prototype.display = function () {
+		document.writeln(
+			"<br>大名 : " + this.name
+			+ "<br>學號 = " + this.studentID
+			+ "<br>年齡 = " + this.age
+			+ "<br>"
+		);
+	};
+	var student1 = new Student("Alex","0200102",23);
+	var student2 = new Student("Joey","0200103",20);
+	var student3 = new Student("Kelvin","0200104",22);
+
+	student1.display(); // Student.prototype.display()
+	student2.display();
+	student3.display();
+
+	console.log(student1.display == student2.display);  //true
+
+	console.log(student1 instanceof Student); //true
+	console.log(student1 instanceof Object);  //true
+	
+	console.log(student1.constructor == Student);  //true
+	console.log(student1.constructor == Object);  //false
+	console.log(Student.prototype.constructor == Student);  //true
+	
+	console.log(Student.prototype.isPrototypeOf(student1));  //true
+	console.log(Student.prototype.isPrototypeOf(student2));  //true
+
+	console.log(student1.hasOwnProperty("display"));  //false
+	console.log("display" in student1);  //true
+	//function hasPrototypeProperty(obj, prop){
+	//	return !obj.hasOwnProperty(prop) && (prop in obj);
+	//}
+	
+	// Student.display(); // TypeError: undefined is not a function
+
+	document.writeln("<hr>"); 
+	// possible application:
+	// I. output array string, defaultly joined by '|'
+	var a=[1,2,3]; // new Array(1,2,3);
+	document.writeln(a,"<br>"); // a.toString()
+	document.writeln(a.join('|'),"<br>"); // coded for every array
+	// change the default joining format
+	Array.prototype.toString = function () { return this.join('|') } 
+	document.writeln(a,"<br>"); // now, write without join()
+	var b = [4,5,6];
+	document.writeln(b,"<br>"); // now, write without join()
+	// II. hidden the function code
+	function sayHi() { alert("hi"); }
+	document.writeln(sayHi, "<br>"); //sayHi.toString()
+	document.writeln(sayHi.toString(), "<br>"); //outputs “function sayHi() {alert("hi");}”
+	Function.prototype.toString = function () { return "Function codes are hidden"; };
+	document.writeln(sayHi, "<br>"); //outputs "Function codes are hidden"
+
+/*
+	// 2. example Person
+	function Person(name) {
+		this.name = name;
+	}
+	// user-defined prototype object
+	Person.prototype = {
+		getName : function () { return this.name; },
+		friends : ["Alice", "Sandy"],
+		//constructor: Student,
+	}
+	var person1 = new Person("John");
+	var person2 = new Person("Mary");
+	console.log("user-defined prototype object:");
+	console.log(person1.getName());
+	console.log(person1.constructor == Student);  //false
+	console.log(person1.constructor == Object);  //true
+	console.log(Person.prototype.constructor == Object);  //true
+		
+	person1.friends.push("Michael");
+	console.log(person2.friends); // "Alice", "Sandy", "Michael"
+	console.log(person1.friends === person2.friends); // true
+
+	// 3. example Circle
+	const PI = 3.1415926; // ES6; ES5: var PI = 3.1415926;
+
+	function Circle(radiux) {
+		this.radiux = radiux;
+	}
+	Circle.prototype.area = function () {
+		return this.radiux * this.radiux * PI;
+	}
+	var circle1 = new Circle(3);
+	var circle2 = new Circle(5);
+	document.writeln(circle1.area(), "<br>");
+	document.writeln(circle2.area(), "<br>");
+	document.writeln(circle1.area == circle2.area, "<br>");
+*/
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>corner image</title>
+<style type="text/css">
+<!--
+.top div {background: url(corner-top-left.jpg) no-repeat top left;}
+.top {background: url(corner-top-right.jpg) no-repeat top right;}
+.bottom div {background: url(corner-bottom-left.jpg) no-repeat bottom left;}
+.bottom {background: url(corner-bottom-right.jpg) no-repeat bottom right;}
+
+.top div, .top, .bottom div, .bottom {
+  width: 100%;
+  height: 14px;
+  font-size: 1px;
+}
+
+.container {
+  width: 320px;
+  background-color: aqua;
+  color: green;
+  margin-left: 10px;
+}
+
+.content {
+  margin: 0 14px;  
+}
+
+h2 {text-align: center;}
+-->
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="top">
+    <div></div>
+  </div>
+  
+  <div class="content">
+    <h2>圓角的方框</h2>
+    <p>
+      要讓所有的瀏覽器都適用的方式，就是使用圖片來替代方框的圓角。要使用圖片來建立方框的圓角時，您首先畫出一個圓形。將這個圓形切成4等份，分別儲存成top_left.jpg，top_right.jpg，bottom_left.jpg，與bottom_right.jpg圖片。
+    </p>
+  </div>
+  
+  <div class="bottom">
+    <div></div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>設定元素的堆疊順序</title>
+<style type="text/css">
+<!--
+p {
+	border: 2px solid blue;
+	color: red;
+	font-size: 36px;
+	position: absolute;
+	height: 120px;}
+-->
+</style>
+</head>
+<body>
+<p style="z-index: 1; top: 20px; left: 20px; background-color: yellow;">元素 1 : z-index = 1</p>
+<p style="z-index: 4; top: 60px; left: 60px; background-color: silver;">元素 2 : z-index = 4</p>
+<p style="z-index: 17; top: 100px; left: 100px; background-color: orange;">元素 3 : z-index = 17</p>
+<p style="z-index: -1; top: 140px; left: 140px; background-color: aqua;">元素 4 : z-index = -1</p>
+<p style="z-index: 0; top: 180px; left: 180px; background-color: gray;">元素 5 : z-index = 0</p>
+</body>
+</html>

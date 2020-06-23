@@ -1,0 +1,21 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv=content-type content="text/html; charset=utf-8">
+	<title>Redirect Page!</title>
+	<script>
+		function assign() { location.assign("http://www.google.com/"); }
+		function replace() { location.replace("http://www.google.com/"); }
+		function wAssign() {
+			window.location="http://www.google.com/";
+			//window.location.host="";
+			window.parent.location="http://www.google.com/";
+		}
+	</script>
+</head>
+<body style="text-align:center;">
+	<input type="button" value="使用 assign() 指定新頁" onclick="assign()" />
+	<input type="button" value="使用 replace() 指定新頁" onclick="replace()" />
+	<input type="button" value="使用 = 指定新頁" onclick="wAssign()" />
+</body>
+</html>

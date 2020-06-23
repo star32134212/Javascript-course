@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC”-//W3C//DTD HTML 4.0//EN”
+"http://www.w3.org/TR/REC-html140/strict.dtd">
+<html><head>
+<meta http-equiv=content-type content="text/html; charset=Big5">
+<title>Sample Page!</title>
+</head>
+<body> 
+<p id="p1">
+  Welcome to
+  <B> DOM </B>
+  World!
+</p>
+<script language="JavaScript" type="text/javascript">
+<!--
+//輸出指定節點資訊
+function nodeStatus(node)
+{
+  var temp="";
+  if(node.nodeName!=null)
+  {
+    temp+="nodeName: "+node.nodeName+"\n";
+  }
+  else temp+="nodeName: null!\n";
+  if(node.nodeType!=null)
+  {
+    temp+="nodeType: "+node.nodeType+"\n";
+  }
+  else temp+="nodeType: null\n";
+  if(node.nodeValue!=null)
+  {
+    temp+="nodeValue: "+node.nodeValue+"\n\n";
+  }
+  else temp+="nodeValue: null\n\n";
+  return temp;
+}
+var parentElement=document.getElementById('p1');
+var msg="父節點：\n"+nodeStatus(parentElement);
+//返回元素節點P的最後一個孩子，即文字節點“World!”
+currentElement=parentElement.lastChild;
+msg+="刪除前:lastChild:\n"+nodeStatus(currentElement);
+//刪除節點P的最後一個孩子，即文字節點“World!”，最後一個孩子變為B
+parentElement.removeChild(currentElement);
+currentElement=parentElement.lastChild;
+msg+="刪除後:lastChild:\n"+nodeStatus(currentElement);
+//輸出節點屬性
+alert(msg);
+-->
+</script>
+</body></html>

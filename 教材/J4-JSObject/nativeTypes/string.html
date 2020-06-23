@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2 align=center>字串物件的方法與性質</h2>
+<hr>
+<script>
+//document.writeln("<xmp>");
+myStr = "寬而栗，柔而立，愿而恭，亂而敬，擾而毅，直而溫，簡而廉，剛而塞，彊而義，彰厥有常，吉哉！";
+document.writeln("<b>" + myStr + "</b><br>");
+document.writeln(myStr.bold() + "<br>");
+document.writeln("原字串：myStr = " + myStr + "<br>");
+document.writeln("字串長度：myStr.length = " + myStr.length + "<br>");
+document.writeln("增大字型：myStr.big() = " + myStr.big() + "<br>");
+document.writeln("減小字型：myStr.small() = " + myStr.small() + "<br>");
+document.writeln("閃爍字串：myStr.blink() = " + myStr.blink() + "<br>");
+document.writeln("變黑體：myStr.bold() = " + myStr.bold() + "<br>");
+document.writeln("變斜體：myStr.italics() = " + myStr.italics() + "<br>");
+document.writeln("變等寬字體：myStr.fixed() = " + myStr.fixed() + "<br>");
+document.writeln("槓掉字串：myStr.strike() = " + myStr.strike() + "<br>");
+document.writeln("變下標：myStr.sub() = " + myStr.sub() + "<br>");
+document.writeln("變上標：myStr.sup() = " + myStr.sup() + "<br>");
+document.writeln("設定顏色：myStr.fontcolor(\"blue\") = " + myStr.fontcolor("blue") + "<br>");
+document.writeln("設定字型大小：myStr.fontsize(5) = " + myStr.fontsize(5) + "<br>");
+document.writeln("換成大寫字母：myStr.toUpperCase() = " + myStr.toUpperCase() + "<br>");
+document.writeln("換成小寫字母：myStr.toLowerCase() = " + myStr.toLowerCase() + "<br>");
+document.writeln("字串並排：myStr.concat(\"新加的\") = " + myStr.concat("新加的") + "<br>");
+document.writeln("抽出字元：myStr.charAt(13) = " + myStr.charAt(13) + "<br>");
+document.writeln("抽出 Unicode 字元：myStr.charCodeAt(13) = " + myStr.charCodeAt(13) + "<br>");
+document.writeln("抽出子字串：myStr.substr(13, 5) = " + myStr.substr(13, 5) + "<br>");
+document.writeln("抽出子字串：myStr.substring(13, 15) = " + myStr.substring(13, 15) + "<br>");
+document.writeln("尋找子字串：myStr.indexOf(\"恭\") = " + myStr.indexOf("恭") + "<br>");
+document.writeln("尋找子字串：myStr.lastIndexOf(\"而\") = " + myStr.lastIndexOf("而") + "<br>");
+//document.writeln("</xmp>");
+</script>
+<hr>
+</body>
+</html>

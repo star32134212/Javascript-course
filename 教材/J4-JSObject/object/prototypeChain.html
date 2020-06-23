@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prototype Chaining</title>
+<script type="text/javascript">
+					
+	function Parent(inputName){
+		this.name = inputName;
+	}
+	Parent.prototype.getName = function(){
+		return this.name;
+	};
+
+	function Child(inputName){
+		this.name = inputName;
+		//Parent.call(this, inputName);
+		this.juniorName = "Joshua";
+	}
+	//inherit from Parent
+	Child.prototype = new Parent("Adam");
+	console.log(Child.prototype.getName()); //Adam
+
+	var inst = new Child("Eve");
+	console.log(inst.getName());   // "Eve"
+	console.log(inst instanceof Child);  // true
+	console.log(inst instanceof Parent); // true
+	console.log(inst instanceof Object); // true
+	console.log(inst instanceof Function); // false
+	console.log(Child instanceof Function); // true
+	
+	console.log(Child.prototype.isPrototypeOf(inst)); //true
+	console.log(Parent.prototype.isPrototypeOf(inst)); //true
+	console.log(Object.prototype.isPrototypeOf(inst)); //true
+	console.log(Function.prototype.isPrototypeOf(inst)); //false
+	console.log(Function.prototype.isPrototypeOf(Child)); //true
+
+	//override existing method
+	Child.prototype.getName = function (){
+		return this.juniorName;
+	};
+	console.log(inst.getName());   // "Joshua"
+	delete Child.prototype.getName;
+	console.log(inst.getName());   // "Eve"
+</script>
+</head>
+</html>

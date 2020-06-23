@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Box Outline</title>
+<style type="text/css">
+p {
+	outline-style: dotted;
+	outline-width: thick;
+	outline-color: blue;
+	outline-offset: 10px;
+	border: red dotted thick;
+	margin: 20px;
+	}
+a {
+	border: outset thick #32CD32; /* 框線厚度為0.1cm,樣式為3D隆起線,顏色為來姆綠 */
+	background-color:yellow;
+	text-decoration: none;
+	}
+
+a:focus		{ outline: outset 10px black;}
+a:active	{ outline: outset 10px red; outline-offset: 10px; }
+/*
+a:active {
+	outline-style: outset;
+	outline-width: 10px;
+	outline-color: red;
+	outline-offset: 10px;
+	}
+*/
+button:hover	{ outline: outset 10px red; outline-offset: 10px; }
+</style>
+</head>
+<body>
+<p> test paragraph </p>
+<br />
+<a id="b1" href="http://www.google.com">Google</a>
+<a href="http://www.yahoo.com">Yahoo</a>
+<button>Facebook</button>
+</body>
+</html>

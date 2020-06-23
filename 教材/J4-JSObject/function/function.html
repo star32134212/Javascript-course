@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Function Examples</title>
+<script type="text/javascript">
+	function sayHi() {
+		alert("Hi!!");
+	}
+
+	function showMsg(name, message) {
+		alert(name + "," + message);
+	}
+
+	sayHi();
+	showMsg("John", "Hi");
+	showMsg("Boy", "Wake up!!");
+	showMsg("Girl", "Wake up!!");
+	/*
+	function max(a, b) {
+		if ( a < b ) return b;
+		else return a;
+	}
+
+	var a=1, b=2;
+	document.write("the max of (",a,",",b,") is ", max(a,b));    
+	*/
+	sum(1,2);
+	function sum(x, y) { return (x+y); }
+	sum(10,20);
+	sum2(1,2);
+	var sum2 = function(x,y) { return (x+y); }
+	sum2(10,20);
+	var sum = new Function("x", "y", "return (x+y);");
+</script>
+</head>
+
+<body>
+</body>
+
+</html>

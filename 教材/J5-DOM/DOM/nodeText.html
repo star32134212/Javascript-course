@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC　"-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html140/strict.dtd">
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=big5">
+<title> First Page!</title>
+</head>
+<body>
+<p id="p1">Congratulations</p>
+<script language="JavaScript" type="text/javascript">
+<!--
+function nodeStatus(node)
+{
+  var temp="";
+  if(node.length!=0)
+  {
+    temp+="nodeLength: "+node.length+"\n";
+  }
+  else temp+="nodeLength: 0\n\n";
+  if(node.data!="")
+  {
+    temp+="nodeData: "+node.data+"\n\n";
+  }
+  else temp+="nodeData: null\n\n";
+  return temp;
+}
+//返回id屬性值為p1的元素節點
+var parentElement=document.getElementById('p1');
+//返回p1的第一個孩子，即文字節點「Congratulations」，並輸出其訊息
+var targetElement=parentElement.firstChild;
+var msg="●原始文字節點內容:\n"+nodeStatus(targetElement);
+//使用targetElement的data屬性直接修改其內容
+targetElement.data="Welcome you";
+msg+="●使用targetElement.data=''Welcome you'':\n"+nodeStatus(targetElement);
+//使用appendData( )方法在文字節點內容後面添加字串
+targetElement.appendData(' to NUDT!');
+msg+="●使用targetElement.appendData(' to NUDT!'):\n"+nodeStatus(targetElement);
+//使用insertData( )方法在文字節點內容某個位置添加字串
+targetElement.insertData(0,'YSQ ');
+msg+="●使用targetElement.insertData(0,'YSQ '):\n"+nodeStatus(targetElement);
+//使用deleteData( )方法在文字節點內容中指定位置刪除指定長度的字串
+targetElement.deleteData(0,4);
+msg+="●使用targetElement.deleteData(0,4):\n"+nodeStatus(targetElement);
+//使用replaceData( )方法用指定字串替換文字節點內容指定位置和長度的字串
+targetElement.replaceData(0,7,'JHX Let');
+msg+="●使用targetElement.replaceData(0,7,'JHX Let'):\n"+nodeStatus(targetElement);
+//使用splitText( )方法將文字節點內容從指定位置分為兩部分，左邊為原始節點，右邊指定值給新節點
+var tempNode=targetElement.splitText(8);
+msg+="●使用targetElement.splitText(8):\n";
+msg+="原始文字節點: \n"+nodeStatus(targetElement);
+msg+="新的文字節點: \n"+nodeStatus(tempNode);
+//使用substringData( )方法返回文字節點內容中指定位置和長度的字串
+msg+="●使用targetElement.substringData(0,3):\n"+targetElement.substringData(0,3);
+//輸出文字節點屬性變化過程
+alert(msg);
+//-->
+</script>
+</body>
+</html>

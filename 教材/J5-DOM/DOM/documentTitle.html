@@ -1,0 +1,20 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>a;skldfjl;asdjf</title>
+<script>
+function changeTitle() {
+	var msg = ["hi", "hello", "world", "look", "attention" ];
+	document.title = msg[Math.floor(Math.random()*msg.length)];
+}
+</script>
+</head>
+<body style="">
+	<h2>change document title (注意 window/tab 上的變化)</h2>
+	<hr>
+	<form>
+		<input type="button" value="change document title" onClick="changeTitle()">
+	</form>
+</body>
+</html>

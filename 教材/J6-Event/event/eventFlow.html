@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Event Flow</title>
+<style>
+body { width: 50%; margin: 20px auto; border: solid 1px blue;}
+div {
+	background-color: pink;
+	width: 80%;
+	text-align: center;
+	margin: 20px auto;
+	border: 1px solid blue;
+}
+a { background-color: #ddd;
+	display: block;
+	width: 80%;
+	margin: 10px auto;
+	padding: 5px;
+	border: 2px solid blue;
+}
+</style>
+</head>
+<body>
+	&lt;body&gt;
+	<div>
+		&lt;div&gt;<br>
+		<a href="http://www.google.com/" target="_blank">
+			&nbsp;&lt;a&gt;&nbsp;
+		</a>
+	</div>
+	<script type="text/javascript">
+	var oBody = document.getElementsByTagName('body')[0];
+	var oDiv = document.getElementsByTagName('div')[0];
+	var oLink = document.getElementsByTagName('a')[0];
+	
+	oBody.addEventListener('click',function (e) { alert('0. Body Event - capture phase');}, true);
+	oBody.addEventListener('click',function (e) { alert('4. Body Event - bubbling phase');}, false);
+	oDiv.addEventListener('click',function (e) { alert('1. Div Event - capture phase');
+		e = e || window.event;
+		//e.cancelBubble=true;
+		e.stopPropagation();
+		//if (e.cancelable)
+		e.preventDefault?e.preventDefault():e.returnValue=false;
+		}, true);
+	oDiv.addEventListener('click',function (e) { alert('3. Div Event - bubbling phase');}, false);
+	oLink.addEventListener('click',function (e) { alert('2a. Link Event');}, false);
+	oLink.addEventListener('click',function (e) { alert('2b. Link Event');}, true);
+	oLink.addEventListener('click',function (e) { alert('2c. Link Event');}, false);
+	
+	/*
+	function myBinding( obj, doEvent, doHandler, doPhase ) {
+		if (window.addEventListener)
+			obj.addEventListener(doEvent, doHandler, doPhase);
+		else if (window.attachEvent)
+			obj.attachEvent("on"+doEvent, doHandler);
+		else
+			eval("obj.on"+doEvent+"=doHandler");
+	}
+		
+	myBinding( oDiv, 'click', function (e) { alert('1. Div Event - capture phase');},true );
+	myBinding( oDiv, 'click', function (e) { alert('3. Div Event - bubbling phase');},false);
+	myBinding( oLink,'click', function (e) { alert('2a. Link Event');},false);
+	myBinding( oLink,'click', function (e) { alert('2b. Link Event');},true);
+	myBinding( oLink,'click', function (e) { alert('2c. Link Event');},false);
+	*/
+</script>
+</body>
+</html>

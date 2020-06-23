@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+var clock;
+function showTime(){
+	var d = new Date();
+	var h = d.getHours();
+	var m = d.getMinutes();
+	var s = d.getSeconds();
+	if ( h < 12) { a = "AM"; if ( h == 0) h = 12; }
+	else { a = "PM"; h = h - 12; }
+	document.getElementById("clock").textContent = h + ":" + m + ":" + s+ " " + a;
+}
+</script>
+</head>
+<body>
+<h2>Digital Clock</h2>
+<hr>
+<div id="clock">00:00:00</div>
+<script>
+	clock = setInterval(showTime, 1000);
+</script>
+<hr>
+<form name="theForm">
+<input type="button" value="停止時鐘" onClick="clearInterval(clock)">
+</form>
+</body>
+</html>

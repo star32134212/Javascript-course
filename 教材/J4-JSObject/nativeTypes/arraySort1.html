@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 align="center">陣列的方法：sort() 和 reverse()</h2>
+<hr>
+<script>
+x=10;//myArray = ["First", "3.1415926", "Third", 4, 20];
+myArray = [5, 3.1415926, 4, 20];
+//myArray[2] = new Date();
+document.writeln("<p>原來的陣列：<br>");
+for (var i=0; i<myArray.length; i++) {
+	document.write("myArray["+i+"] = ");
+	document.write('<span style="color:green">'+myArray[i]+'</span><br>');
+}
+
+myArray.sort();
+document.writeln("<p>排序後的陣列：<br>");
+for (var i=0; i<myArray.length; i++) {
+	document.write("myArray["+i+"] = ");
+	document.write('<span style="color:green">'+myArray[i]+'</span><br>');
+}
+
+myArray.reverse();
+document.writeln("<p>反排後的陣列：<br>");
+for (var i=0; i<myArray.length; i++) {
+	document.write("myArray["+i+"] = ");
+	document.write('<span style="color:green">'+myArray[i]+'</span><br>');
+}
+
+</script>
+<hr>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Fire Event</title>
+<!-- IE 專用 : fireEvent() -->
+<style>
+body { width: 80%; margin: 20px auto; border: solid 1px blue; text-align: center;}
+table { width: 80%; margin: 20px auto; border: solid 1px green;
+	border-spacing: 20px;
+    border-collapse: separate;
+}
+td { border: solid 1px purple; }
+td div { margin-top: -22px; }
+p { width: 80%; border: solid 1px red; margin: 10px auto;}
+em {font-size: 2em; solid 1px red; background-color: #ddd;}
+</style>
+<script type="text/javascript">
+	var msg="";
+	msg+="事件轉向實例:\n\n";
+	msg+="Click事件開始:\n\n";
+	function myAlert() { 
+	  msg+="Click事件結束:\n";
+	  alert(msg);
+	}
+</script>
+</head>
+<body onclick="javascript:msg+='==>Body onClick event\n\n';myAlert();">
+&lt;body&gt;
+  <table onclick="javascript:msg+='==>Table onClick event\n\n'">
+    <tr onclick="javascript:msg+='==>Tr onClick event\n\n'">
+      <td onclick="javascript:msg+='==>Td onClick event\n\n'">
+      <!--td onclick="javascript:msg+='==>Td onClick event\n\n';event.cancelBubble=true;document.body.fireEvent('onclick',event);"-->
+	  	<div>&lt;table&gt;</div>&lt;tr&gt;&lt;td&gt;
+        <p onclick="javascript:msg+='==>p onClick event\n\n'">
+          &lt;p&gt;<br>Click the
+          <em onclick="javascript:msg+='==>em onClick event\n\n'">
+            EM text 
+          </em>
+          to Test!<br>&lt;/p&gt;
+        </p>
+      </td>
+    </tr> 
+  </table>
+</body>
+</html>

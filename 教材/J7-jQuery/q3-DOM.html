@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DOM manipulation</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+function output(i) {
+	//$('#output').html("<li> 元素個數: " + $("li").length);
+	//$('#output').append('<br><b>第一個清單值是: </b>');
+	//$('#output').text($("li").get(i).innerText);
+	$("li").get(i).innerText = "test";
+}
+</script>
+</head>
+<body>
+	<ul id="menu">
+		<li onclick="output(0)">功能一</li>
+		<li onclick="output(1)">功能二</li>
+		<li onclick="output(2)">功能三</li>
+	</ul>
+	<div id="output"></div>
+</body>
+</html>

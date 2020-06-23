@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>設定 box 定位的類型 - 浮水印</title>
+<style type="text/css">
+body { background-color:#ffffc0; }
+h2 { color:#0000d0; }
+#floatmark {
+	position:absolute;
+	width:100px;
+	border:solid 1px black;
+	right:1em;
+	bottom:5px;
+}
+ol { /*list-style-position:inside;*/ }
+</style>
+</head>
+<body>
+<h2>Definition of "containing block"</h2>
+<p>
+<img id="floatmark" src="bird.jpg">
+The position and size of an element's box(es) are sometimes calculated relative to a certain rectangle, called the <a href="http://www.w3.org/TR/CSS21/visudet.html#containing-block-details">containing block</a> of the element. The containing block of an element is defined as follows:
+<ol>
+	<li>The containing block in which the root element lives is a rectangle called the initial containing block. For continuous media, it has the dimensions of the viewport and is anchored at the canvas origin; it is the page area for paged media. The 'direction' property of the initial containing block is the same as for the root element.</li>
+	<li>For other elements, if the element's position is 'relative' or 'static', the containing block is formed by the content edge of the nearest block container ancestor box.</li>
+	<li>If the element has 'position: fixed', the containing block is established by the viewport in the case of continuous media or the page area in the case of paged media.</li>
+	<li>If the element has 'position: absolute', the containing block is established by the nearest ancestor with a 'position' of 'absolute', 'relative' or 'fixed', in the following way:
+		<ol>
+			<li>In the case that the ancestor is an inline element, the containing block is the bounding box around the padding boxes of the first and the last inline boxes generated for that element. In CSS 2.1, if the inline element is split across multiple lines, the containing block is undefined.</li>
+			<li>Otherwise, the containing block is formed by the padding edge of the ancestor.</li>
+		</ol>
+		If there is no such ancestor, the containing block is the initial containing block.
+	</li>
+</ol>
+<h2>CSS 2.1 關於 containing block (包容區塊)的解釋：</h2>
+<ol>
+<li>由網頁根元素所建立的包容區塊稱為 initial containing block(初始包容區塊)，initial containing block 的長方形方框會佔據整個瀏覽器視窗。有些瀏覽器的根元素是 html，有些是 body，但是結果是一樣的。</li>
+<li>block-level 的元素其 containing block 的範圍是到元素的內距邊界(在元素的邊框內)。</li>
+<li>定位類型是 static 或 relative 的元素(根元素除外)，其 containing block 是最近的區塊層級，表格儲存格，或是行內區塊的父元素。</li>
+<li>定位類型是 absolute 的元素，其 containing block 是定位類型非 static 的最近父元素。換句話說，父元素必須是 relative，absolute，或 fixed 的元素。</li>
+<li>如果沒有其他的 containing block 存在，就使用 initial containing block。</li>
+</ol>
+</p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Static Variable</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+			var setup = function () {
+				var count=0;
+				return function () { return (count+=1); };
+			};
+
+			// usage
+			var next = setup();
+			document.writeln(setup.count); // undefined
+			document.writeln(next.count); // undefined
+			document.writeln(next()); // return 1 
+			document.writeln(next()); // return 2
+			document.writeln(next()); // return 3
+			var n2 = setup();
+			document.writeln(n2()); // return 1
+			document.writeln(next()); // return 4
+			document.writeln(n2()); // return 2
+	</script>
+</body>
+
+</html>

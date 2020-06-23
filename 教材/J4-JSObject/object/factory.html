@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>User Defined Object</title>
+</head>
+<body>
+	<h2 style="text-align:center">自訂物件示範：使用函數產生物件</h2>
+	<hr>
+	<script>
+	function student(inputName, inputStudentID, inputAge) {
+		var o = new Object();
+		o.name = inputName;
+		o.studentID = inputStudentID;
+		o.age = inputAge;
+		o.display = function () {
+			document.writeln(
+				"<br>姓名 : " + this.name
+				+ "<br>學號 = " + this.studentID
+				+ "<br>年齡 = " + this.age
+				+ "<br>");
+		};
+		return o;
+	}
+
+	var student1 = student("Alex","0200102",23);
+	var student2 = student("Joey","0200103",20);
+	var student3 = student("Kelvin","0200104",22);
+
+	student1.display();
+	student2.display();
+	student3.display();
+	</script>
+	<hr>
+</body>
+</html>

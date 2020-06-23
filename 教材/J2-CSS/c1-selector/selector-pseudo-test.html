@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>pseudo class</title>
+<style type="text/css">
+a {
+  display: block;
+  /*width: 140px;*/
+  width: 160px;
+  height: 50px;
+  color: purple;
+  text-align: center;
+  vertical-align: bottom;
+  text-decoration: none;  
+  border: 1px solid olive;
+  margin: 20px 0;
+  /*line-height: 130px;*/
+  /*text-indent: -100em;*/
+}
+/*
+#google { background: url(image/google.jpg) no-repeat top yellow; }
+#yahoo {background: url(image/yahoo.jpg) no-repeat top yellow;}
+#microsoft {background: url(image/microsoft.jpg) no-repeat top yellow;}
+*/
+/* #google::after {content: "(" attr(href) ")";} */
+/* #google::after {margin-left: 180px; content: url(image/hinet.jpg);} */
+
+a:hover {
+  background: aqua;
+}
+</style>
+</head>
+<body>
+連結網站 :
+<a id="google" class="company" href="http://www.google.com/">Google</a>
+<a id="yahoo" class="company" href="#" >Yahoo!奇摩</a>
+<a id="microsoft" class="company" href="#" >台灣微軟</a>
+</body>
+</html>

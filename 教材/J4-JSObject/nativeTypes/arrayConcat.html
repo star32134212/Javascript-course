@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 align=center>陣列的方法：concat()</h2>
+<hr>
+
+<script>
+str1="鼠、牛、虎、兔";
+str2="龍、蛇";
+array1=str1.split('、');	// 將字串拆成陣列
+array2=str2.split('、');	// 將字串拆成陣列
+document.writeln("Array 1:<br>");
+	for (var i=0; i<array1.length; i++) {
+		document.write("array1["+i+"] = ");
+		document.write('<span style="color:green">'+array1[i]+'</span><br>');
+	}
+document.writeln("Array 2:<br>");
+	for (var i=0; i<array2.length; i++) {
+		document.write("array2["+i+"] = ");
+		document.write('<span style="color:green">'+array2[i]+'</span><br>');
+	}
+document.writeln("<p>將上述兩個陣列並排的結果：<br>");
+document.writeln("Array 3:<br>");
+array3=array1.concat(array2);
+	for (var i=0; i<array3.length; i++) {
+		document.write("array3["+i+"] = ");
+		document.write('<span style="color:red">'+array3[i]+'</span><br>');
+	}
+</script>
+
+<hr>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DOM manipulation</title>
+<style>
+.large { font-size: 36px; color:red; }
+.small { font-size: 12px; color:green; }
+body { font-size: 24px; }
+div { cursor: pointer; }
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('#increase').bind('click', function () {
+		$('p').addClass('large');
+		$('p').removeClass('small');
+	});
+	$('#decrease').click( function () {
+		$('p').addClass('small');
+		$('p').removeClass('large');
+	});  
+});
+/*
+$(document).ready(function() {
+	$('#toggle').toggle(
+	function () {
+		$('p').addClass('large');
+		$('p').removeClass('small');
+	},
+	function () {
+		$('p').addClass('small');
+		$('p').removeClass('large');
+	});  
+});
+*/
+</script>
+</head>
+<body>
+	<p>jQuery事件處理</p>
+	<div>
+		<span id="increase">放大標題</span> |
+		<span id="decrease">縮小標題</span>
+		<!--span id="toggle">change 標題</span-->
+	</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<title>get element by tag</title>
+</head>
+<body>
+<ul id="purchases" name="purchases">
+	<li>Beans</li>
+	<li>Cheese</li>
+	<li>Milk</li>
+</ul>
+<div>
+	<input name="x" type="text" size="20" value="12" ><br>
+	<input name="x" type="text" size="20" value="34" ><br>
+	<input name="x" type="text" size="20" value="x3" ><br>
+</div>
+<script language="JavaScript" type="text/javascript">
+function accessByTagName() {
+	var pList=document.getElementsByTagName("li");
+	document.write("getElementsByTagName() return an ",typeof pList); // Array Object
+
+	var msg="";
+	for ( i=0; i<pList.length; i++) {
+		msg += " " + pList[i].childNodes[0].nodeValue; // pList[i] == pList.item(i)
+	}
+	document.write("<br>before changing pList[2]<br>", msg);
+	pList[2].childNodes[0].nodeValue = "Coffee";
+	msg="";
+	for ( i=0; i<pList.length; i++) {
+		msg += " " + pList[i].childNodes[0].nodeValue; // pList[i] == pList.item(i)
+	}
+	document.write("<br>after changing pList[2]<br>", msg);
+	/*
+	msg = "";
+	for ( j in pList) { // 0, 1, 2, lenght, item(), namedItem()
+		msg += "," + j;
+	}
+	document.write("<br>enumerated pList property by 'in' operator<br>", msg);
+	*/
+}
+function accessById() {
+	//document.write(typeof document.getElementById("purchases"));
+	document.write("the list content is: ");
+	document.write("<xmp>");
+	document.write(document.getElementById("purchases").innerHTML);
+	document.write("</xmp>");
+	//document.getElementById("purchases").innerHTML = "<li>apple</li>";
+	//document.write(document.getElementById("milk").childNodes[0].nodeValue);
+}
+function accessByName() {
+	var x=document.getElementsByName("x");
+	//alert(x.length);
+	x[2].value = parseInt(x[0].value) + 
+	parseInt(x[1].value);
+}
+</script>
+</body>
+</html>

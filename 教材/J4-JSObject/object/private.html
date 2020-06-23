@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Private Member</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+			function setup(init) {
+				this.public = "public member";
+				var secret = "secret message";
+				var count = init;
+				function dec() {
+					if (count > 0) {
+						count -= 1;
+						return true;
+					} else {
+						return false;
+					}
+				}
+				this.getSecret = function() {
+					return dec()? secret: null;
+				}
+			}
+			// usage
+			var obj = new setup(3);
+			console.log(obj.public); // "public member"
+			console.log(obj.secret); // undefined
+			console.log(obj.getSecret()); // "secret message" 
+			console.log(obj.getSecret()); // "secret message" 
+			console.log(obj.getSecret()); // "secret message" 
+			console.log(obj.getSecret()); // null 
+	</script>
+</body>
+</html>

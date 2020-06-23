@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 align=center>表單的性質列表</h2>
+<hr>
+
+<form name=formName id=formId action="mailto:test@cs.nthu.edu.tw" encType=text/plain method=post target=_blank>
+	<p>名字：<input name="UserName" size=10 maxlength=20 value="蕭亞軒">
+	<p>密碼：<input name="passwd" type=password size=8 maxlength=8 value=xyz>
+	<p>性別（單選）：<input name="sex" type=radio value="男">男
+		<input name="sex" type=radio value="女" checked>女
+	<p>嗜好（複選）：
+		<input name="f1" type=checkbox value="book">閱讀
+		<input name="f2" type=checkbox value="sport" checked>運動
+		<input name="f3" type=checkbox value="music" checked>音樂
+		<input name="f4" type=checkbox value="sleep">睡覺
+		<input name="f5" type=checkbox value="talk">聊天<P>
+	<p><input type="submit"> <input type="reset">
+</form>
+
+<hr>
+<script>
+for (var prop in document.formName)
+	document.writeln('document.formName.<span class="key">'+prop+'</span> = <span class="value">'+document.formName[prop]+'</span><br>');
+</script>
+<hr>
+</body>
+</html>

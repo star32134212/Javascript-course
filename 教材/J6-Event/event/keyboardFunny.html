@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2>強制輸入大寫字母</h2>
+<input id="testField">
+<hr>
+<script>
+document.getElementById("testField").addEventListener("keypress", function(e)
+{
+	e = e || window.event;
+	if (e.charCode && e.charCode > 32)
+	{
+		var uChar = /[a-z]/.test(e.key) ? e.key.toUpperCase() : e.key;
+		this.value = this.value.slice(0, this.selectionStart)
+			+ uChar
+			+ this.value.slice(this.selectionEnd);
+    }
+	e.preventDefault();
+});
+</script>
+</body>
+</html>

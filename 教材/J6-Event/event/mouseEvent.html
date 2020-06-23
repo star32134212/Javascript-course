@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+function showMouseButton(e) {
+	e = e || window.event;
+	if	(document.implementation.hasFeature("MouseEvents", "2.0")) {
+		switch (e.button){
+			case 0: msg="你用滑鼠左鍵！"; break;
+			case 1:	msg="你用滑鼠中鍵！"; break;
+			case 2:	msg="你用滑鼠右鍵！"; break;
+			default: msg="未知的滑鼠鍵！";
+		}
+	} else {  // IE
+		switch (e.button){
+			case 1: msg="你用滑鼠左鍵！(IE)"; break;
+			case 4:	msg="你用滑鼠中鍵！(IE)"; break;
+			case 2:	msg="你用滑鼠右鍵！(IE)"; break;
+			default: msg="未知的滑鼠鍵！(IE)";
+		}
+	}
+	document.getElementById("message").textContent = msg;
+}
+
+function init() {
+	var btn = document.getElementById("btn");
+	if (window.addEventListener)
+		// DOM method for binding an event
+		btn.addEventListener("mousedown", showMouseButton, false);
+		//window.addEventListener("mousedown", showMouseButton, false);
+	else if (window.attachEvent) 
+		// IE-exclusive method for binding an event
+		// document.attachEvent("onmousedown", showMouseButton);
+		btn.attachEvent("onmousedown", showMouseButton);
+	else
+		//window.onmousedown = showMouseButton;
+		btn.onmousedown = showMouseButton;
+}
+
+if (window.addEventListener)
+	window.addEventListener("load", init);
+else if (window.attachEvent) 
+	window.attachEvent("onload", init);
+else
+	window.onload = init;
+</script>
+</head>
+<body>
+<h2>滑鼠事件：偵測滑鼠鍵</h2>
+<hr>
+<button id="btn">請用滑鼠按我！</button>
+<!--button onMouseDown="showMouseButton(event)">
+請用滑鼠按我！</button-->
+<hr>
+<p id="message"></p>
+<script>
+</script>
+</body>
+</html>

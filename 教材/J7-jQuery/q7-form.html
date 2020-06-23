@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>會員註冊系統</title>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<link href="q7-form.css" rel="stylesheet" type="text/css" />
+<style>
+input.error::-webkit-input-placeholder { color: red; }
+input.error::-moz-placeholder {	color: red; }
+input.error:-ms-input-placeholder {	color: red; }
+input.error::placeholder { color: red; }
+</style>
+<script language="JavaScript">
+$(document).ready(function() {
+	$(':input').blur(function() {
+	  // :input is a jQuery extension, selects all input, textarea, select and button elements
+	  // or you can use $('input') to select only <input> elements
+	  if($(this).val().length == 0) {
+		 $(this).addClass('error').attr('placeholder','不可空白'); 
+	  }
+	});
+	$(':input').focus(function() {
+	  $(this).removeClass('error').attr('placeholder','輸入您的帳號');
+	});
+});
+</script>
+</head>
+<body>
+<div class="container">
+	<div class="header">
+		<h1>範例:會員管理系統</h1>
+	</div>
+	<div class="content">
+		<form id="form1" name="form1" method="POST" action="">
+		<table>
+			<caption>會員註冊</caption>
+			<tr>
+				<td><label>帳號</label></td>
+				<td><input type="text" name="account" id="account" placeholder="輸入您的帳號" /></td>
+			</tr>
+			<tr>
+				<td><label>密碼</label></td>
+				<td><input type="password" name="password" id="password" value="123456"/></td>
+			</tr>
+			<tr>
+				<td><label>確認密碼</label></td>
+				<td><input type="password" name="passwordConfirm" id="passwordConfirm" value="123456"/></td>
+			</tr>
+			<tr>
+				<td><label>姓名</label></td>
+				<td><input type="text" name="name" id="name" value="smooth"/></td>
+			</tr>
+			<tr>
+				<td><label>性別</label></td>
+				<td>
+					<input type="radio" name="gender" id="male" value="男" checked="checked" />男
+					<input type="radio" name="gender" id="female" value="女" />女
+				</td>
+			</tr>
+			<tr>
+				<td><label>信箱</label></td>
+				<td><input type="text" name="email" id="email" value="lia@cc.nctu.edu.tw"/></td>
+			</tr>
+			<tr>
+				<td><label>地址</label></td>
+				<td><input type="text" name="address" id="address" value="HsinChu"/></td>
+			</tr>
+			<tr>
+				<td><label>電話</label></td>
+				<td><input type="text" name="tel" id="tel" value="31719"/></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" name="btnRegister" id="btnRegister" value="註冊" /></td>
+			</tr>
+		</table>
+		</form>
+	</div><!-- end of .content -->
+	<div class="footer">
+		<p>&copy;2012 網頁應用系統設計</p>
+	</div>
+</div><!-- end of .container -->
+</body>
+</html>

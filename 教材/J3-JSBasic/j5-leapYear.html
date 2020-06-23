@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html140/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Sample Page!</title> 
+
+</head> <body>
+<script language="JavaScript" type="text/javascript">
+var year=4000;
+if (( year % 4 == 0 && year % 100 != 0) ||
+    ( year % 400 == 0 && year % 4000 != 0 )
+   ) {
+		document.writeln(year + " is a leap year");
+	} else {
+		document.writeln(year + " is not a leap year");
+	}
+</script>
+</body> 
+</html>

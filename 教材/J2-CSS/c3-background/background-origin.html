@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CSS Sample</title>
+<style>
+div {
+	height: 100px;
+	width: 200px;
+	border: 10px solid rgba(0,102,153,0.5);
+	padding: 10px;
+	background-color: #CCFF66;
+	background-image: url(shuttle.png);
+	background-repeat: no-repeat;	
+}
+div.a1 { background-origin: border-box; background-clip: border-box; float: left;}
+div.a2 { background-origin: border-box; background-clip: padding-box; float: left;}
+div.a3 { background-origin: border-box; background-clip: content-box; float: left;}
+div.b1 { background-origin: padding-box; background-clip: border-box; float: left;}
+div.b2 { background-origin: padding-box; background-clip: padding-box; float: left;}
+div.b3 { background-origin: padding-box; background-clip: content-box; float: left;}
+div.c1 { background-origin: content-box; background-clip: border-box; float: left;}
+div.c2 { background-origin: content-box; background-clip: padding-box; float: left;}
+div.c3 { background-origin: content-box; background-clip: content-box; float: left;}
+hr { clear: both; width: 720px; margin-left: 0;
+</style>
+</head>
+<body>
+<div class="a1"></div><div class="a2"></div><div class="a3"></div><hr />
+<div class="b1"></div><div class="b2"></div><div class="b3"></div><hr />
+<div class="c1"></div><div class="c2"></div><div class="c3"></div>
+</body>
+</html>

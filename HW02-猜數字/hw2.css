@@ -1,0 +1,30 @@
+body {
+	background-color: 	#CAFFFF;
+}
+h1 {
+    color: 	#9F5000;
+}
+table {
+    color: 	#4B0091;
+    display: inline-block;
+}
+input {
+    font-size: 250%;
+}
+div#header {
+    width: 1000px;
+    text-align: center;
+    margin: auto; 
+}
+
+div#mytable {
+    width: 1000px;
+    text-align: center;
+    margin: auto; 
+}
+
+div#btn {
+    width: 150px;
+    text-align: center;
+    margin: auto; 
+}

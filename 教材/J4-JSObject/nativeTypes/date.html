@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="date.js"></script>
+</head>
+<body>
+<h2 style="text-align:center;">日期物件的方法</h2>
+<hr>
+<script>
+var today = new Date();
+document.write("<br>標準字串：" + today);
+document.write("<br>標準字串 today.toString() = "+today.toString());
+document.write("<br>地方字串 today.toLocaleString() = "+today.toLocaleString());
+document.write("<br>年份 today.getYear() = "+today.getYear());
+document.write("<br>西元 today.getFullYear() = "+today.getFullYear());
+document.write("<br>月份 today.getMonth() = "+today.getMonth());
+document.write("<br>日期 today.getDate() = "+today.getDate());
+document.write("<br>時數 today.getHours() = "+today.getHours());
+document.write("<br>分數 today.getMinutes() = "+today.getMinutes());
+document.write("<br>秒數 today.getSeconds() = "+today.getSeconds());
+document.write("<br>星期幾 today.getDay() = "+today.getDay());
+document.write("<br>valueOf()：" + today.valueOf()); // ms from 1970年1月1日0時0分0秒 UTC
+document.write("<br>after one day：" + new Date(today.valueOf()+86400000));
+document.write("<br>" + (new Date(1970,0,1,8,0,0)).valueOf());
+document.write("<br>" + (new Date(2018,10,1)).valueOf());
+document.write("<br>" + (new Date(2018,9,31)).valueOf());
+document.write("<br>" + ((new Date(2018,10,1)).valueOf()-(new Date(2018,9,31)).valueOf()));
+
+
+
+// Date 物件的方法與輸出
+method = [
+	"getYear", "getFullYear", "getMonth", "getDate", "getDay", 
+	"getHours", "getMinutes", "getSeconds", "getMilliseconds",
+	"getTime", "getTimezoneOffset",	
+	"getUTCFullYear", "getUTCMonth", "getUTCDate", "getUTCDay", "getUTCMilliseconds",
+	"getUTCHours", "getUTCMinutes", "getUTCSeconds", "getUTCMilliseconds",	 
+	"toString", "toLocaleString", "toUTCString", "valueOf"];
+	// toGMTString() is equivalent to toUTCString(), for backwards compatitilty
+
+document.write("<hr>");
+for (i=0; i<method.length; i++)
+	document.writeln("today."+method[i]+"()="+eval("today."+method[i]+"();")+"<br>");
+
+document.write("<hr>");
+Object.getOwnPropertyNames(Date.prototype).forEach(function(p, idx, array) {
+	if ( p.search(/^(get|to)/)==0 ) document.writeln("today."+p+"()="+eval("today."+p+"();")+"<br>");
+});
+
+
+console.log("Date property: ", Object.getOwnPropertyNames(Date));
+console.log("Date.prototype property: ", Object.getOwnPropertyNames(Date.prototype));
+console.log(typeof Date.getYear); // undefined
+console.log(typeof today.getYear); // function
+console.log(Object.getOwnPropertyNames(Date.prototype).filter(function (p) {
+    return typeof today[p] === 'function';
+}));
+
+</script>
+<hr>
+<script>
+document.write('今天是' + currentDay() + '，目前時間是' + currentTime()+ '！');
+</script>
+</body>
+</html>

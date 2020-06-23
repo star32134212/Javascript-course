@@ -1,0 +1,61 @@
+<script>
+	const PI = 3.1415926;
+
+	class Circle {
+		constructor(radiux) {
+			this.radiux = radiux;
+		}
+		area() {
+			document.writeln(this.radiux * this.radiux * PI, "<br>");
+		}
+	}
+
+	let circle1 = new Circle(3);
+	let circle2 = new Circle(5);
+	circle1.area();
+	circle2.area();
+
+	document.writeln(typeof Circle,"<br>"); // "function"
+	document.writeln(Circle === Circle.prototype.constructor,"<br>"); // true
+	// class 的所有方法都定義在 class 的 prototype 上面
+	document.writeln(circle1.constructor === Circle.prototype.constructor,"<br>"); // true
+	document.writeln(circle1.area === Circle.prototype.area,"<br>");
+
+	document.writeln(Circle.constructor === Circle.prototype.constructor,"<br>"); // false
+	document.writeln(Circle.constructor === Function.prototype.constructor,"<br>"); // true
+	
+	// rewrite prototypeChain.html
+	
+	class Parent {
+		constructor() {
+			this.name = "Adam"; // Parent's name
+		}
+		getName() {
+			return this.name;
+		}
+	}
+	class Child extends Parent {	
+		constructor() {
+			super();
+			//this.juniorName = "Joshua";
+		}
+	}
+	let inst = new Child();
+	console.log(inst.getName());   // "Adam"
+   
+	console.log(inst instanceof Child);  // true
+	console.log(inst instanceof Parent); // true
+	console.log(inst instanceof Object); // true
+
+	console.log(Child.prototype.isPrototypeOf(inst));  //true
+	console.log(Parent.prototype.isPrototypeOf(inst)); //true
+	console.log(Object.prototype.isPrototypeOf(inst)); //true
+	
+	//override existing method
+	Child.prototype.getName = function (){
+		return this.juniorName;
+	};
+	console.log(inst.getName());   // "Joshua"
+	delete Child.prototype.getName;
+	console.log(inst.getName());   // "Adam"
+</script>

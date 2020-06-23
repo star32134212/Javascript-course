@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>First jQuery Example</title>
+<style>
+.zebra { background-color: skyblue; }
+</style>
+<!--script type="text/javascript" src="jquery-1.8.3.min.js"></script-->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//$('table tr:nth-child(even)').addClass('zebra');
+	//$('table tr:nth-child(even)').css('background-color', 'skyblue');
+	$('tr:even').addClass('zebra');
+	//$('tr:odd').css('background-color', 'skyblue');
+	//$('tr').filter(':odd').css('background-color', 'skyblue');
+	
+	// note:
+	// CSS pseudo element: table tr:nth-child(even)
+	//		index starts from 1, thead/tbody/tfoot count independently
+	// jQuery even filter: $('tr:even')
+	//		index starts from 0, thead/tbody/tfoot combined
+	
+	//$('tr:first').css('background-color', 'yellow');
+	//$('tr:last').css('background-color', 'green');
+	
+	//$('tr:has(th)').css('background-color', 'yellow');
+	
+	//$('div:empty').hide();
+	
+	$('td:contains("水")').css('background-color', 'pink');
+	
+});
+</script>
+</head>
+<body>
+<table>
+ <caption>星座</caption>
+ <thead>
+	 <tr>
+		<th class="col2">星座名稱</th>
+		<th class="col3">出生日期(陽歷)</th>
+		<th class="col4">性格</th>
+		<th class="col5">配對關係</th>
+		<th class="col6">構成元素</th>
+		<th class="col7">顏色</th>
+		<th class="col8">英文名稱</th>
+	 </tr>
+ </thead>
+ <tfoot>
+	 <tr>
+		<th class="col2">星座名稱</th>
+		<th class="col3">出生日期（陽歷）</th>
+		<th class="col4">性格</th>
+		<th class="col5">配對關係</th>
+		<th class="col6">構成元素</th>
+		<th class="col7">顏色</th>
+		<th class="col8">英文名稱</th>
+	 </tr>
+ </tfoot>
+ <tbody>
+	 <tr>
+		<td class="col2">水瓶座</td>
+		<td class="col3">01月21日─02月19日</td>
+		<td class="col4">創意、智慧 反叛、冷漠</td>
+		<td class="col5">雙子座與天秤座</td>
+		<td class="col6">空氣</td>
+		<td class="col7">黑</td>
+		<td class="col8">aquarius</td>
+	 </tr>
+	 <tr>
+		<td class="col2">雙魚座</td>
+		<td class="col3">02月20日─03月20日</td>
+		<td class="col4">浪漫、善解人意 粗心、意志薄弱</td>
+		<td class="col5">巨蟹座與天蠍座</td>
+		<td class="col6">水</td>
+		<td class="col7">藍</td>
+		<td class="col8">pisces</td>
+	 </tr>
+	 <tr>
+		<td class="col2">白羊座</td>
+		<td class="col3">03月21日─04月20日</td>
+		<td class="col4">積極、直率 自我、沒有耐性</td>
+		<td class="col5">獅子座與射手座</td>
+		<td class="col6">火</td>
+		<td class="col7">紅</td>
+		<td class="col8">aries</td>
+	 </tr>
+	 <tr>
+		<td class="col2">金牛座</td>
+		<td class="col3">04月21日─05月21日</td>
+		<td class="col4">可靠、有耐心 貪婪、古板</td>
+		<td class="col5">處女座與摩羯座</td>
+		<td class="col6">土</td>
+		<td class="col7">綠</td>
+		<td class="col8">taurus</td>
+	 </tr>
+	 <tr>
+		<td class="col2">雙子座</td>
+		<td class="col3">05月22日─06月21日</td>
+		<td class="col4">機智、適應力強 善變、不安份</td>
+		<td class="col5">天秤座與水瓶座</td>
+		<td class="col6">空氣</td>
+		<td class="col7">黃</td>
+		<td class="col8">gemini</td>
+	 </tr>
+	 <tr>
+		<td class="col2">巨蟹座</td>
+		<td class="col3">06月22日─07月23日</td>
+		<td class="col4">真摯、有包容力 不理性、多愁善感</td>
+		<td class="col5">天蠍座與雙魚座</td>
+		<td class="col6">水</td>
+		<td class="col7">白</td>
+		<td class="col8">cancer</td>
+	 </tr>
+	 <tr>
+		<td class="col2">獅子座</td>
+		<td class="col3">07月24日─08月23日</td>
+		<td class="col4">熱心、有領導能力 武斷、自以為是</td>
+		<td class="col5">牧羊座與射手座</td>
+		<td class="col6">火</td>
+		<td class="col7">橙</td>
+		<td class="col8">leo</td>
+	 </tr>
+	 <tr>
+		<td class="col2">處女座</td>
+		<td class="col3">08月24日─09月23日</td>
+		<td class="col4">頭腦清晰、完美主義 保守、吹毛求疵</td>
+		<td class="col5">金牛座與摩羯座</td>
+		<td class="col6">土</td>
+		<td class="col7">灰</td>
+		<td class="col8">virgo</td>
+	 </tr>
+	 <tr>
+		<td class="col2">天秤座</td>
+		<td class="col3">09月24日─10月23日</td>
+		<td class="col4">和諧、平易近人 輕浮、優柔寡斷</td>
+		<td class="col5">雙子座與水瓶座</td>
+		<td class="col6">空氣</td>
+		<td class="col7">淡紅</td>
+		<td class="col8">libra</td>
+	 </tr>
+	 <tr>
+		<td class="col2">天蠍座</td>
+		<td class="col3">10月24日─11月22日</td>
+		<td class="col4">果然、實際 多疑、狂妄</td>
+		<td class="col5">巨蟹座與雙魚座</td>
+		<td class="col6">水</td>
+		<td class="col7">深紅</td>
+		<td class="col8">scorpio</td>
+	 </tr>
+	 <tr>
+		<td class="col2">射手座</td>
+		<td class="col3">11月23日─12月22日</td>
+		<td class="col4">活潑、思想開明 粗心、反覆無常</td>
+		<td class="col5">獅子座與牧羊座</td>
+		<td class="col6">火</td>
+		<td class="col7">紫紅</td>
+		<td class="col8">sagittarius</td>
+	 </tr>
+	 <tr>
+		<td class="col2">摩羯座</td>
+		<td class="col3">12月23日─01月22日</td>
+		<td class="col4">有原則、家庭理念 太現實、缺乏熱情</td>
+		<td class="col5">處女座與金牛座</td>
+		<td class="col6">土</td>
+		<td class="col7">黑</td>
+		<td class="col8">capricorn</td>
+	 </tr>
+ </tbody>
+</table>
+<div style="width:100px; height:20px; border:1px solid blue;"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>元素浮動的重疊</title>
+<style type="text/css">
+img {border: 1px solid blue;}
+p {
+	padding: 20px;
+	color: green;
+	border: 2px solid blue;
+	background-color: #F0F0F0;
+}
+</style>
+</head>
+<body>
+<h1>元素的重疊</h1>
+<p>
+  <img src="fish.jpg" style="margin:0px; float:left;" />
+  <img src="bird.jpg" style="margin:0 -8px; float:left;" />
+  <img src="fish.jpg" style="margin:0px; float:right;" />
+  <img src="bird.jpg" style="margin:0 -8px; float:right;" />
+  box margin 為負值時, float 的 box 會重疊<br />
+  box margin 為負值時, float 的 box 會重疊<br />
+  box margin 為負值時, float 的 box 會重疊<br />
+</p>
+</body>
+</html>

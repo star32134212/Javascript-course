@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Table Colspan</title>
+</head>
+<body>
+  
+  <!-- 水平方向的儲存格合併 -->
+  <table border="1">
+    <tr>
+      <td>李大華</td>
+      <td>25</td>
+      <td>12345678</td>
+    </tr>
+    <tr>
+      <td colspan="2">陳小明</td>
+      <td>21</td>
+    </tr> 
+    <tr>
+      <td colspan="3">劉大豐</td>
+    </tr>
+  </table>
+ 
+  <br />
+ 
+  <!-- 垂直方向的儲存格合併 -->
+  <table border="1">
+    <tr>
+      <td>李大華</td>
+      <td>25</td>
+      <td rowspan="3">12345678</td>
+    </tr>
+    <tr>
+      <td>陳小明</td>
+      <td rowspan="2">21</td>
+    </tr> 
+    <tr>
+      <td>劉大豐</td>
+   </tr>
+ </table>
+   
+</body>
+</html>

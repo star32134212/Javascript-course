@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tabs</title>
+<style type="text/css">
+div, ul, li { margin : 0;  padding : 0; }
+#container { width : 550px; margin : 5px auto; }
+p { margin : 10px; height : 300px; }
+/*.fix:after { content : "."; clear : both;
+             display : block;
+             height : 0; visibility : hidden; }*/
+#tabs { position : relative; list-style-type : none; }
+#tabs li { position : relative;
+           float : left;  width : 155px;
+           text-align : center;  margin : 0 3px; }
+#tabs li a.active { position : relative;
+                    color : blue; top : 1px;
+                    background-color : #fff; }
+#tabs li a { position : relative;
+             border-top: 1px solid #333;
+             border-left: 1px solid #333;
+             border-right: 1px solid #333;
+             color: #fff;   display: block;
+             background-color : #555;;
+             padding: 5px 5px 5px 0px;            
+             text-decoration: none; }
+.content { clear: both; border : 1px solid #333;
+           background-color : #fff; }
+.tab { display : none; }
+</style>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script language="JavaScript">
+$(document).ready(function(){
+   $('.tab').not(':first').hide();
+   $('.tab:first').show()  
+   $('#tabs li a:first').addClass('active');
+   $('ul#tabs li a').click(function() {
+      $('ul#tabs li a').removeClass('active');
+      $(".tab:visible").hide();
+      var index = $('ul#tabs li a').index(this);
+      $(".tab:eq(" + index + ")").fadeIn('slow');
+      $(this).addClass('active');
+      return false; // this.preventDefault()
+   });
+});
+</script>
+</head>
+<body>
+<div id="container">
+   <ul id="tabs" class="fix">
+      <li><a href="#">HTML 5</a></li>
+      <li><a href="#">JavaScript</a></li>
+      <li><a href="#">jQuery</a></li>
+   </ul>
+   <div class="content">
+      <div class="tab">
+		  <p>HTML 5仍然遵循HTML 4.01和XHTML的語法，只是擴充、
+		  改進HTML標籤和APIApplication Programming Interfaces）
+		  來建立複雜的Web應用程式，和處理DOM（Document 
+		  Object Model）。</p>
+      </div>
+      <div class="tab">
+		  <p>JavaScript原為Netscape Communication Corporation
+		 （網景公司）開發的腳本語言，提供該公司瀏覽器產品
+		  Netscape Navigator開發互動網頁的功能。JavaScript
+		  原名LiveScript，於1995年在Netscape 2.0版正式發表，
+		  目前是各大瀏覽器在客戶端最普遍支援的腳本語言。</p>
+	  </div>
+      <div class="tab">
+		  <p>jQuery是在2006年1月由John Resig在BarCamp NYC
+		  發表的網頁技術，這是一種高效率和簡潔的JavaScript
+		  函數庫，目前是免費軟體，可供個人或商業專案使用。</p>
+      </div>        
+   </div>
+</div>   
+</body>
+</html>

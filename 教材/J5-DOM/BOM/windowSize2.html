@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2 align=center>resize</h2>
+<hr>
+var myWidth = 0, myHeight = 0;
+if (typeof (window.innerWidth) == 'number') {
+     myWidth = window.innerWidth; 
+     myHeight = window.innerHeight;
+} else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+     myWidth = document.documentElement.clientWidth; 
+     myHeight = document.documentElement.clientHeight;
+} else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+     myWidth = document.body.clientWidth; 
+     myHeight = document.body.clientHeight;
+}
+本視窗（可顯示網頁範圍）innerWidth（window.innerWidth）：<script>document.write(window.innerWidth);</script><br>
+本視窗（可顯示網頁範圍）innerHeight（window.innerHeight）：<script>document.write(window.innerHeight);</script><br>
+本視窗（可顯示網頁範圍）outerWidth（window.outerWidth）：<script>document.write(window.outerWidth);</script><br>
+本視窗（可顯示網頁範圍）outerHeight（window.outerHeight）：<script>document.write(window.outerHeight);</script><br>
+<hr>
+<script>
+window.resizeBy(20,20);
+</script>
+本視窗（可顯示網頁範圍）innerWidth（window.innerWidth）：<script>document.write(window.innerWidth);</script><br>
+本視窗（可顯示網頁範圍）innerHeight（window.innerHeight）：<script>document.write(window.innerHeight);</script><br>
+本視窗（可顯示網頁範圍）outerWidth（window.outerWidth）：<script>document.write(window.outerWidth);</script><br>
+本視窗（可顯示網頁範圍）outerHeight（window.outerHeight）：<script>document.write(window.outerHeight);</script><br>
+</body>
+</html>

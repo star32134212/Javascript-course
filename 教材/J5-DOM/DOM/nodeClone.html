@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html140/strict.dtd">
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=Big5">
+<title>Sample Page!</title>
+</head>
+<body>
+<p id="p1">Welcome to<B> DOM </B>World! </p>
+<script language="JavaScript" type="text/javascript">
+<!--
+function nodeStatus(node)
+{
+  var temp="";
+  if(node.nodeName!=null)
+  {
+    temp+="nodeName: "+node.nodeName+"\n";
+  }
+  else temp+="nodeName: null!\n";
+  if(node.nodeType!=null)
+  {
+    temp+="nodeType: "+node.nodeType+"\n";
+  }
+  else temp+="nodeType: null\n";
+  if(node.nodeValue!=null)
+  {
+    temp+="nodeValue: "+node.nodeValue+"\n\n";
+  }
+  else temp+="nodeValue: null\n\n";
+  return temp;
+}
+//輸出節點樹相關資訊
+//返回id屬性值為p1的元素節點
+var parentElement=document.getElementById('p1');
+var msg="insertBefore方法之前:\n"
+msg+=nodeStatus(parentElement);
+//返回p1的第一個孩子，即文字節點“Welcome to”
+var targetElement=parentElement.firstChild;
+msg+=nodeStatus(targetElement);
+//返回文字節點“Welcome to”的下一個同父節點，即元素節點B
+var currentElement=targetElement.nextSibling;
+msg+=nodeStatus(currentElement);
+//返回元素節點P的最後一個孩子，即文字節點“World!”
+currentElement=parentElement.lastChild;
+msg+=nodeStatus(currentElement);
+//透過目標節點的cloneNode( )方法產生複製後的新節點
+var ClonedNode=targetElement.cloneNode(false); //false recursively, onle clone node itself 
+//使用父節點的insertBefore( )方法將新節點插入到目標節點的前面
+parentElement.insertBefore(ClonedNode,targetElement);
+msg+="insertBefore方法之後:\n"+nodeStatus(parentElement);
+//返回p1的第一個孩子，即克隆的新文字節點“Welcome to”
+targetElement=parentElement.firstChild;
+msg+=nodeStatus(targetElement);
+//返回文字節點“Welcome to”的下一個同父節點，即元素節點“Welcome to”
+var currentElement=targetElement.nextSibling;
+msg+=nodeStatus(currentElement);
+//返回元素節點P的最後一個孩子，即文字節點“World!”
+currentElement=parentElement.lastChild;
+msg+=nodeStatus(currentElement);
+//輸出節點屬性
+alert(msg);
+-->
+</script>
+</body>
+</html>

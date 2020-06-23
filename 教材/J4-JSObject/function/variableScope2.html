@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>變數的有效範圍</title>
+    <script type="text/javascript">
+          
+        var color = "blue";
+		console.log(color);
+		console.log(window.color);
+        
+        function changeColor(){
+            var anotherColor = "red";
+        
+            function swapColors(){
+                var tempColor = anotherColor;
+                anotherColor = color;
+                color = tempColor;
+                
+                //color, anotherColor, and tempColor are all accessible here
+            }
+        
+            //color and anotherColor are accessible here, but not tempColor        
+            swapColors();
+        }
+        
+        changeColor();
+
+        //anotherColor and tempColor aren't accessible here, but color is
+        alert("Color is now " + color);
+      
+    </script>
+
+</head>
+<body>
+  
+</body>
+</html>

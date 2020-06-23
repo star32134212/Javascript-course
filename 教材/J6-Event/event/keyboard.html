@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+var numDown = 0, numPress = 0, numUp = 0;
+
+function keyFunction(e){
+	e = e || window.event;
+	if (e.type=="keydown") {
+		numDown++;
+        document.getElementById('btnDown').value = "Key Down (" + numDown + ")";
+	} else if (e.type=="keypress") {
+		numPress++;
+        document.getElementById('btnPress').value = "Key Pressed (" + numPress + ")";
+	} else { // keyup
+		numUp++;
+		document.getElementById('btnUp').value = "Key Up (" + numUp + ")";
+	}
+    document.getElementById('txtKeyin').value = "";
+    document.getElementById('txtKeyin').focus();
+	return (e.keyCode != 13);
+}
+
+if (window.addEventListener) {
+	window.addEventListener("keydown", keyFunction);
+	window.addEventListener("keypress", keyFunction);
+	window.addEventListener("keyup", keyFunction);	
+} else if (window.attachEvent) {
+	// IE8 doesn't support key events on the window, instead using document
+	document.attachEvent("onkeydown", keyFunction);
+	document.attachEvent("onkeypress", keyFunction);
+	document.attachEvent("onkeyup", keyFunction);
+} else {
+	window.onkeydown = keyFunction;
+	window.onkeypress = keyFunction;
+	window.onkeyup = keyFunction;
+}
+</script>
+</head>
+<body>
+<input id="txtKeyin" type="text">
+<input id="btnDown" type="button" value="Not yet pressed">
+<input id="btnPress" type="button" value="Not yet pressed">
+<input id="btnUp" type="button" value="Not yet pressed">
+<p style="text-align:justify;">
+In order to understand the difference between keydown and keypress, it is useful to&nbsp;understand the difference&nbsp;between a &quot;character&quot; and a &quot;key&quot;. A &quot;key&quot; is a physical button on the computer&#39;s keyboard while&nbsp;a &quot;character&quot; is a symbol typed by pressing a button.&nbsp; In theory, the keydown and keyup events represent keys being pressed or released, while the keypress event represents a character being typed. The implementation of the theory is not same in all browsers. 
+<br>
+Above is a Key Event Tester that logs the three&nbsp;key events:&nbsp;(The first button logs keydown, second button logs keypress and third button logs keyup events.) 
+</p>
+</body>
+</html>

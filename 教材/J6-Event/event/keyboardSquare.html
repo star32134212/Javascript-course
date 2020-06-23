@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2>鍵盤事件：使用方向鍵來移動物件</h2>
+<hr>
+<script>
+const KEYBOARDS = {
+	UP: 38,
+	DOWN: 40,
+	LEFT: 37,
+	RIGHT: 39
+}
+function followMe(e){
+	e = e || window.event;
+	ek = e.keyCode;
+	var myArea = document.getElementById("myArea");
+	switch (ek) {
+	case KEYBOARDS.LEFT:
+		myArea.style.left = parseInt(myArea.style.left) - 5;
+		break;
+	case KEYBOARDS.RIGHT:
+		myArea.style.left = parseInt(myArea.style.left) + 5;
+		break;
+	case KEYBOARDS.UP:
+		myArea.style.top  = parseInt(myArea.style.top) - 5;
+		break;
+	case KEYBOARDS.DOWN:
+		myArea.style.top  = parseInt(myArea.style.top) + 5;
+		break;
+	default:
+		// ...
+	}
+}
+
+if (window.addEventListener)
+	window.addEventListener("keydown", followMe);
+else if (window.attachEvent) 
+	window.attachEvent("onkeydown", followMe);
+else
+	window.onkeydown=followMe;
+</script>
+<div id="myArea" style="position:absolute; top:20; left:20; height:50; width:50; background-color:#00FF00"></div>
+請按鍵盤的方向鍵來移動綠色的方塊。
+
+<hr>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<script>
+function change(aaa, arr) {
+	
+	console.log(aaa, arr.toString());
+	aaa=200;
+	arr[2] = 10;
+}
+var i=100;
+var myArray = [1, 2, 3, 4, 5];
+document.write(myArray+"<br>");
+change(i, myArray);
+document.write(myArray);
+</script>
+</body>
+</html>

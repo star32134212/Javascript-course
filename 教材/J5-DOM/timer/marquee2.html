@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>垂直捲動文字</title>
+</head>
+<body>
+<h1 align="center">垂直捲動文字</h1>
+<p align="center">　</p>
+<p align="center"><b><font color="#FF0000">dddd單擊Start開始特效；單擊Stop停止特效。</font></b></p>
+<center>
+<!--原始碼開始//-->
+<!--在此可以修改捲動文字特效整體的大小﹑特效邊框的樣式﹑背景的色彩﹑文字運動的方向﹑速度等有關設定//-->
+<marquee id="scroller" scrollamount="1" direction="up" width="150" height="150" style="background-color:lightgreen;border:3px solid black" onmouseover=this.stop() onmouseout=this.start() >您可以試試這個特效&#8213;垂直捲動文字，它可以將文字訊息像電影的字幕一樣，透過捲動的方式呈現在瀏覽者的眼前。是不是很酷呢？gfdgsf</marquee><br>
+<b>
+<!--在這裡可以修改開始及特效的連結文字//-->
+<a href="javascript:scroller.start()">Start</a> 
+<!--在這裡可以修改停止特效的連結文字//-->
+| <a href="javascript:scroller.stop()">Stop</a>
+</b>
+<script language="JavaScript1.2" type="text/javascript">
+/*
+Up down scrolling marquee
+By Website Abstraction (http://wsabstract.com)
+Over 400+ free scripts here!
+*/
+if (document.all) scroller.stop();
+</script>
+<!--原始碼結束//-->
+</center>
+<p align="center">　</p>
+<br><br>
+<center>
+<hr width='20%'>
+<input type='button' value='看原始檔' onclick='window.location="view-source:" +window.location.href'><br><br>
+<input type='button' value='回前頁' onclick='history.go(-1)'>
+<input type='button' value='主選單' onclick='location.href="../index.htm"'>
+<hr width='20%'>
+</form>
+</center>
+</body>
+</html>

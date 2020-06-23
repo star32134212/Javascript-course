@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>preformat</title>
+</head>
+<body>
+<!-- 連續的空白字元，都會被瀏覽器當成只有一個空白來顯示 -->
+<p>
+連續的<strong>空白字元</strong>,都會被瀏覽器當成只有一個空白來顯示
+second<br>line</p>
+<p>&euro;&#8364;third&nbsp;&nbsp;&nbsp;&nbsp;line</p>
+<!-- 使用字元實體(character entity) &nbsp;來顯連續的空白字元 -->
+<p>
+解決的方法&nbsp;&nbsp;&nbsp;是使用字元實體&nbsp;來顯示一個空白字元
+</p>
+<!-- 使用pre元素來建立預先格式化的文字 --> 
+<h3>使用&lt;pre&gt;元素顯示</h3>
+<p>
+<pre>
+ 姓名             電子郵件位址               電話
+----------------------------------------------------
+李小東       daniel@nctu.edu.tw           12345678
+王小珍       cindy@nctu.edu.tw            23456789
+張大有       andy@nctu.edu.tw             34567890
+陳小君       mary@nctu.edu.tw             45678901
+</pre>
+</p>
+<h3>沒有使用&lt;pre&gt;元素顯示</h3>
+<p>
+ 姓名             電子郵件位址               電話
+----------------------------------------------------
+李小東       daniel@nctu.edu.tw           12345678
+王小珍       cindy@nctu.edu.tw            23456789
+張大有       andy@nctu.edu.tw             34567890
+陳小君       mary@nctu.edu.tw             45678901
+</p>
+</body>
+</html>

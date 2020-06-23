@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Function Examples</title>
+<script type="text/javascript">
+try {
+	console.log(typeof foo); // "function"
+	console.log(typeof goo); // "undefined"
+	foo();
+	goo(); // console.log(goo);
+} catch(e) {
+	console.log(e.name, ":", e.message);
+}
+function foo() { console.log("global foo"); }
+var goo = function() { console.log("global goo"); }
+
+hoisting();
+function hoisting() {
+	// function declaration,
+	//		foo and its implementation both get hoisted
+	// 		only variable goo get hoisted, not the implementation
+	console.log(typeof foo); // "function"
+	//console.log(typeof goo); // "undefined"
+	foo(); // "local foo"
+	try {
+		goo(); // access the local variable goo, TypeError: undefined is not a function
+	} catch(e) {
+		console.log(e.name, ":", e.message);
+	}	
+	function foo() { console.log("local foo"); }
+	var goo = function() { console.log("local goo"); };
+	goo(); // local goo
+}
+
+function hoistingNote() {
+	f = function() {console.log("***1:f is local function***");}
+	f();
+	var f = function() {console.log("***2:f is local function***");}
+	f();
+}
+hoistingNote();
+try {
+	f();
+} catch(e) {
+	console.log(e.name, ":", e.message);
+}
+
+// ps: variable defined by "let" does not hoisted,
+//		please refer to variableScope.html
+</script>
+</head>
+<body>
+</body>
+</html>

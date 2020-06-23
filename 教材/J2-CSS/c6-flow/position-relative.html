@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>relative position</title>
+<style type="text/css">
+div {
+	height:80px; width:80px;
+	margin:0;
+	border:1px solid blue;
+}
+div#d2 {
+	background-color:pink;
+	position:relative;
+	top:2em;
+	left:-2em; /* right: 2em; */
+	/*left:15%;*/
+	/*z-index: -1;*/
+}
+div#d3 {
+	background-color:green;
+}
+</style>
+</head>
+<body>
+<div id="d1">division 1</div>
+<div id="d2">division 2</div>
+<div id="d3">division 3</div>
+</body>
+</html>

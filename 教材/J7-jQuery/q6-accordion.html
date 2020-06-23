@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Accordion Menu</title>
+<style type="text/css">
+#container {  position : relative;
+              width : 640px; text-align : left; }
+p { width : 400px; }
+#accordion { float : right; width : 200px;
+             margin: 5px 0 5px 10px; }
+.catalog { position : relative; color : #fff;
+           background-color : #015287;
+           border-bottom : 1px solid #fff; }
+.catalog h4 { margin : 0; cursor : pointer;
+              text-indent : 5px; padding: 5px 0; }
+.active { background-color : #555; }
+.item { background-color : #A8D7E2;
+        margin  : 0px 0 0px 0;
+        padding : 5px 5px 10px 5px;
+        list-style-type : none; }
+.item li { display : block; margin  : 0; 
+           padding : 1px 0px; }
+.item li a { color : #015287; }
+</style>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+$(document).ready(function() {
+   $('.item').hide();
+   $('.item:first').show();
+   //$('.item').not(':first').hide();
+   $('.catalog:first').addClass('active'); 
+   $('.catalog').click(function() {
+      $('.item:visible').slideUp('slow').prev().removeClass('active');
+      $(this).addClass('active').next().slideDown('slow');
+   });
+});
+</script>
+</head>
+<body>
+<div id="container">
+   <div id="content">  
+     <div id="accordion"> 
+        <div class="catalog"> 
+           <h4>程式語言</h4>
+        </div>          
+        <ul class="item"> 
+           <li><a href='#'>Java</a></li> 
+           <li><a href='#'>Visual Basic</a></li> 
+           <li><a href='#'>Visual C#</a></li> 
+        </ul>
+        <div class="catalog"> 
+           <h4>網頁設計</h4>
+        </div>          
+        <ul class="item"> 
+           <li><a href='#'>ASP.NET</a></li> 
+           <li><a href='#'>PHP</a></li> 
+           <li><a href='#'>JSP</a></li> 
+        </ul>
+        <div class="catalog"> 
+           <h4>資料庫系統</h4>
+        </div> 
+        <ul class="item"> 
+           <li><a href='#'>SQL Server</a></li> 
+           <li><a href='#'>Oracle</a></li> 
+           <li><a href='#'>MySQL</a></li> 
+        </ul>  
+     </div>   
+     <p>jQuery是一個JavaScript函數庫，
+      提供網頁設計者另一種更簡潔的方式來
+      撰寫JavaScript程式碼和擴充JavaScript的功能。</p>
+   </div>   
+</div>
+</body>
+</html>

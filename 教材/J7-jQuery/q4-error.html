@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>error event</title>
+<style type="text/css">
+.hidden { display: none; }
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script language="JavaScript">
+	$(document).ready(function() {
+		$("img").error(function() {
+			$(this).attr("src", "missing.png");
+		});
+	});
+</script>  
+</head>
+<body>
+	<h2>Image Missing error event</h2>
+	<hr/>
+	<img src="q4-error.png"/>
+</body>
+</html>

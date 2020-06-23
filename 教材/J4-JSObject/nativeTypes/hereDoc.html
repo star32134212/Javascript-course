@@ -1,0 +1,21 @@
+<script>
+function data() {/*
+Hello, World!
+I am a JavaScript here document.
+Use the 'hereDoc' function to extract me.
+*/}
+
+function hereDoc(doc) {
+	return doc.toString().split("\n").slice(1, -1).join("<br>");
+	//return doc.toString().split(/\n/).slice(1, -1).join('\n');
+}
+
+document.write(hereDoc(function (){/*
+Hello, World!
+I am a JavaScript here document.
+Use the 'hereDoc' function to extract me.
+*/}));
+
+document.write(hereDoc(data));
+//console.log(hereDoc(data));
+</script>

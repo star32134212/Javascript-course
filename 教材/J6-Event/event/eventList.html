@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style>
+body { text-align: center; }
+table { margin: auto; }
+table,td { text-align: left; border: solid 1px blue; }
+</style>
+<script>
+	function listSource(obj) { alert(obj.outerHTML); }
+	window.onload = function(){ alert("歡迎光臨！"); };
+	window.onbeforeunload = function () {alert("這麼快就要走啦？有空再來玩！");};
+	// work for IE,Firefox ; not Chrome
+</script>
+</head>
+<body>
+<h2>各種瀏覽器事件</h2>
+<hr>
+<p>
+<form onsubmit="Javascript:alert('即將送出表單！'); return false;">
+<table>
+	<tr><th>事件<th>說明<th>實例<th>原始碼
+	<tr>
+		<td>click</td>
+		<td>點選物件時</td>
+		<td><input type="button" id="btnOnClick" value="請按我！" 
+			></td>
+		<td><a href="javascript:listSource(document.forms[0].btnOnClick)">按此</a></td>
+	<tr>
+		<td>change</td>
+		<td>改變物件選項或字串時</td>
+		<td><input type="text" name="txtOnChange" value="Grandson"
+			onchange="alert('不可以亂改我的名字喔！');this.value='Grandson'"></td>
+		<td><a href="javascript:listSource(document.forms[0].txtOnChange)">按此</a></td>
+	<tr>
+		<td>focus/blur</td>
+		<td>得到/失去 焦點時</td>
+		<td><input type="text" id="txtOnFocus"
+			onfocus="this.value='歡迎光臨交通大學'"
+			onblur="this.value='再見！期待您再次光臨'" 
+			>
+		</td>
+		<td><a href="javascript:listSource(document.forms[0].txtOnFocus)">按此</a></td>
+	<tr>
+		<td>load</td>
+		<td>瀏覽器載入網頁時</td>
+		<td>&nbsp;</td>
+		<td><a href="javascript:window.onload()">按此</a></td>
+	<tr>
+		<td>unload</td>
+		<td>瀏覽器離開網頁時</td>
+		<td>&nbsp;</td>
+		<td><a href="javascript:window.onunload()">按此</a></td>
+	<tr>
+		<td>submit</td>
+		<td>送出表單資訊時</td>
+		<td><input type="submit"></td>
+		<td><a href="javascript:listSource(document.forms[0])">按此</a></td>
+	<tr>
+		<td>mousedown</td>
+		<td>按下滑鼠按鈕時</td>
+		<td><a name="link1" href="#"
+			onmousedown="javascript:alert('滑鼠被你按下去了！')">快按我吧！</a></td>
+		<td><a href="javascript:listSource(document.links[0])">按此</a></td>
+	<tr>
+		<td>mouseup</td>
+		<td>鬆開滑鼠按鈕時</td>
+		<td><a name="link2" href="#"
+			onmouseup="javascript:alert('滑鼠被你鬆開了！')" >你還猶豫什麼？</a></td>
+		<td><a href="javascript:listSource(document.links[1])">按此</a></td>
+	<tr>
+		<td>mouseover</td>
+		<td>滑鼠移動到某個物件時</td>
+		<td><input type="button" name="btnOnMouseOver" value="請輕輕的滑過我的身上！"
+			onmouseover="alert('好癢喔！')" ></td>
+		<td><a href="javascript:listSource(document.forms[0].btnOnMouseOver)">按此</a></td>
+</table>
+</form>
+<script>
+	var btn = document.getElementById("btnOnClick");
+	btn.addEventListener( "click", 
+					function () { alert('按我幹嘛？'); },
+					false );
+</script>
+</body>
+</html>

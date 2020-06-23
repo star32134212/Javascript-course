@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+h2 { text-align: center; }
+table {
+	margin: auto;
+}
+table,th,td {
+	border: 1px solid gray;
+}
+.ccc {text-align: center;}
+.lll {text-align: right; }
+
+</style>
+</head>
+<body>
+<h2>不同基底的表示方式</h2>
+<hr>
+<table>
+<tr><th>十進位</th><th>二進位</th><th>八進位</th><th>十六進位</th>
+<script>
+document.writeln(Date().toString());
+
+var x;
+for (x=0; x<16; x++) {
+	document.writeln("<tr>");
+	document.writeln("<td class=\"ccc\" style=\"text-align:center;\">"+x.toString());
+	document.writeln("<td class=\"lll\">"+x.toString(2));
+	document.writeln("<td class=\"lll\">"+x.toString(8));
+	document.writeln("<td class=\"ccc\">"+x.toString(16).toUpperCase());
+	document.writeln("</tr>");
+}
+/*
+var x=0;
+	document.writeln("<tr>");
+	document.writeln("<td class=\"ccc\" style=\"text-align:center;\">"+x.toString());
+	document.writeln("<td class=\"lll\">"+x.toString(2));
+	document.writeln("<td class=\"lll\">"+x.toString(8));
+	document.writeln("<td class=\"ccc\">"+x.toString(16));
+x=1;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=2;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=3;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=4;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=5;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=6;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=7;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=8;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=9;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=10;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=11;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=12;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=13;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=14;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+x=15;
+	document.writeln("<tr>");
+	document.writeln("<td>"+x.toString());
+	document.writeln("<td>"+x.toString(2));
+	document.writeln("<td>"+x.toString(8));
+	document.writeln("<td>"+x.toString(16));
+*/
+</script>
+</table>
+
+<hr>
+</body>
+</html>

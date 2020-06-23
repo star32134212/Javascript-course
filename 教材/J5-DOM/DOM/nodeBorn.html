@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Node Creation</title>
+<script type="text/javascript" src="nodeTree.js"></script>
+<script type="text/javascript">
+function createWebPage() {
+	myWindow = window.open('','nodetree','width=600,height=300,scrollbars=yes');
+	
+	myWindow.document.open(); // for Chrome
+	var hl = myWindow.document.createElement("html");
+	myWindow.document.appendChild( hl );
+	var bd = myWindow.document.createElement("body");
+	myWindow.document.documentElement.appendChild( bd );
+	var node = myWindow.document.createTextNode("Hello,World!");
+	myWindow.document.body.appendChild( node );
+	myWindow.document.close(); // for Chrome
+	myWindow.focus();
+	
+	// display child window tree in parent window
+	node = document.createElement("p");
+	node.innerHTML = navigate(myWindow.document, 0);
+	document.body.appendChild( node );
+}
+</script>
+</head>
+<body>
+	<input type="button" value="create web page" onClick="createWebPage()" /><br>
+</body>
+</html>

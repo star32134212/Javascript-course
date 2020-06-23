@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>IE event object</title>
+<script language="JavaScript" type="text/javascript">
+<!--
+var msg="";
+msg+="Click事件發生後建立的Event物件資訊:\n\n";
+function MyAlert()
+{ 
+  msg+="發生事件的型別 :\n";
+  msg+="type = " +event.type+ "\n\n";
+  msg+="發生事件的原始物件 :\n";
+  msg+="target = " +event.srcElement+ "\n\n";
+  msg+="游標相對于事件所在文檔的水準和垂直位置(像素) :\n";
+  msg+="x = " +event.x+ "y = " +event.y+ "\n\n";
+  msg+="游標相對於事件所在容器的水準和垂直位置(像素) :\n";
+  msg+="x = " +event.offsetX+ "y = " +event.offsetY+ "\n\n";
+  msg+="游標相對於事件所在螢幕的水準和垂直位置(像素) :\n";
+  msg+="x = " +event.screenX+ "y = " +event.screenY+ "\n\n";
+  msg+="游標相對於事件所在Web頁面的水準和垂直位置(像素) : \n";
+  msg+="x = " +event.clientX+ "y = " +event.clientY+ "\n";
+  alert(msg);
+}
+-->
+</script>
+</head>
+<body onclick="MyAlert();">
+  <table>
+    <tr>
+      <td>
+        <p>
+          Click the 
+          <em>
+            EM text 
+          </em>
+          to Test!
+        </p>
+      <td>
+    <tr> 
+  </table>
+</body>
+</html>

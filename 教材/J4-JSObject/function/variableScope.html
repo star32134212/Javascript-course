@@ -1,0 +1,82 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2 align="center">變數的有效範圍</h2>
+<hr>
+<script>
+function varScope() {
+	var x=5;
+	y=8;
+}
+function arguScope(x,a) {
+	x=5;
+	a[0]=10;
+}
+var x = 10;	// Global Variable 全域變數
+var y = 10;	// Global Variable 全域變數
+var arr = [1,2,3];
+console.log("Before invoking function:");
+console.log("x=",x,",y=",y);
+console.log("arr=",arr);
+
+varScope();
+console.log("After invoking varScope() ... ");
+console.log("x=",x,",y=",y);
+console.log("arr=",arr);
+
+arguScope(x,arr);
+console.log("After invoking arguScope(x,arr) ... ");
+console.log("x=",x,",y=",y);
+console.log("arr=",arr);
+
+// without block scope
+for (var i=1; i<10; i++) {
+	//...
+}
+console.log("after for loop with var i, i=",i); // 10
+
+// ES6 block scope by let
+
+for (let k=1; k<10; k++) {
+	// ...
+}
+//console.log("after for loop with let k, k=",k);
+
+var a = [];
+for (i = 0; i < 10; i++) {
+  a[i] = function () { return (i); };
+}
+console.log("var i; a[5]() = ", a[5]()); // 10
+
+for (let i = 0; i < 10; i++) {
+  a[i] = function () { return (i); };
+}
+console.log("let i; a[5]() = ", a[5]()); // 5
+
+try { // variable defined by "let" is not hoisted...
+
+	console.log(foo); // undefined
+	console.log(bar); // ReferenceError
+	var foo = 2;
+	let bar = 2;
+
+} catch(e) {
+	console.log(e.name, ":", e.message);
+}
+// temploral dead zone?
+var tmp = 123;
+try {
+	console.log(tmp); // ReferenceError, 既然let沒有hoisted, 不懂為什麼不能用? 
+	let tmp = 456;
+} catch(e) {
+	console.log(e.name, ":", e.message);
+}
+console.log(tmp);
+
+</script>
+<hr>
+</body>
+</html>

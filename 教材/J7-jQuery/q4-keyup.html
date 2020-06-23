@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Keyboard Event</title>
+<style>
+.large { font-size: 36px; color:red; }
+body { font-size: 24px; }
+div { cursor: pointer; }
+</style>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+$(document).ready( function() {
+	$("#inputPassword").bind("keyup", function() {
+		var strPassword= $('#inputPassword').val();
+		var complexity = $('#complexity');
+		if (strPassword.length == 0) {
+			complexity.text('set your password');
+		} else if (strPassword.length <= 4) {
+			complexity.text('weak');
+		} else if (strPassword.length <= 7) {
+			complexity.text('strong');
+		} else {
+			complexity.text('secure');
+		}
+	});
+}); 
+</script>
+</head>
+<body>
+	<h2>Keyboard Event</h2>
+	<div>
+		<input id="inputPassword" type="text" />
+		<span id="complexity">set your password</span>
+	</div>
+</body>
+</html>

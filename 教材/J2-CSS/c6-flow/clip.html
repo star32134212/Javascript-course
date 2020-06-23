@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>設定元素溢位的裁切範圍</title>
+<style type="text/css">
+<!--
+div {
+	height: 150px; width: 250px;
+	border: 2px solid red;
+	background-color:yellow;
+	position: absolute;
+}
+-->
+</style>
+</head>
+<body>
+<div>
+CSS使用clip屬性來設定元素溢位的裁切範圍。預設值auto將元素溢位的裁切範圍，設定為元素內容的邊界。clip屬性的值必須是長度單位，百分比值不被允許。裁切範圍的上，右，下，左邊界，是以元素的左上角為基準，而不是距離的偏移值。</div>
+<p style="position: absolute; top: 180px; left: 320px;"> clip: rect(20px, 230px, 130px, 20px); </p> 
+<div style="clip: rect(20px, 230px, 130px, 20px); left: 320px;">
+CSS使用clip屬性來設定元素溢位的裁切範圍。預設值auto將元素溢位的裁切範圍，設定為元素內容的邊界。clip屬性的值必須是長度單位，百分比值不被允許。裁切範圍的上，右，下，左邊界，是以元素的左上角為基準，而不是距離的偏移值。
+</div>
+<div style="width: 210px; height: 110px; clip: auto; top: 250px;">
+CSS使用clip屬性來設定元素溢位的裁切範圍。預設值auto將元素溢位的裁切範圍，設定為元素內容的邊界。clip屬性的值必須是長度單位，百分比值不被允許。裁切範圍的上，右，下，左邊界，是以元素的左上角為基準，而不是距離的偏移值。
+</div>
+</body>
+</html>

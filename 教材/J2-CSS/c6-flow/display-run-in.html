@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>A run-in box example</title>
+    <style type="text/css">
+      H3 { display: run-in }
+    </style>
+  </head>
+  <body>
+<a href="http://www.w3.org/TR/css3-box/#run-in-boxes">A run-in box behaves as follows:</a>
+<ol>
+<li>If the run-in box contains a block box, the run-in box becomes a block box.</li>
+<li>If a sibling block box (that does not float and is not absolutely positioned) follows the run-in box, the run-in box becomes the first inline box of the block box. A run-in cannot run in to a block that already starts with a run-in or that itself is a run-in.</li>
+<li>Otherwise, the run-in box becomes a block box.</li>
+</ol>
+Example:
+<xmp>
+    <style type="text/css">
+      H3 { display: run-in }
+    </style>
+    <h3>A run-in heading.</h3>
+    <p> And a paragraph of text that follows it.</p>
+</xmp>
+    <h3>A run-in heading.</h3>
+    <p> And a paragraph of text that follows it.</p>
+  </body>
+</html>

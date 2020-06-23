@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Round Corner</title>
+<style>
+#container p {
+	font-size:24px;
+	color:white;
+	background:#999;
+	padding: 10px;
+	margin:0;
+	width:280px;
+	box-sizing: padding-box;
+	}
+.rtop, .rbottom {display:block;}
+.rtop *, .rbottom * {
+	display: block;
+	height: 1px;
+	overflow: hidden;
+	}
+.r1{margin: 0 5px; background:#999; width:290px}
+.r2{margin: 0 3px; background:#999; width:294px}
+.r3{margin: 0 2px; background:#999; width:296px}
+.r4{margin: 0 1px; height: 2px; background:#999; width:298px}
+</style>
+</head>
+<body>
+	<div id="container">
+		<b class="rtop">
+			<b class="r1"></b>
+			<b class="r2"></b>
+			<b class="r3"></b>
+			<b class="r4"></b>
+		</b>
+		<p>第三種方法是利用 CSS 畫線條，利用相鄰線條長短差製造圓角的視覺效果</p>
+		<b class="rbottom">
+			<b class="r4"></b>
+			<b class="r3"></b>
+			<b class="r2"></b>
+			<b class="r1"></b>
+		</b>
+	</div>
+</body>
+</html>

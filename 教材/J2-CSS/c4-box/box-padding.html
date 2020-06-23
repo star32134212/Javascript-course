@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>設定元素的內距</title>
+<style type="text/css">
+<!--
+div#outer {font-size: 48px; color: red; border: 2px solid blue;}
+
+div {
+ 	border: 2px dotted blue; 
+	margin: 20px;
+}
+div#inner1 {margin: 20px; padding-top:0.5cm;} /*元素內的上邊界為0.5cm*/
+div#inner2 {padding-right:16pt;} /*元素內的右邊界為16pt*/
+div#inner3 {padding-bottom:20%;} /*元素內的下邊界為30%*/
+div#inner4 {padding-left:3em;} /*元素內的左邊界為3em*/
+div#inner5 {
+	padding:0.5cm; /*只設定一個內邊界值, 元素內的四邊界為0.5cm*/
+}
+div#inner6 {
+	padding:0.5cm 1cm; /*設定對應的內邊界值, 元素內的上下邊界為0.5cm, 右左邊界為1cm*/
+}
+div#inner7 {
+	padding: 20px 25% 1em 20px; /*一次設定完四個內邊界值,上邊界為20px, 右邊界為25%, 下邊界為1em, 左邊界為20px*/
+}
+div#inner8 {
+	padding: 20pt 20% 30px 2cm;  /*一次設定完四個內邊界值,上邊界為20pt, 右邊界為20%, 下邊界為30px, 左邊界為2cm*/
+}
+-->
+</style>
+</head>
+<body>
+<div id="outer">
+  <div id="inner1">設定元素內的上邊界為0.5cm</div>
+  <div id="inner2">設定元素內的右邊界為16pt</div>
+  <div id="inner3">設定元素內的下邊界為20%</div>
+  <div id="inner4">設定元素內的左邊界為3em</div>
+  <div id="inner5">設定元素內的四邊界為0.5cm</div>
+  <div id="inner6">設定元素內的上下邊界為0.5cm, 右左邊界為1cm</div>
+  <div id="inner7"><span style="Background-color: #F0F0F0;">一次設定完四個內邊界值,上邊界為20px, 右邊界為25%, 下邊界為1em, 左邊界為20px</span></div>
+  <div id="inner8"><span style="Background-color: #F0F0F0;">一次設定完四個內邊界值,上邊界為20pt, 右邊界為20%, 下邊界為30px, 左邊界為2cm</span></div>
+</div>
+</body>
+</html>

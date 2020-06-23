@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>pseudo element</title>
+<!--link ....-->
+<style type="text/css">
+p::first-letter {
+	font-size: 2em;
+	color: blue;
+	vertical-align:top;
+}
+/*
+p::first-line {
+	color: red;
+}
+p {text-indent: 2em; color:green;}
+p::before {
+	content: "{開始}";
+	font-size: 14px;
+	color: purple;
+	}
+
+p::first-letter {font-size: 2em;
+ color: blue; vertical-align:top;}
+p.p2::first-letter {font-size: 300%; color: green;}
+
+*/
+
+p::after {
+	content: "~The End~";
+	font-size: 14px;
+	color: navy;
+	}
+a[href]::after {
+	content: "(" attr(href) ")";
+	}
+a[href$=".pdf"]::after {
+	content: url("pdf.ico");
+	/*display: inline-block;
+	width: 5px; 不能改 image width? */
+	}
+table {
+	border-spacing: 3px;
+	border: 2px dotted blue;
+	}
+td {
+	border: 2px solid blue;
+	padding: 3px; 
+	text-align: center;
+	}
+/*
+table tr:nth-child(even) {
+	background-color: skyblue;
+	}
+*/
+table tr:nth-child(3n+1) {  /* 1st row index=1, thead,tbody,tfoot 分開計算 */
+	background-color: skyblue;
+	}
+table tr:nth-child(3n+2) { 
+	background-color: pink;
+	}
+span.first { font-size: 2em; }
+</style>
+</head>
+<body>
+  <p><span style="color:purple;">第</span>一回</p>
+  <p>第一回　靈根育孕源流出　心性修持大道生</p>
+  <p>第一回　靈根育孕源流出　心性修持大道生</p>
+  <p class="p2">
+  蓋聞天地之數，有十二萬九千六百歲為一元。將一元分為十二會，
+  乃子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥之十二支也。
+  每會該一萬八百歲。且就一日而論：子時得陽氣而丑則雞鳴，寅不通
+  光而卯則日出，辰時食後而巳則挨排，日午天中而未則西蹉，申時晡
+  而日落酉，戌黃昏而人定亥。譬於大數，若到戌會之終，則 天地昏
+  曚而萬物否矣。
+  </p>
+  <a href="http://www.nctu.edu.tw/">交通大學</a><br />
+  <a href="test1.pdf">PDF1 Download</a>
+  <a href="test2.pdf">PDF2 Download</a>
+<table>
+ <caption>星座</caption>
+ <thead>
+	 <tr>
+		<th class="col1">星座標誌</th>
+		<th class="col2">星座名稱</th>
+		<th class="col3">出生日期(陽歷)</th>
+		<th class="col4">性格</th>
+		<th class="col5">配對關係</th>
+		<th class="col6">構成元素</th>
+		<th class="col7">顏色</th>
+		<th class="col8">英文名稱</th>
+	 </tr>
+ </thead>
+ <tfoot>
+	 <tr>
+		<th class="col1">星座標誌</th>
+		<th class="col2">星座名稱</th>
+		<th class="col3">出生日期（陽歷）</th>
+		<th class="col4">性格</th>
+		<th class="col5">配對關係</th>
+		<th class="col6">構成元素</th>
+		<th class="col7">顏色</th>
+		<th class="col8">英文名稱</th>
+	 </tr>
+ </tfoot>
+ <tbody>
+	 <tr>
+		<td class="col1"><img src="image/m1-aquarius.gif"></td>
+		<td class="col2">水瓶座</td>
+		<td class="col3">01月21日─02月19日</td>
+		<td class="col4">創意、智慧 反叛、冷漠</td>
+		<td class="col5">雙子座與天秤座</td>
+		<td class="col6">空氣</td>
+		<td class="col7">黑</td>
+		<td class="col8">aquarius</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/m2-pisces.gif"></td>
+		<td class="col2">雙魚座</td>
+		<td class="col3">02月20日─03月20日</td>
+		<td class="col4">浪漫、善解人意 粗心、意志薄弱</td>
+		<td class="col5">巨蟹座與天蠍座</td>
+		<td class="col6">水</td>
+		<td class="col7">藍</td>
+		<td class="col8">pisces</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/m3-aries.gif"></td>
+		<td class="col2">白羊座</td>
+		<td class="col3">03月21日─04月20日</td>
+		<td class="col4">積極、直率 自我、沒有耐性</td>
+		<td class="col5">獅子座與射手座</td>
+		<td class="col6">火</td>
+		<td class="col7">紅</td>
+		<td class="col8">aries</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/m4-taurus.gif"></td>
+		<td class="col2">金牛座</td>
+		<td class="col3">04月21日─05月21日</td>
+		<td class="col4">可靠、有耐心 貪婪、古板</td>
+		<td class="col5">處女座與摩羯座</td>
+		<td class="col6">土</td>
+		<td class="col7">綠</td>
+		<td class="col8">taurus</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/m5-gemini.gif"></td>
+		<td class="col2">雙子座</td>
+		<td class="col3">05月22日─06月21日</td>
+		<td class="col4">機智、適應力強 善變、不安份</td>
+		<td class="col5">天秤座與水瓶座</td>
+		<td class="col6">空氣</td>
+		<td class="col7">黃</td>
+		<td class="col8">gemini</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/m6-cancer.gif"></td>
+		<td class="col2">巨蟹座</td>
+		<td class="col3">06月22日─07月23日</td>
+		<td class="col4">真摯、有包容力 不理性、多愁善感</td>
+		<td class="col5">天蠍座與雙魚座</td>
+		<td class="col6">水</td>
+		<td class="col7">白</td>
+		<td class="col8">cancer</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/m7-leo.gif"></td>
+		<td class="col2">獅子座</td>
+		<td class="col3">07月24日─08月23日</td>
+		<td class="col4">熱心、有領導能力 武斷、自以為是</td>
+		<td class="col5">牧羊座與射手座</td>
+		<td class="col6">火</td>
+		<td class="col7">橙</td>
+		<td class="col8">leo</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/m8-virgo.gif"></td>
+		<td class="col2">處女座</td>
+		<td class="col3">08月24日─09月23日</td>
+		<td class="col4">頭腦清晰、完美主義 保守、吹毛求疵</td>
+		<td class="col5">金牛座與摩羯座</td>
+		<td class="col6">土</td>
+		<td class="col7">灰</td>
+		<td class="col8">virgo</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/m9-libra.gif"></td>
+		<td class="col2">天秤座</td>
+		<td class="col3">09月24日─10月23日</td>
+		<td class="col4">和諧、平易近人 輕浮、優柔寡斷</td>
+		<td class="col5">雙子座與水瓶座</td>
+		<td class="col6">空氣</td>
+		<td class="col7">淡紅</td>
+		<td class="col8">libra</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/ma-scorpio.gif"></td>
+		<td class="col2">天蠍座</td>
+		<td class="col3">10月24日─11月22日</td>
+		<td class="col4">果然、實際 多疑、狂妄</td>
+		<td class="col5">巨蟹座與雙魚座</td>
+		<td class="col6">水</td>
+		<td class="col7">深紅</td>
+		<td class="col8">scorpio</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/mb-sagittarius.gif"></td>
+		<td class="col2">射手座</td>
+		<td class="col3">11月23日─12月22日</td>
+		<td class="col4">活潑、思想開明 粗心、反覆無常</td>
+		<td class="col5">獅子座與牧羊座</td>
+		<td class="col6">火</td>
+		<td class="col7">紫紅</td>
+		<td class="col8">sagittarius</td>
+	 </tr>
+	 <tr>
+		<td class="col1"><img src="image/mc-capricorn.gif"></td>
+		<td class="col2">摩羯座</td>
+		<td class="col3">12月23日─01月22日</td>
+		<td class="col4">有原則、家庭理念 太現實、缺乏熱情</td>
+		<td class="col5">處女座與金牛座</td>
+		<td class="col6">土</td>
+		<td class="col7">黑</td>
+		<td class="col8">capricorn</td>
+	 </tr>
+ </tbody>
+</table>
+</body>
+</html>

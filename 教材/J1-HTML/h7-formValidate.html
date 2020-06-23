@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<title>Form Example</title>
+</head>
+<body>
+	<h3>HTML 5 新增的資料輸入類型</h3>
+	<form name="formValidate" action="" method="get" >
+		required: <input type="text" name="fld_required" required="required"><br>
+		placeholder: <input type="text" name="fld_placeholder" placeholder="請輸入文字"><br>
+		<br>
+		email：<input type="email" name="fld_email"><br>
+		網址：<input type="url" name="fld_url"><br>
+		tel：<input type="tel" name="fld_tel" pattern="^0\d{8,9}$"><br>
+		數字(年齡)：<input type="number" name="fld_number" min="18" max="120" value="30" step="2"><br>
+		範圍：<input type="range" name="fld_range" min="1" max="10"><br>
+		搜索關鍵字：<input type="search" name="fld_search" results="s"><br>
+		顏色：<input type="color" name="fld_color"><br>
+		<br>
+		日期和時間(date)：<input type="date" name="fld_date"><br>
+		日期和時間(month)：<input type="month" name="fld_date"><br>
+		日期和時間(week)：<input type="week" name="fld_date"><br>
+		日期和時間(time)：<input type="time" name="fld_date"><br>
+		日期和時間(datetime)：<input type="datetime" name="fld_date"><br>
+		日期和時間(datetime-local)：<input type="datetime-local" name="fld_date"><br>
+<br>
+		<input type="submit" value="送出表單" >
+	</form>
+</body>
+</html>

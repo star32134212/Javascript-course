@@ -1,0 +1,44 @@
+body {
+	margin:0px;
+	padding:0px;
+	font:1em verdana, arial, helvetica, sans-serif; /* set the baseline font and font-size */ 
+}
+header {
+	  font-size:28px;
+	  color:blue;
+	  background-color:lime;
+	  padding:6px;
+	  text-align:center;
+}
+nav { 
+	margin:20px 0 0 15px; /* move the nav div down and in from edge */
+	width:150px;
+	padding:.5em 0 0 0; /* push the list down from the top of the nav div */
+	border-top:2px solid #069; /* add a rule across the top and bottom of the nav */
+	border-bottom:1px solid #069;
+}
+nav ul {
+	margin-top:0px;
+	margin-bottom:.8em;  /* positioin list vertically within containing div */
+}
+nav li {
+	margin-bottom:.5em; /* add space below each list item */
+	font-weight:bold; /* style links */
+	font-size:.75em;
+}
+div#sidebar { 
+	width:150px;
+	margin:20px 10px;
+}
+div#content {
+	margin:20px 0 0 15px;
+	padding:0 1em;
+	/*border: solid 1px blue;*/
+}
+footer {
+  font-size:28px;
+  color:blue;
+  background-color:lime;
+  padding:6px;
+  text-align:center;
+}

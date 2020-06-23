@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html140/strict.dtd">
+<html><head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<title>Sample Page!</title>
+<script language="JavaScript" type="text/javascript">
+<!--
+//設定視窗水準和垂直位置的參數(像素)
+var ix;
+var iy;
+//設定視窗寬度和高度的參數(像素)
+var iWidth;
+var iHeight;
+//設定視窗移動的方向和速度的參數
+var xDirection=7;
+var yDirection=4;
+//設定與視窗移動相關聯的間隔時間計時器
+var TimerID;
+//初始化視窗大小和位置
+function InitWindow()
+{
+	myWindow=window.open('','Game Window','width=300,height=200');
+	myWindow.document.write("<p>This is 'myWindow'</p>");
+  ix=200;
+  iy=200;
+  iWidth=480;
+  iHeight=320;
+  myWindow.moveTo(ix,iy);
+  myWindow.resizeTo(iWidth,iHeight);
+}
+//將瀏覽器視窗居中放置
+function CenterWindow()
+{
+  var ix=(screen.width-iWidth)/2;
+  var iy=(screen.height-iHeight)/2;
+  myWindow.moveTo(ix,iy);
+}
+//設定間隔時間計時器
+function StartMove()
+{
+  //此處的100代表改變的速度,即100ms改變一次位置
+  TimerID=setInterval("MoveWindow();",100);
+}
+//控制頁面移動
+function MoveWindow()
+{
+  //如果目標頁面水準方向在螢幕之內,則不改變水準移動方向
+  if((ix+iWidth<screen.width)&&(ix>0))
+  {
+    ix=ix+xDirection;
+  }
+  //如果目標頁面水準方向在螢幕之外,則改變水準移動方向
+  if((ix+iWidth>=screen.width)||(ix<=0))
+  {
+    xDirection=-xDirection;
+    ix=ix+xDirection;
+  }
+  //如果目標頁面垂直方向在螢幕之內,則不改變垂直移動方向
+  if((iy+iHeight<screen.height-30)&&(iy>0))
+  {
+    iy=iy+yDirection;
+  }
+  //如果目標頁面垂直方向在螢幕之外,則改變垂直移動方向
+  if((iy+iHeight>=screen.height-30)||(iy<=0))
+  {
+    yDirection=-yDirection;
+    iy=iy+yDirection;
+  }
+  //移動視窗至指定的位置
+  myWindow.moveTo(ix,iy);
+}
+//停止視窗的捲動,回到原始位置
+function StopMove()
+{
+  clearInterval(TimerID);
+  CenterWindow();
+}
+//全螢幕化瀏覽器視窗
+function FullWindow()
+{
+  //判斷瀏覽器類型
+  //若瀏覽器為NN
+  if(navigator.appName=="Netscape")
+  {
+    ix=screen.availLeft;
+    iy=screen.availTop;
+    iWidth=screen.availWidth;
+    iHeight=screen.availHeight;
+    myWindow.moveTo(ix,iy);
+    myWindow.resizeTo(iWidth,iHeight);  
+  }
+  //若瀏覽器為IE
+  else if(navigator.appName=="Microsoft Internet Explorer")
+  {
+    ix=0;
+    iy=0;
+    iWidth=screen.width;
+    iHeight=screen.height;
+    myWindow.moveTo(ix,iy);
+    myWindow.resizeTo(iWidth,iHeight);  
+  }
+  //否則,輸出警告資訊
+  else
+    alert("對不起，當前瀏覽器類型不支援!");
+}
+//-->
+</script>
+</head>
+<body>
+<center>
+<P>順序按一下如下按鈕,實現視窗準確定位<p>
+<form name="MyForm">
+  <input type="button" value="初始化瀏覽器視窗" onclick="InitWindow()"><br>
+  <input type="button" value="將瀏覽器視窗居中" onclick="CenterWindow()"><br>
+  <input type="button" value="開始目標視窗移動" onclick="StartMove()"><br>
+  <input type="button" value="停止目標視窗移動" onclick="StopMove()"><br>
+  <input type="button" value="全螢幕化瀏覽器視窗" onclick="FullWindow()"><br>
+</form>
+</center>
+</body></html>

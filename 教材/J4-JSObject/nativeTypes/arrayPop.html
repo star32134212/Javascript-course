@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 align="center">pop(), push(), shift(), unshift()</h2>
+<hr>
+<script>
+var myPet = ["鼠", "牛", "虎", "兔"];
+document.writeln("myPet = " + myPet + "<br>");
+// pop()
+document.writeln("<p>After「popped = myPet.pop()」<br>");
+popped = myPet.pop();
+document.writeln("myPet = " + myPet + "<br>");
+document.writeln("poped = " + popped + "<br>");
+// push()
+document.writeln('<p>After「elementCount = myPet.push("龍", "蛇")」<br>');
+elementCount = myPet.push("龍", "蛇");
+document.writeln("myPet = " + myPet + "<br>");
+document.writeln("elementCount = " + elementCount + "<br>");
+// shift()
+document.writeln("<p>After「shifted = myPet.shift()」<br>");
+shifted = myPet.shift();
+document.writeln("myPet = " + myPet + "<br>");
+document.writeln("shifted = " + shifted + "<br>");
+// unshift()
+document.writeln('<p>After「myPet.unshift("馬", "羊")」<br>');
+myPet.unshift("馬", "羊");
+document.writeln("myPet = " + myPet + "<br>");
+</script>
+<hr>
+</body>
+</html>

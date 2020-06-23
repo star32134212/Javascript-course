@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<style>
+body { text-align: center; }
+img { width:190px; border:2px solid; }
+</style>
+<body>
+<h2>取消滑鼠右鍵的功能</h2>
+<hr>
+<script>
+function disableMenu(e){
+	e = e || window.event;
+	
+	if ( e.button == 2 ) {
+		document.getElementById("message").textContent = 
+		"很抱歉，滑鼠右鍵的功能已被取消了！";
+		if (e.cancelable) {
+			e.preventDefault?e.preventDefault():e.returnValue=false;
+		}
+	}
+}
+if (window.addEventListener)
+	window.addEventListener("contextmenu", disableMenu);
+else if (window.attachEvent)
+	document.attachEvent("oncontextmenu", disableMenu);
+else
+	document.oncontextmenu=disableMenu;
+</script>
+<img src="fishing.gif">
+<p id="message">請按右鍵擷圖</p>
+</body>
+</html>

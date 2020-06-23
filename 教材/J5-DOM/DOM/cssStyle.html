@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Style Property</title>
+<style>
+body {
+	font-size: 3em;
+}
+</style>
+</head>
+<body style="color:blue; text-indent:2em; text-align:center; background-color: pink;">
+content
+<script>
+	// style 物件的內容僅止於標籤的 style 屬性設定
+	// 所以下列輸出不會含 font-size
+	var s = document.body.style;
+	for (var i=0; i<s.length; i++) {
+		var pname = s.item(i);
+		document.writeln(i + " " + pname + ":" + s.getPropertyValue(pname) +";<br>");
+	}
+</script>
+</body>
+</html>

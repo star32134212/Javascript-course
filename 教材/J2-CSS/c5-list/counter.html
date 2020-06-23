@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>設定清單編號的號碼</title>
+<style type="text/css">
+div#first {
+	counter-reset : chapter;
+	}
+div#first h1 {
+	counter-increment : chapter;
+	counter-reset : section;
+	}
+div#first h1:before { 
+	content : "Chapter " counter(chapter) ": " 
+	}
+div#first h2 {
+	counter-increment : section;
+	}
+div#first h2:before { 
+  content : "Section " counter(section) ": "
+}
+
+div#second {
+	counter-reset : chapter 5 section 4;
+	}
+div#second::before {
+	content: "part II";
+	}
+div#second h1::before {
+	counter-increment : chapter 2;
+	content : "Chapter " counter(chapter) ": " 
+	}
+div#second h2::before { 
+	counter-increment : section 2;  
+	content: "Section " counter(section) ": "
+}
+h2 {margin-left: 50px;}
+
+ol { 
+	list-style-type: none;
+	counter-reset: item;
+}
+li::before {
+	counter-increment: item 1;
+	/*content: counter(item) "."; */
+	/*content: counters(item, ".") " "; */
+	content: counters(item, "-", decimal) " ";
+	}
+</style>
+</head>
+<body>
+    <div id="first">
+        <h1>XHTML</h1>
+          <h2>XHTML 1.0</h2>
+          <h2>XHTML 1.1</h2>
+          <h2>XHTML 2.0</h2>
+        <h1>JavaScript</h1>
+		<h1>CSS</h1>
+          <h2>CSS 1.0</h2>
+          <h2>CSS 2.0</h2>
+          <h2>CSS 2.1</h2>
+        <h1>Python</h1>
+    </div>
+    <div id="second">
+        <h1>XHTML</h1>
+          <h2>XHTML 1.0</h2>
+          <h2>XHTML 1.1</h2>
+          <h2>XHTML 2.0</h2>
+        <h1>CSS</h1>
+          <h2>CSS 1.0</h2>
+          <h2>CSS 2.0</h2>
+          <h2>CSS 2.1</h2>
+        <h1>JavaScript</h1>
+    </div>
+
+	<ol>                      <!-- { item[0]=0            -->
+	  <li>item</li>           <!--   item[0]++ (=1)       -->
+	  <li>item                <!--   item[0]++ (=2)       -->
+		<ol>                  <!--   { item[1]=0          -->
+		  <li>item</li>       <!--     item[1]++ (=1)     -->
+		  <li>item</li>       <!--     item[1]++ (=2)     -->
+		  <li>item            <!--     item[1]++ (=3)     -->
+			<ol>              <!--     { item[2]=0        -->
+			  <li>item</li>   <!--       item[2]++ (=1)   -->
+			</ol>             <!--     }                  -->
+			<ol>              <!--     { item[2]=0        -->
+			  <li>item</li>   <!--       item[2]++ (=1)   -->
+			</ol>             <!--     }                  -->
+		  </li>               <!--                        -->
+		  <li>item</li>       <!--     item[1]++ (=4)     -->
+		</ol>                 <!--                        -->
+	  </li>                   <!--   }                    -->
+	  <li>item</li>           <!--   item[0]++ (=3)       -->
+	  <li>item</li>           <!--   item[0]++ (=4)       -->
+	</ol>                     <!--                        -->
+	<ol>                      <!-- } { item[0]=0          -->
+	  <li>item</li>           <!--     item[0]++ (=1)     -->
+	  <li>item</li>           <!--     item[0]++ (=2)     -->
+	</ol>                     <!--   }                    -->
+
+</body>
+</html>

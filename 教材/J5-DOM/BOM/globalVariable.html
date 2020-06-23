@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Difference of global variable and window property</title>
+</head>
+<body>
+<h2>Difference of global variable and window property</h2>
+<script type="text/javascript">
+
+	// refer ECMAScript 10.5 
+	// declare with var, is created in VariableEnvironment
+	// declare without var, created in LexicalEnvironment
+	var age = 29;
+	fname = "John";
+	window.color = "red";
+	
+	//throws an error in IE < 9, returns false in all other browsers
+	delete window.age;
+	// global variable(VariableEnvironment) is not deletable 
+	
+	//throws an error in IE < 9, returns true in all other browsers
+	delete window.fname;	// return true
+	delete window.color;    // return true
+	
+	console.log(window.age);    // 29
+	console.log(window.fname);	// undefined
+	console.log(window.color);  // undefined
+function test() {
+	a=5; // because var is hoisted, so a is local varible
+	var a=10;
+}
+test();
+console.log(a); // a is not defined
+</script>
+</body>
+</html>

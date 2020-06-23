@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 align="center">陣列的方法：toString() 和 join()</h2>
+<hr>
+	<script>
+	myPet = new Array("鼠", "牛", "虎", "兔");
+	document.writeln("myPet = " + myPet + "<br>");
+	document.writeln("myPet.toString() = " + myPet.toString() + "<br>");
+	
+	document.writeln("myPet.join() = " + myPet.join() + "<br>");
+	document.writeln("myPet.join(', ') = " + myPet.join(', &nbsp;') + "<br>");
+	
+	document.writeln("myPet.join(' + ') = " + myPet.join(' + ') + "<br>");
+	</script>
+<hr>
+</body>
+</html>
+<!--
+Nicholas C. Zakas 的 Professional Javascript for Web Developers
+提到字串連結時，使用 Array.join() 會比使用字串相加快
+理由是因為 Javascript 字串儲存為一個固定不可改的物件。
+設定新字串是重新產生一個暫存物件，然後將內容分別複製至暫存物件
+再將變數指到暫存物件。
+所以時間較長
+
+    // 利用 Array 物件的　push() &  join() 把字串連結
+	const COUNT=1000;
+	var i;
+    var aData = new Array();
+    var aStart = new Date();
+    for (i=0 ; i<COUNT ; i++ ) { aData.push('longer'); }
+	aData = aData.join();
+    var aEnd = new Date();
+    console.log( "Array:" + (aStart.getTime()-aEnd.getTime()) );
+    
+    //利用 字串直接用 += 的方式連結
+    var sData = "";
+    var sStart = new Date();
+    for (i=0 ; i<COUNT ; i++ ) { sData += "text"; }
+    sEnd = new Date();
+    console.log( "String +:" + ( sStart.getTime() - sEnd.getTime() ) );
+
+結果：
+單位:ms	Internet Explorer 7.0.6002.18005	Firefox 3.5.5	Google Chrome 
+3.0.195.32	Safari 4.0.3	Opera 10.01
+Array	291	12	8	6	90
+String	91295 	7	4	10	26
+
+結果除了 IE 跟 Safari 執行結果顯示用 Array.join()  的方式比較快以外，
+其他的瀏覽器都顯示，直接用 += 居然比較快！
+
+那...那我們寫程式，應該用哪一種呢？
+其實只要觀察一下瀏覽器的市占率，你就知道用Array.join() 了。
+-->

@@ -1,0 +1,31 @@
+#photoviewer {
+    position: relative;
+    width: 940px;
+    height: 420px;
+}
+#photoviewer:hover #previous, #photoviewer:hover #next {
+    margin: 0 30px;
+    opacity: 1;
+    transition: 1s;
+}
+#previous,#next{
+    width: 1.5em;
+    text-align: center;
+    font-weight: 900;
+    background-color: rgb(232, 217, 233);
+    font-size: 3em; 
+    border-radius: 100%;
+    position: absolute;
+    top: 200px;
+    z-index: 10;
+    opacity: 0;
+}
+#previous{
+    left: 20px;
+}
+#next{
+    right: 0px;
+}
+img {
+    position: absolute;
+}

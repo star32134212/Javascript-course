@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>User Defined Object</title>
+</head>
+
+<body>
+<h2 style="text-align:center">自訂物件示範：簡單物件</h2>
+<hr>
+<script>
+
+var student = new Object();
+student.name = "Timmy";
+student.id = "0200102";
+student.age = "25";
+
+//JSON Javascript Simple Object Notation
+var student1 = {"name":"Timmy", "id":"0200102", "age":21}
+// property 不含空白時，可不用引號
+var student2 = {name:"Mary", id:"0200103", age:23}
+var student3 = {name:"Alice", id:"0200104", age:22}
+
+// 列舉物件中的所有屬性
+for ( field in student ) {
+    document.write(	"student." + field + " = " + 
+		student[field] // or eval("student."+field)
+		+ "<br>" );
+}
+	
+// 以 in 運算子測試物件的欄位是否存在
+field="age";
+if (field in student) {
+	document.write(field + " is a field of student<br>");
+	document.write(field," value: ",student[field],"<br>");
+}
+
+</script>
+<hr>
+</body>
+</html>

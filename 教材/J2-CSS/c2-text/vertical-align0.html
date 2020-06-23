@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>設定文字的垂直對齊方式</title>
+<style type="text/css">
+<!--
+p {
+	font-size:24px;
+	line-height:48px;
+	border:1px solid blue;
+	text-decoration:line-through;
+}
+span { display:inline-block; border:1px solid blue;}
+img {width: 60px; height: 60px; border: 1px solid blue;}
+-->
+</style>
+</head>
+<body>
+<div style="line-height: 48px;border:1px solid blue;">test</div>
+<h2>根據文字高度來對齊</h2>
+<p>基準文字abcdeg:<span style="vertical-align:text-top;" >text-top中文</span></p>
+<p>基準文字abcdeg:<span style="vertical-align:baseline;" >baseline中文</span></p>
+<p>基準文字abcdeg:<span style="vertical-align:text-bottom;" >text-bottom中文</span></p>
+<p>基準文字abcdeg: 2X<span style="vertical-align:sub;" >2</span></p>
+<p>基準文字abcdeg: 2X<span style="vertical-align:super;" >2</span></p>
+<h2>根據行距來對齊</h2>
+<p>基準文字abcdeg:<span style="vertical-align:top;" >top中文</span></p>
+<p>基準文字abcdeg:<span style="vertical-align:middle;" >middle中文</span></p>
+<p>基準文字abcdeg:<span style="vertical-align:bottom;" >bottom中文</span></p>
+<h1>圖片 alignment</h1>
+<p>基準文字abcdeg:<img src="fish.jpg" alt="" style="vertical-align: text-top;"/> 圖片的垂直對齊方式是 text-top.</p>
+<p>基準文字abcdeg:<img src="fish.jpg" alt="" style="vertical-align: middle;" /> 圖片的垂直對齊方式是 middle.</p>
+<p>基準文字abcdeg:<img src="fish.jpg" alt="" style="vertical-align: text-bottom;" /> 圖片的垂直對齊方式是 text-bottom.</p>
+<p>基準文字abcdeg:<img src="fish.jpg" alt="" style="vertical-align: top;" /> 圖片的垂直對齊方式是 top.</p>
+<p>基準文字abcdeg:<img src="fish.jpg" alt="" style="vertical-align: bottom;" /> 圖片的垂直對齊方式是 bottom.</p>
+</body>
+</html>

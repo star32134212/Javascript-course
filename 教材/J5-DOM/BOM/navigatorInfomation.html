@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<title>Browser Information</title>
+<script language="JavaScript" type="text/javascript">
+function getInfo() //根據瀏覽器類型選用適當的 script 
+{ 
+	document.write("<br>瀏覽器資訊 : ("+navigator.appName+" 類)<br><br>通用屬性 : <br>");
+	document.write("navigator.appName = "+navigator.appName+" (瀏覽器名稱) <br>");
+	document.write("navigator.appCodeName = "+navigator.appCodeName+" (瀏覽器代碼) <br>");
+	document.write("navigator.appVersion = "+navigator.appVersion+" (瀏覽器主要版本) <br>");
+	document.write("navigator.userAgent = "+navigator.userAgent+"<br>");
+	document.write("navigator.platform = "+navigator.platform+" (作業系統平台) <br>");
+	document.write("navigator.cookieEnabled = "+navigator.cookieEnabled+" (是否允許使用小餅乾) <br>");
+	// 判斷瀏覽器類型
+	if (navigator.appName=="Netscape") // 瀏覽器為 Netscape Navigator 類: 如 Chrome, Firefox
+		getNNInfo();
+	else if (navigator.appName=="Microsoft Internet Explorer") //瀏覽器為 IE
+		getIEInfo();
+	else
+		alert("對不起，不支援您的瀏覽器類型!");
+}
+function getNNInfo()      //若用戶端瀏覽器為 NN，則觸發此函數
+{
+	document.write("擴充屬性 : <br>");
+	document.write("navigator.language : "+navigator.language+"(瀏覽器預設語言)<br>");
+	document.write("navigator.mimeTypes.length = "+navigator.mimeTypes.length+" () <br>");
+	document.write("navigator.plugins.length = "+navigator.plugins.length+" () <br>");
+}
+function getIEInfo() //若用戶端瀏覽器為 IE，則觸發此函數
+{
+	document.write("擴充屬性 : <br>");
+	document.write("navigator.appMinorVersion = "+navigator.appMinorVersion+" (瀏覽器次要版本) <br>");
+	document.write("navigator.cpuClass = "+navigator.cpuClass+" (CPU 類別) <br>");
+	document.write("navigator.systemLanguage = "+navigator.systemLanguage+" (瀏覽器預設語言) <br>");
+	document.write("navigator.browserLanguage = "+navigator.browserLanguage+" (瀏覽器預設語言) <br>");
+	document.write("navigator.userLanguage = "+navigator.userLanguage+" (使用者預設語言) <br>");
+	document.write("navigator.onLine : "+navigator.onLine+"<br>");
+	//document.write("navigator.userProfile : "+navigator.userProfile+"<br>");
+}
+</script>
+</head>
+<body>
+	<script>getInfo();</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Rounded Corner</title>
+<style type="text/css">
+div.container {
+	width:320px;
+	height:100px;
+	padding: 10px;
+	margin: 0px;
+
+	/* For border-image to work, the border need be set! */
+	border-width: 20px;
+	border-style: solid;
+	border-image-source: url("box-border-image.png");
+	border-image-slice: 28 30; 
+	border-image-repeat: repeat repeat; /*水平 垂直 */
+
+	/*
+	border-image-width: 30px;
+	border-image-outset: 50px; 
+		width that border image area extends beyond the border box
+	border-image:url("border.png") 27 stretch;
+	border-image-repeat: repeat|stretch|round|space;
+	*/
+}
+</style>
+<body>
+<div class="container">
+	使用圖片當邊線<br>
+    Note: Internet Explorer does not support the border-image property.
+</div>
+</body>
+</html>

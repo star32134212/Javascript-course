@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 align=center>預約程式碼的執行：預約與取消</h2>
+<hr>
+
+<script>
+timeStep=0.1;	// 每 0.1 秒顯示一次時間
+accumulated=0;	// 目前累計的時間
+function showTime(){
+	document.theForm.theText.value=accumulated;
+	accumulated+=timeStep;
+	timer=setTimeout("showTime();", timeStep*1000);
+}
+
+function clickCallback(){
+	switch(document.theForm.theButton.value){
+		case "開始計時":
+			document.theForm.theButton.value="停止計時"; // 將按鈕文字改為「停止計時」
+			accumulated=0;					// 時間歸零
+			showTime();					// 開始計時
+			break;
+		case "停止計時":
+			document.theForm.theButton.value="開始計時"; // 將按鈕文字改為「開始計時」
+			clearTimeout(timer);				// 停止計時
+			break;
+		default:
+			alert("Error!");
+			break;
+	}
+}
+
+//timeDiff=(date2.getTime()-date1.getTime())/1000;// 時間差距，以秒為單位
+</script>
+
+<center>
+<form name="theForm">
+<input type="button" name=theButton value="開始計時" onClick="clickCallback()">
+<input type="text" name=theText value="00:00:00">
+</form>
+</center>
+
+<hr>
+</body>
+</html>

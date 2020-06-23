@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Effective Style</title>
+<style type="text/css">
+<!--
+p {color:green; font-size: 48px; }
+-->
+</style>
+</head>
+<body>
+<p id="para" style=" color:red; font-family: '標楷體', Helvetica, sans-serif;">
+  這是段落文字
+</p>
+<script type="text/javascript">
+// <![CDATA[
+// 取得p元素
+var p = document.getElementsByTagName("p")[0];
+p.style.color = "blue";
+
+// 讀取p元素的font-family屬性值
+var family = "";
+if (p.currentStyle)
+    family = p.currentStyle.fontFamily;
+else if (window.getComputedStyle)
+    family = window.getComputedStyle(p, null).fontFamily;
+
+// 讀取p元素的font-size屬性值
+var size = "";
+if (p.currentStyle)
+    size = p.currentStyle.fontSize;
+else if (window.getComputedStyle)
+    size = window.getComputedStyle(p, null).fontSize;
+
+// 讀取p元素的color屬性值
+var color = "";
+if (p.currentStyle)
+    color = p.currentStyle.color;
+else if (window.getComputedStyle)
+    color = window.getComputedStyle(p, null).color;
+	
+document.write("p元素的font-family屬性值 = " + family + "<br />" + 
+  	"p元素的font-size屬性值 = " + size + "<br />" + 
+	"p元素的color屬性值 = " + color); 
+// ]]>
+</script>
+</body>
+</html>

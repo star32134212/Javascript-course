@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>元素置中</title>
+<style type="text/css">
+/* h1 {text-align: center;} */
+
+div#container1 {
+  width: 500px;
+  margin: auto; /* margin-left: auto;  margin-right: auto; */
+}
+div#container2 {
+  position: absolute;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+}
+div#container {
+	width: 500px;
+	text-align: center;
+	margin-top: 200px;
+}
+</style>
+</head>
+<body>
+	<div id="container1">
+	  <h1>元素置中</h1>
+	  <p>
+		讓固定寬度(註)元素置中的方法是指定元素的 margin-left 與 margin-right 屬性都是 auto。
+		(註: 有設定元素的width)
+	  </p>
+	</div>
+	<div id="container2">
+	  <h1>元素置中</h1>
+		另一種方法是使用絕對定位來指定元素的位置，
+		讓其距離瀏覽器視窗左邊界 50% 視窗寬度的位置。
+	</div>
+	<div id="container">
+	  <h1>內容置中</h1>
+	  <p>
+		元素的 text-align 屬性為 center是設定網頁內容置中，不是元素本身置中。
+		元素的 text-align 屬性為 center是設定網頁內容置中，不是元素本身置中。
+	  </p>
+	</div>
+</body>
+</html>

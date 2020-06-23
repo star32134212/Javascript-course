@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html140/strict.dtd">
+<html><head>
+<meta http-equiv=content-type content="text/html; charset=Big5">
+<title>Sample Page!</title>
+</head>
+<body>
+<p id="p1">Welcome to<B> DOM </B>World! </p>
+<script language="JavaScript" type="text/javascript">
+<!--
+function nodeStatus(node)
+{
+  var temp="";
+  if(node.nodeName!=null)
+  {
+    temp+="nodeName: "+node.nodeName+"\n";
+  }
+  else temp+="nodeName: null!\n";
+  if(node.nodeType!=null)
+  {
+    temp+="nodeType: "+node.nodeType+"\n";
+  }
+  else temp+="nodeType: null\n";
+  if(node.nodeValue!=null)
+  {
+    temp+="nodeValue: "+node.nodeValue+"\n\n";
+  }
+  else temp+="nodeValue: null\n\n";
+  return temp;
+}
+//輸出節點樹相關資訊
+//返回id屬性值為p1的元素節點
+var parentElement=document.getElementById('p1');
+var msg="insertBefore方法之前:\n"
+msg+=nodeStatus(parentElement);
+//返回p1的第一個孩子，即文字節點“Welcome to”
+var targetElement=parentElement.firstChild;
+msg+=nodeStatus(targetElement);
+//返回文字節點“Welcome to”的下一個同父節點，即元素節點B
+var currentElement=targetElement.nextSibling;
+msg+=nodeStatus(currentElement);
+//返回元素節點P的最後一個孩子，即文字節點“World!”
+currentElement=parentElement.lastChild;
+msg+=nodeStatus(currentElement);
+//生成新文字節點“New Text”，並插入到文字節點“Welcome to”之前
+var newTextNode= document.createTextNode("New Text");
+parentElement.insertBefore(newTextNode,targetElement);
+msg+="insertBefore方法之後:\n"+nodeStatus(parentElement);
+//返回p1的第一個孩子，即文字節點“NUDT YSQ”
+targetElement=parentElement.firstChild;
+msg+=nodeStatus(targetElement);
+//返回文字節點“Welcome to”的下一個同父節點，即元素節點“Welcome to”
+var currentElement=targetElement.nextSibling;
+msg+=nodeStatus(currentElement);
+//返回元素節點P的最後一個孩子，即文字節點“World!”
+currentElement=parentElement.lastChild;
+msg+=nodeStatus(currentElement);
+alert(msg);
+//-->
+</script>
+</body></html>

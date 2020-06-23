@@ -1,0 +1,55 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+// 可便引數個數的函式範例
+function sum() {
+	var i,total=0;
+	for (i=0; i<arguments.length; i++) {
+		total = total + arguments[i];
+	}
+	return total;
+}
+document.write(sum(10,10)+"<br>");
+document.write(sum(10,20,30)+"<br>");
+
+function list() { // list.arguments;
+	let type, start=0;
+	if (typeof(arguments[0]) == "undefined") {type = "u";}
+	else if (!(arguments[0] == "u" || arguments[0] == "o")) { type = "u";}
+	else {type = arguments[0]; start = 1;} 
+	document.write("<" + type + "l>");
+	for (let i=start; i<arguments.length; i++)
+		document.write("<li>" + arguments[i] + "</li>");
+	document.write("</" + type + "l>");
+}
+</script>
+</head>
+<body>
+<h2 align=center>可接受不同輸入個數的函數</h2>
+<hr>
+以「list("u", "香蕉", "橘子", "蘋果")」產生的無序列表：
+<script>
+list("教務處", "學務處", "總務處");
+list("u", "香蕉", "橘子", "蘋果", "芭樂");
+list("u", "鳯梨", "西瓜");
+</script>
+
+以「list("o", "冠軍", "亞軍", "季軍", "墊底")」產生的有序列表：
+<script>
+list("o", "冠軍", "亞軍", "季軍", "墊底");
+
+var sum = function () {
+	for (var i=0,total=0; i<arguments.length; i++) {
+		total+=arguments[i];
+	}
+	return (total);
+}
+document.write(sum(1,2,3)+"<br>");
+document.write(sum(20,30,25,1,8)+"<br>");
+
+</script>
+
+<hr>
+</body>
+</html>

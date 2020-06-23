@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>addClass()</title>
+<style type="text/css">
+.headline   {color: red; font-size: 24px;}
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script language="JavaScript">
+$(document).ready(function() {
+   $('h2').addClass('headline');
+});
+</script>
+</head>
+<body>
+<h2 class="">使用 addClass</h2>
+<a href="javascript: $('h2').addClass('headline');">設定標題 class 為 headline</a> |
+<a href="javascript: $('h2').removeClass();">移除標題的 class</a> |
+<a href="javascript: $('h2').toggleClass('headline');">切換 class</a>
+</body>
+</html>

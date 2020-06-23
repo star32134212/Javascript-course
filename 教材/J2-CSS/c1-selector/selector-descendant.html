@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>descendant</title>
+<style type="text/css">
+h1 em { color: purple }
+
+li {color: green;}
+ul > li { color: pink; }
+
+li em {color: red;}
+li a em {color: silver;}
+em {color: blue;}
+h2 em {color: olive;}
+em.h1 { ... }
+</style>
+</head>
+<body>  
+<h1>This headline is <em class="h1">very</em>important</h1> 
+<ul>
+  	<li>item 1-1</li>
+	<li>item 1-2
+		<ol>nested list
+			<li>item 2</li>
+		</ol>
+	</li>
+</ul>
+<li>outside of UL</li>
+
+網頁技術
+  <ul>
+    <li>XHTML</li>
+    <li><em>JavaScript</em></li>
+    <li><a href="http://www.w3.org/Style/CSS/"><em>CSS</em></a></li>
+  </ul>
+  <h1><em>XML</em></h1>
+  <h2><em>PHP</em></h2>
+  <h3><em>ASP.NET</em></h3>
+</body>
+</html>

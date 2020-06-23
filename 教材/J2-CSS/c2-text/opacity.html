@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>opacity</title>
+<style type="text/css">
+img { width: 200px; }
+img#i1 {
+	opacity: 0.4;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+	}
+img#i2 {
+	opacity: 0.6;
+	filter:alpha(opacity=60); /* For IE8 and earlier */
+	}
+img#i3 {
+	opacity: 0.8;
+	filter:alpha(opacity=80); /* For IE8 and earlier */
+	}
+section {
+	width: 600px;
+	border:#000 medium dashed;
+	border-radius: 18px;
+	-moz-border-radius: 18px;
+	-webkit-border-radius: 18px;
+}
+</style>
+</head>
+<body>
+<img id="i1" src="opacity.jpg" />
+<img id="i2" src="opacity.jpg" />
+<img id="i3" src="opacity.jpg" />
+<section>
+  <div style="padding:20px;background:navy; opacity:0;"></div>
+  <div style="padding:20px;background:navy; opacity:.2;"></div>
+  <div style="padding:20px;background:navy; opacity:0.4;"></div>
+  <div style="padding:20px;background:navy; opacity:0.6;"></div>
+  <div style="padding:20px;background:navy; opacity:0.8;"></div>
+  <div style="padding:20px;background:navy; opacity:1;"></div>
+</content>
+</body>
+</html>

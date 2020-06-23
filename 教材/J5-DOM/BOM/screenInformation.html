@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<title>Screen Information</title>
+<script>
+function getInfo() //根據瀏覽器類型選用適當的 script 
+{ 
+	document.write("<br>螢幕資訊 : ("+navigator.appName+" 類)<br><br>通用屬性 : <br>");
+	document.write("screen.height = "+screen.height+" (螢幕高)<br>");
+	document.write("screen.width = "+screen.width+" (螢幕寬))<br>");
+	document.write("screen.availHeight = "+screen.availHeight+" (可用-高) <br>");
+	document.write("screen.availWidth = "+screen.availWidth+" (可用-寬) <br>");
+	document.write("screen.colorDepth = "+screen.colorDepth+" (色彩品質) <br>");
+ 	// 判斷瀏覽器類型
+	if (navigator.appName=="Netscape") // 瀏覽器為 Netscape screen 類: 如 Chrome, Firefox
+		getNNInfo();
+	else if (navigator.appName=="Microsoft Internet Explorer") //瀏覽器為 IE
+		getIEInfo();
+	else
+		alert("對不起，不支援您的瀏覽器類型!");
+}
+function getNNInfo()      //若用戶端瀏覽器為 NN，則觸發此函數
+{
+	document.write("擴充屬性 : <br>");
+	document.write("screen.availLeft : "+screen.availLeft+"<br>");
+	document.write("screen.availTop = "+screen.availTop+"<br>");
+	document.write("screen.pixelDepth = "+screen.pixelDepth+"<br>");
+}
+function getIEInfo() //若用戶端瀏覽器為 IE，則觸發此函數
+{
+	document.write("擴充屬性 : <br>");
+	document.write("screen.bufferDepth = "+screen.bufferDepth+"<br>");
+}
+</script>
+</head>
+<body>
+	<script>getInfo();</script>
+</body>
+</html>

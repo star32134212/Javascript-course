@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!--meta http-equiv="Content-Type" content="text/html; charset=big5"-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>iFrame  Example</title>
+</head>
+<body>  
+<h1>iframe demo 展示</h1>
+<!-- 影像地圖 -->
+<map id="nctu" name="nctu">
+    <area shape="rect" coords="176,96,194,112" 
+	 href="h5-map1.html" target="note" alt="體育館" title="體育館" >
+    <area shape="circle" coords="261,177,16" 
+	 href="h5-map2.html" target="note" alt="圖書館" title="圖書館" >
+    <area shape="poly" coords="228,124,228,140,250,140,250,130,240,130,240,124" 
+	 href="h5-map3.html" target="note" alt="資訊中心" title="資訊中心" >
+</map>
+
+<!-- 製作影像地圖所用的圖片 -->
+<figure >
+	<img src="image/mapNCTU.gif" usemap="#nctu" style="width:400px;" alt="交大地圖">
+	<figcaption style="width:400px; text-align:center; font-weight:bold;">交通大學</figcaption>
+</figure>
+
+<iframe id="note" name="note" srcdoc="image map" width="500"  height="438"
+ style="position:absolute; top:0; right:0;" seamless>
+		您的瀏覽器不支援浮動頁框(inline frame)
+</iframe>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Window Move</title>
+<style>
+button { width: 300px; height: 200px; }
+</style>
+</head>
+<body>
+<script>
+function openWin() 
+{
+	myWindow=window.open('','New Window','width=300,height=200');
+	myWindow.document.write("<p>This is 'myWindow'</p>");
+}
+function moveWin(dir, dist)
+{
+  var myVert, myHorz;
+
+  if(dir == "vert"){
+	myHorz = 0;
+	myVert = dist;
+  }else{
+	myHorz = dist;
+	myVert = 0;
+  }
+  myWindow.moveBy(myHorz, myVert);
+}
+function shakeWindow(n)
+{
+	for (i=0;i,i<100;i++){
+		myWindow.moveBy(0,n);
+		myWindow.moveBy(n,0);
+		myWindow.moveBy(0,-n);
+		myWindow.moveBy(-n,0);
+	}
+	myWindow.focus();
+}
+</script>
+<table>
+	<tr>
+		<td><a href="javascript:openWin()"><button>
+			<img src="NewWindow.png" /><br>Create a New Window
+			</button></a></td>
+		<td><a href="javascript:moveWin('vert',-3)"><button>
+			<img src="ArrowUp.png" /><br>Move the New Window Up
+			</button></a></td>
+		<td><a href="javascript:myWindow.close()"><button>
+			<img src="Exit.png" /><br>Close the New Window
+			</button></a></td>
+	</tr>
+	<tr>
+		<td><a href="javascript:moveWin('horz',-3)"><button>
+			<img src="ArrowLeft.png" /><br>Move the New Window Left
+			</button></a></td>
+		<td><button><img src="Window.png" /><br>Window Move Operation</button></td>
+		<td><a href="javascript:moveWin('horz',3)"><button>
+			<img src="ArrowRight.png" /><br>Move the New Window Right
+			</button></a></td>
+	</tr>
+	<tr>
+		<td><a href="javascript:shakeWindow(5)"><button>
+			<img src="QuakeGently.png" /><br>Gently Shake the New Window
+			</button></a></td>
+		<td><a href="javascript:moveWin('vert',3)"><button>
+			<img src="ArrowDown.png" /><br>Move the New Window Down
+			</button></a></td>
+		<td><a href="javascript:shakeWindow(20)"><button>
+			<img src="QuakeHeavily.png" /><br>Heavily Shake the New Window
+			</button></a></td>
+	</tr>
+</body>
+</html>

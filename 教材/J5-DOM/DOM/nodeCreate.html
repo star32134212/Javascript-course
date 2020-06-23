@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html140/strict.dtd">
+<html><head>
+<meta http-equiv=content-type content="text/html; charset=Big5">
+<title>Sample Page!</title>
+</head>
+<script language="JavaScript" type="text/javascript">
+<!--
+function nodeStatus(node)
+{
+  var temp="";
+  if(node.nodeName!=null)
+  {
+    temp+="nodeName: "+node.nodeName+"\n";
+  }
+  else temp+="nodeName: null!\n";
+  if(node.nodeType!=null)
+  {
+    temp+="nodeType: "+node.nodeType+"\n";
+  }
+  else temp+="nodeType: null\n";
+  if(node.nodeValue!=null)
+  {
+    temp+="nodeValue: "+node.nodeValue+"\n\n";
+  }
+  else temp+="nodeValue: null\n\n";
+  return temp;
+}
+function MyTest( )
+{
+  //產生p元素節點和新文字節點
+  var newParagraph = document.createElement("p");
+  var newTextNode= document.createTextNode(document.MyForm.MyField.value);
+  var msg=nodeStatus(newParagraph);
+  //msg+=nodeStatus(newTextNode);
+  //alert(msg);
+  var parentElements = document.getElementsByTagName("body");
+  var parentElement = parentElements[0];
+  msg=nodeStatus(parentElement.firstChild);
+  alert(msg);
+  parentElement.insertBefore(newTextNode,parentElement.firstChild);
+}
+-->
+</script>
+<body>
+<form name="MyForm">
+  <input type="text" name="MyField" value="My Sample">
+  <input type="button" value="TestButton" onclick="MyTest()">
+</body></html>

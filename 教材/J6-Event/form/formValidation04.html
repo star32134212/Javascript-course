@@ -1,0 +1,43 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>return false</title>
+<script language="JavaScript" type="text/javascript">
+function checkInput() {
+	var msg = "\n系統提示資訊 : \n\n";
+	var o = document.getElementById("username");
+	var p = document.getElementById("password");
+
+	if (o.value == '') {   
+		msg += "您輸入的帳號為空,請重新填寫並確認! \n";
+		alert(msg);
+		u.focus();
+		return false;
+	}
+
+	if (p.value=='') {
+		msg += "您輸入的密碼為空,請重新填寫並確認! \n";
+		alert(msg);   
+		p.focus()
+		return false;
+	}
+}
+
+function init() {
+	var o = document.getElementById("form1");
+	o.addEventListener("submit", checkInput);
+}
+
+window.onload = init;
+</script>
+</head>
+<body>
+<form id="form1" method="post" action="">
+帳號:<input type="text" name="username" id="username" size="12" ><br>
+密碼:<input type="password" name="password" id="password" size="12"><br>
+<input type="submit" value="提交" name="btnSubmit" >
+<input type="reset" value="重設" name="btnReset" >
+</form>
+</body>
+</html>

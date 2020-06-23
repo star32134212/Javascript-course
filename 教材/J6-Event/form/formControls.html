@@ -1,0 +1,142 @@
+﻿<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<style>
+body { text-align:center; }
+table { width:600px; margin: auto; border: 2px outset;}
+caption { font-size:2em;}
+th,td { border-bottom: 2px solid grey; text-align:center; }
+div { width:600px; margin: auto; text-align: left; border: 2px inset; padding:5px 10px;}
+</style>
+<script>
+/*
+modified by W.H. Liao, 2012/5/22
+*/
+function displayHTMLCode(control) {
+	var oDiv = document.getElementById("HTMLCode");
+	oDiv.innerHTML = "<xmp class=code>" + control.outerHTML + "</xmp>";
+}
+
+function displayControlProperty(control){
+	var property = new Array(), i=0, prop, msg;
+	for (prop in control) property[i++]=prop;
+	property.sort();
+	for (i=0, msg=""; i<property.length; i++)  {
+		try {
+			msg += control.type+'.<span class="key">'+property[i]+'</span> = <span class="value">'+control[property[i]]+'</span><br>';
+		} catch (error) {
+			msg += control.type+'.<span class="key">'+property[i]+'</span> = <span class="value">unusable</span><br>';
+		}
+	}
+	var oDiv = document.getElementById("controlProperty");
+	oDiv.innerHTML = msg;
+}
+</script>
+</head>
+<body>
+<form onsubmit="Javascript:return false;">
+<table>
+	<caption>控制元件一覽表</caption>
+	<tr><th>Type<th>Example<th>原始碼<th>Property
+	<tr>
+		<td>Text</td>
+		<td><input type="text" id="username" value="goodname"></td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].username)">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].username)">display property</a></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input type="password" id="myPassword" value="nctuitsc"></td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].myPassword)">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].myPassword)">display property</a></td>
+	</tr>
+	<tr>
+		<td>Radio</td>
+		<td>
+			<input type="radio" name="gender" value="男">男&nbsp;&nbsp;&nbsp;
+			<input type="radio" name="gender" value="女">女
+		</td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].elements['gender'][0])">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].elements['gender'][0])">display property</a></td>
+	</tr>
+	<tr>
+		<td>Checkbox</td>
+		<td><input type="checkbox" name="chkOK" value="知道了">知道了</td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].chkOK)">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].chkOK)">display property</a></td>
+	</tr>
+	<tr>
+		<td>Checkbox</td>
+		<td>
+			<input type="checkbox" name="chkHobby" value="上網">上網
+			<input type="checkbox" name="chkHobby" value="閱讀">閱讀
+		</td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].elements['chkHobby'][0])">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].elements['chkHobby'][0])">display property</a></td>
+	</tr>
+	<tr>
+		<td>Select (multiple)</td>
+		<td>
+			<select id="selDept">
+				<option value="資工系" selected>資工系</option>
+				<option value="資管系">資管系</option>
+				<option value="資財系">資財系</option>
+			</select>
+		</td>
+		<td><a href="javascript:displayHTMLCode(document.getElementById('selDept'))">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.getElementById('selDept'))">display property</a></td>
+	</tr>
+	<tr>
+		<td>Select (single)</td>
+		<td>
+			<select id="selDepts" multiple>
+				<option value="資工系" selected>資工系</option>
+				<option value="資管系">資管系</option>
+				<option value="資財系">資財系</option>
+			</select>
+		</td>
+		<td><a href="javascript:displayHTMLCode(document.getElementById('selDepts'))">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.getElementById('selDepts'))">display property</a></td>
+	</tr>
+	<tr>
+		<td>Text Area</td>
+		<td><textarea id="myArea">文字區</textarea></td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].myArea)">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].myArea)">display property</a></td>
+	</tr>
+	<tr>
+		<td>Button</td>
+		<td><input type="button" id="btnNormal" value="請按我"></td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].btnNormal)">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].btnNormal)">display property</a></td>
+	</tr>
+	<tr>
+		<td>File</td>
+		<td><input type="file" id="myFile" value="fileName"></td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].myFile)">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].myFile)">display property</a></td>
+	</tr>
+	<tr>
+		<td>Hidden</td>
+		<td><input type="hidden" id="secret" value="hidden value">（隱藏控制元件,看不見!）</td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].secret)">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].secret)">display property</a></td>
+	</tr>
+	<tr>
+		<td>Reset</td>
+		<td><input type="Reset" id="btnReset" value="重設"></td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].btnReset)">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].btnReset)">display property</a></td>
+	</tr>
+	<tr>
+		<td>Submit</td>
+		<td><input type="submit" id="btnSubmit" value="送出表單"></td>
+		<td><a href="javascript:displayHTMLCode(document.forms[0].btnSubmit)">HTML Code</a></td>
+		<td><a href="javascript:displayControlProperty(document.forms[0].btnSubmit)">display property</a></td>
+	</tr>
+</table>
+</form>
+<div id="HTMLCode"></div>
+<div id="controlProperty"></div>
+</body>
+</html>

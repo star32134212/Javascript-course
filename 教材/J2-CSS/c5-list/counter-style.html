@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>設定清單編號的號碼</title>
+<style type="text/css">
+@counter-style triangle {
+  system: cyclic;
+  symbols: '\25B6'; /* 25B6, 25BA */
+  suffix: " ";
+}
+li {
+	list-style-type: triangle;
+}
+</style>
+</head>
+<body>
+<ol>
+	<li>item 1</li>
+	<li>item 2</li>
+	<li>item 3</li>
+</ol>
+</body>
+</html>

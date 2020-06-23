@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>border style</title>
+<style type="text/css">
+body {font-size:16pt; color:blue;}
+div { margin:20px; border-width: 0.1cm; }
+#br1 {
+	border-top-style: dotted;
+	border-top-color: #ff00ff;
+	} /* 設定框線的厚度為0.1cm, 顏色為紫紅色, 樣式為小點虛線 */
+#br2 {
+	border-style: dashed;
+	border-color: #32cd32;
+	} /*設定框線的厚度為0.1cm, 顏色為來姆綠, 樣式為大點虛線 */
+#br3 {
+	border-style: solid;
+	border-color: #ff00ff;
+	} /*設定框線的厚度為0.1cm, 顏色為紫紅色, 樣式為實線*/
+#br4 {
+	border-style: double;
+	border-color: #32cd32;
+	} /*設定框線的厚度為0.1cm, 顏色為來姆綠, 樣式為雙直線*/
+#br5 {
+	border-style: groove;
+	border-color: #ff00ff;
+	} /*設定框線的厚度為0.1cm, 顏色為紫紅色, 樣式為3d凹線*/
+#br6 {
+	border-style: ridge;
+	border-color: #32cd32;
+	} /*設定框線的厚度為0.1cm, 顏色為來姆綠, 樣式為3d凸線*/
+#br7 {
+	border-style: inset;
+	border-color: #ff00ff;
+	} /*設定框線的厚度為0.1cm, 顏色為紫紅色, 樣式為3d框入線*/
+#br8 {
+	border-style: outset;
+	border-color: #32cd32;
+	} /*設定框線的厚度為0.1cm, 顏色為來姆綠, 樣式為3d隆起線*/
+</style>
+</head>
+<body>
+    <div id="br1">dotted 框線為厚度0.1cm, 紫紅色, 小點虛線</div>
+	<div id="br2">dashed 框線為厚度0.1cm, 來姆綠, 大點虛線</div>
+    <div id="br3">solid 框線為厚度0.1cm, 紫紅色, 實線</div>
+    <div id="br4">double 框線為厚度0.1cm, 來姆綠, 雙實線</div>
+    <div id="br5">groove 框線為厚度0.1cm, 紫紅色, 3d凹線</div>
+    <div id="br6">ridge 框線為厚度0.1cm, 來姆綠, 3d凸線</div>
+    <div id="br7">inset 框線為厚度0.1cm, 紫紅色, 3d框入線</div>
+    <div id="br8">outset 框線為厚度0.1cm, 來姆綠, 3d隆起線</div>
+    <div style="border-style: hidden;">hidden</div>
+    <div style="border-style: none;">none</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>css: multiple class</title>
+<style>
+p.right {
+	text-align:right;
+	}
+p.center {
+	text-align:center;
+	color: purple;
+	}
+.center {
+	text-align:center;
+	color: green;
+	}
+
+.setcolor {color: pink;}
+
+h1.setcolor {color: blue;}
+p.setcolor {color: green;}
+</style>
+</head>
+<body>
+<p class="right"> right-aligned paragraph</p>
+<p class="center"> center-aligned paragraph</p>
+
+<h1 class="center">heading center-aligned</h1>
+<p class="center">paragraph center-aligned too</p>
+
+<h1 class="setcolor">XHTML</h1>
+<p class="setcolor">CSS</p>
+<h2 class="setcolor">JavaScript</h2>
+<ol class="setcolor">
+    <li>SMIL</li>
+    <li>RSS</li>
+</ol>
+<p>XML</p>
+<p>PHP</p>
+</body>
+</html>

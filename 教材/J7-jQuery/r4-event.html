@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+$(document).on("pageinit", "#home", function () {
+    $('#tapthis').on("tap", function () {
+      $('#status').text('tap');
+    });
+    $('#tapholdthis').on("taphold", function () {
+      $('#status').text('taphold');
+    });
+    $('#swipethis').on("swipe", function () {
+      $('#status').text('swipe');
+    });
+    $('#swipeleftthis').on("swipeleft", function () {
+      $('#status').text('swipeleft');
+    });
+    $('#swiperightthis').on("swiperight", function () {
+      $('#status').text('swiperight');
+    });
+  });
+});
+</script>
+</head>
+<body>
+<div data-role="page" id="home" data-theme="d">
+  <div data-role="header">
+   <div data-role="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">關於我</a></li>
+      <li><a href="http://www.google.com/">Google</a></li>
+    </ul>
+  </div>
+ </div>
+  <div data-role="main" class="ui-content">
+	<a href="#about">Go to About Page</a>
+  </div>
+  <div data-role="footer">
+    <h1>&copy;2015</h1>
+  </div>
+</div>
+<div data-role="page" id="about">
+  <div data-role="header">
+    <h1>關於我</h1>
+	<a href="#home" class="ui-btn ui-icon-back ui-btn-icon-right" data-rel="back">回首頁</a>
+  </div>
+  <div data-role="main" class="ui-content">
+		<span id="status">狀態顯示</span>
+		<br>
+		<br>
+		<div id="tapthis" class="test">tap</div>
+		<div id="tapholdthis" class="test">tap hold</div>
+		<div id="swipethis" class="test">swpie</div>
+		<div id="swipeleftthis" class="test">swipe left</div>
+		<div id="swiperightthis" class="test">swipe right</div>  </div>
+  <div data-role="footer">
+    <h1>&copy;2015</h1>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html140/strict.dtd">
+<html><head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<title>Sample Page!</title>
+<script language="JavaScript" type="text/javascript">
+<!--
+var index=0;
+var AnchorArray=new Array("StartAnchor","FirstAnchor","SecondAnchor",
+                          "ThirdAnchor","ForthAnchor");
+function GoNext()
+{
+  window.location.hash=AnchorArray[index];
+  if(index<5)
+  {
+    index=index+1;
+  }
+  else
+    index=0;
+  return;
+}
+//-->
+</script>
+</head>
+<body>
+<center>
+<p><b>錨點間跳轉實例</b></p>
+<p><a id="StartAnchor">Start Anchor</a></p>
+<p><a id="FirstAnchor">First Anchor</a></p>
+<p><a id="SecondAnchor">Second Anchor</a></p>
+<p><a id="ThirdAnchor">Third Anchor</a></p>
+<p><a id="ForthAnchor">Forth Anchor</a></p>
+<form name="MyForm">
+  <input type="button" name="MyBut" value="使用hash進行錨點轉換" onclick= "GoNext()"><br>
+</form>
+</center>
+</body>
+</html>

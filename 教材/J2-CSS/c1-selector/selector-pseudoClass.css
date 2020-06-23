@@ -1,0 +1,28 @@
+body { font-size: 24px; line-height: 30px; }
+
+//li:first-child {color: yellow;}
+li:nth-child(even){color: green;}
+//li:last-child {color: purple;}
+a:link { border: 1px solid blue; color: green; text-decoration: none;}
+a:visited {color: grey; text-decoration: line-through;}
+
+a:focus {color: red; font-size: 48px; text-decoration:none;}
+a:hover {
+	background-color: blue;
+	color: white; text-decoration: overline;
+	padding: 2px;
+	border: solid 1px red; 
+	}
+a:active {
+	background-color: pink;	color: olive;
+	font-size: 200%;
+	text-decoration:none;
+	}
+/*
+*/
+/*
+a.newspaper:link { color: #990000; }
+a.newspaper:visited { color: #000066; }
+a.newspaper:hover { color: #3F5876; }
+a.newspaper:active { color:#990000; }
+*/

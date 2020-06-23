@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</head>
+
+<body onBeforeUnload="openNewWin()">
+
+<script>
+function openNewWin(){
+	// 注意: 這個例子用看就好, 不要執行
+	//
+	// 如果視窗名稱相同，就無法一再開新視窗。
+	// 因此使用亂數來當視窗名稱
+	// 所以關一個就會再生一個新的出來，永遠關不掉
+	
+	winName = Math.floor(Math.random()*10000);
+	window.open('onBeforeUnload02.html', winName, 'location=1,toolbar=1,menubar=1,status=1');
+}
+</script>
+
+<h2 align=center>打不死的蟑螂</h2>
+<hr>
+你關不掉我~XD
+
+</body>
+</html>

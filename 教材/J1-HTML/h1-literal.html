@@ -1,0 +1,253 @@
+﻿<!DOCTYPE HTML>
+<head>
+<title>特殊字元</title>
+<style>
+div#literal {
+float: left;
+margin: 0 10px 10px 0;
+}
+div#describe {
+_margin: 0 0 0 500px;
+padding: 0 1em;
+}
+table {
+margin: 0 auto;
+text-align: center;
+cell-padding: 2px;
+border: 1px solid blue;
+}
+th { 
+color: white;
+background-color: #336699;
+}
+</style>
+</head>
+<body>
+<div id="literal">
+<h3 style="text-align:center">特殊字元</h3>
+<table>
+<caption>在 windows 中文輸入法下可直接以 unicode 來輸入特殊字元:
+按「`」，接著按 U，接著輸入 Unicode
+</caption>
+<tr>
+<th>Entity</th><th>Literal</Th><th>Unicode</Th><th>Description</Th>
+</tr>
+<tr><!-- ℡ -->
+<td>&amp;#x2121;</td><td>&#x2121;</td><td>2121</td><td>電話</td>
+</tr><!-- ☎ -->
+<tr><td>&amp;#x260E;</td><td>&#x260E;</td><td>260E</td><td>電話</td>
+</tr><!-- ☏ -->
+<tr><td>&amp;#x260F;</td><td>&#x260F;</td><td>260F</td><td>電話</td>
+</tr><!-- ✆ -->
+<tr><td>&amp;#x2706;</td><td>&#x2706;</td><td>2706</td><td>電話</td>
+</tr><!-- 📞 -->
+<tr><td>&amp;#x1F4DE;</td><td>&#x1F4DE;</td><td>1F4DE</td><td>電話</td>
+</tr>
+<tr>
+<td>&amp;amp;</td><td>&amp;</td><td></td><td>可用於顯示其它特殊字元</td>
+</tr>
+<tr>
+<td>&amp;gt;</td><td>&gt;</td><td></td><td>大於符號或顯示標記</td>
+</tr>
+<tr>
+<td>&amp;lt;</td><td>&lt;</td><td></td><td>小於符號或顯示標記</td>
+</tr>
+<tr>
+<td>&amp;quot;</td><td>&quot;</td><td></td><td>引號</td>
+</tr>
+<tr>
+<td>&amp;emsp;</td><td>&emsp;</td><td></td><td>全形字空白</td>
+</tr>
+<tr>
+<td>&amp;ensp;</td><td>&ensp;</td><td></td><td>半形字空白</td>
+</tr>
+<tr>
+<td>&amp;nbsp;</td><td>&nbsp;</td><td>00A0</td><td>no-break space 不斷行的空白</td>
+</tr>
+<tr>
+<td>&amp;iexcl;</td><td>&iexcl;</td><td>00A1</td><td>inverted exclamation&nbsp;</td>
+</tr>
+<tr>
+<td>&amp;cent;</td><td>&cent;</td><td>00A2</td><td>cent sign&nbsp;</td>
+</tr>
+<tr>
+<td>&amp;pound;</td><td>&pound;</td><td>00A3</td><td>pound sign</td>
+</tr>
+<tr>
+<td>&amp;curren;</td><td>&curren;</td><td>00A4</td><td>intl. currency sign</td>
+</tr>
+<tr>
+<td>&amp;yen;</td><td>&yen;</td><td>00A5</td><td>yen sign</td>
+</tr>
+<tr>
+<td>&amp;sect;</td><td>&sect;</td><td>00A7</td><td>section sign</td>
+</tr>
+<tr>
+<td>&amp;uml;</td><td>&uml;</td><td>00A8</td><td>diaeresis (umlaut)</td>
+</tr>
+<tr>
+<td>&amp;copy;</td><td>&copy;</td><td>00A9</td><td>copyright版權</td>
+</tr>
+<tr>
+<td>&amp;ordf;</td><td>&ordf;</td><td>00AA</td><td>feminine ordinal</td>
+</tr>
+<tr>
+<td>&amp;laquo;</td><td>&laquo;</td><td>00AB</td><td>left double-angle quote</td>
+</tr>
+<tr>
+<td>&amp;not;</td><td>&not;</td><td>00AC</td><td>not</td>
+</tr>
+<tr>
+<td>&amp;trade;</td><td>&trade;</td><td></td><td>trademark 商標</td>
+</tr>
+<tr>
+<td>&amp;reg;</td><td>&reg;</td><td>00AE</td><td>registered trademark 已註冊</td>
+</tr>
+<tr>
+<td>&amp;macr;</td><td>&macr;</td><td>00AF</td><td>macron</td>
+</tr>
+<tr>
+<td>&amp;deg;</td><td>&deg;</td><td>00B0</td><td>degree</td>
+</tr>
+<tr>
+<td>&amp;plusmn;</td><td>&plusmn;</td><td>00B1</td><td>plus-minus sign</td>
+</tr>
+<tr>
+<td>&amp;acute;</td><td>&acute;</td><td>00B4</td><td>acute accent</td>
+</tr>
+<tr>
+<td>&amp;micro;</td><td>&micro;</td><td>00B5</td><td>micro</td>
+</tr>
+<tr>
+<td>&amp;para;</td><td>&para;</td><td>00B6</td><td>pilcrow (paragraph) sign</td>
+</tr>
+<tr>
+<td>&amp;middot;</td><td>&middot;</td><td>00B7</td><td>middle dot (Georgian comma)</td>
+</tr>
+<tr>
+<td>&amp;cedil;</td><td>&cedil;</td><td>00B8</td><td>cedilla</td>
+</tr>
+<tr>
+<td>&amp;ordm;</td><td>&ordm;</td><td>00BA</td><td>masculine ordinal</td>
+</tr>
+<tr>
+<td>&amp;raquo;</td><td>&raquo;</td><td>00BB</td><td>right double-angle quote</td>
+</tr>
+<tr>
+<td>&amp;iquest;</td><td>&iquest;</td><td>00BF</td><td>inverted question</td>
+</tr>
+</table>
+<table>
+<tr>
+<td>α</td><td>&amp;alpha; </td>
+<td>Γ</td><td>&amp;Gamma;</td>
+</tr>
+<tr>
+<td>β</td><td>&amp;beta;</td>
+<td>Λ</td><td>&amp;Lambda;</td>
+</tr>
+<tr>
+<td>γ</td><td>&amp;gamma;</td>
+<td>Σ</td><td>&amp;Sigma;</td>
+</tr>
+<tr>
+<td>π</td><td>&amp;pi;</td>
+<td>Π</td><td>&amp;Pi;</td>
+</tr>
+<tr>
+<td>σ</td><td>&amp;sigma;</td>
+<td>Ω</td><td>&amp;Omega;</td>
+</tr>
+<tr>
+<td>ς</td><td colSpan="3">&amp;sigmaf; ("final" sigma, lowercase   only)</td>
+</tr>
+</table>
+<table>
+<caption>Other common math symbols:</caption>
+<tr>
+<td>≠</td><td>&amp;ne;</td>
+<td>′</td><td>&amp;prime;</td>
+</tr><tr>
+<td>≤</td><td>&amp;le;</td>
+<td>″</td><td>&amp;Prime;</td>
+</tr><tr>
+<td>≥</td><td>&amp;ge;</td>
+<td>∂</td><td>&amp;part;</td>
+</tr><tr>
+<td>≡</td><td>&amp;equiv;</td>
+<td>∫</td><td>&amp;int;</td>
+</tr><tr>
+<td>≈</td><td>&amp;asymp;</td>
+<td>∑</td><td>&amp;sum;</td>
+</tr><tr>
+<td>∞</td><td>&amp;infin;</td>
+<td>∏</td><td>&amp;prod;</td>
+</tr><tr>
+<td>√</td><td>&amp;radic;</td><td colSpan="2"></td>
+</tr>
+</table>
+<p>Many of the symbols in the Windows "Symbol" font commonly used for rendering mathematics (such as the   expandable bracket parts) are not present on most other machines, and not even   present in <A title="Unicode" href="http://zh.wikipedia.org/wiki/Unicode">Unicode</A> 3.1 or as HTML named   entities (though they are planned for Unicode 3.2). These are used by products   such as <A title="TtH" href="http://zh.wikipedia.org/w/wiki.phtml?title=TtH&action=edit">TtH</A> to render equations. You should be aware   that if you use these symbols, you are restricting your audience to Windows   users (whether or not that's acceptable is a judgment you will have to make as   an author). </p>
+<p><A name="Other_common_symbols"><strong>Other common symbols </strong></A></p>
+<p>Some characters such as the bullet, <A title="Euro" href="http://zh.wikipedia.org/w/wiki.phtml?title=Euro&action=edit">Euro</A> currency sign, and trade mark sign are   special cases. They are likely to be understood and rendered in some way by many   browsers. Because they are important for international trade, many computers   specifically add them to fonts at some non-standard location and render them   when requested, or else render them in special ways that don't require them to   be present in a font. See below for how your browser renders these: </p>
+<table>
+<tr><td>•</td><td>&amp;bull;</td><td>bullet</td></tr>
+<tr><td>€</td><td>&amp;euro;</td><td>euro currency sign</td></tr>
+<tr><td>™</td><td>&amp;trade;</td><td>trade mark</td></tr>
+</table>
+<table>
+<caption>Other somewhat less commonly   used symbols include these: </caption>
+<tr>
+<td>†</td>
+<td>&amp;dagger;</td>
+<td><A title="Dagger (typography)" href="http://zh.wikipedia.org/w/wiki.phtml?title=Dagger_(typography)&action=edit">dagger</A></td>
+        <TD rowSpan="7"> </TD>
+<td>♠</td>
+<td>&amp;spades;</td>
+<td>black spade   suit</td>
+</tr><tr>
+<td>‡</td>
+<td>&amp;Dagger;</td>
+<td><A title="Dagger (typography)" href="http://zh.wikipedia.org/w/wiki.phtml?title=Dagger_(typography)&action=edit">double dagger</A></td>
+<td>♣</td>
+<td>&amp;clubs;</td>
+<td>black club   suit</td>
+</tr><tr>
+<td>◊</td>
+<td>&amp;loz;</td>
+<td>lozenge</td>
+<td>♥</td>
+<td>&amp;hearts;</td>
+<td>black heart   suit</td>
+</tr><tr>
+<td>←</td>
+<td>&amp;larr;</td>
+<td>leftward arrow</td>
+<td>♦ <em>or</em>♦</td>
+<td>&amp;diams; <em>or</em> (see below)</td>
+<td>red diamond   suit</td>
+</tr><tr>
+<td>↑</td>
+<td>&amp;uarr;</td>
+<td>upward arrow</td>
+<td>‹</td>
+<td>&amp;lsaquo;</td>
+<td>single left-pointing angle   quote</td>
+</tr><tr>
+<td>→</td>
+<td>&amp;rarr;</td>
+<td>rightward   arrow</td>
+<td>›</td>
+<td>&amp;rsaquo;</td>
+<td>single right-pointing angle   quote</td>
+</tr><tr>
+<td>↓</td>
+<td>&amp;darr;</td>
+<td>downward arrow</td>
+<td>‰</td>
+<td>&amp;permil;</td>
+<td><A title="Per mille sign" href="http://zh.wikipedia.org/w/wiki.phtml?title=Per_mille_sign&action=edit">per mille   sign</A></td>
+</tr>    </TBODY>
+</table>
+</div>
+</body>
+</html>

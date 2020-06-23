@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>undefined 的範例</title>
+</head>
+
+<body>
+<h2 align=center>undefined 的範例</h2>
+<hr>
+
+<script>
+// notDeclare 變數未經過宣告，所以無值
+// 此時 typeof(notDeclared) 會傳回 "undefined" 字串
+document.write("notDeclared 未被宣告<br>");
+document.write("typeof(notDeclared)="+typeof(notDeclared)+"<br>");
+document.write("typeof(notDeclared) == \"undefined\" is ",(typeof(notDeclared) == "undefined"), "<br>");
+
+// declare 變數只經過宣告，但尚未初始化，它的值是 undefined（非字串！）
+// 此時 typeof(declared) 仍會傳回 "undefined" 字串
+var declared;
+document.write("declared 已宣告但未被啟始<br>");
+document.write("typeof(declared)="+typeof(declared)+"<br>");
+document.write("(declared==undefined) is ",(declared==undefined), "<br>");
+</script>
+
+<hr>
+</body>
+</html>

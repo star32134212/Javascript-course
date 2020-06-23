@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 align=center>以遞迴方式進行階乘函數的計算</h2>
+<hr>
+
+<script>
+function factorial(n){		// 以遞迴方式進行階乘函數的計算
+	if (n==0) return(1);	// 結束條件
+	return(n*factorial(n-1));	// 遞迴呼叫
+}
+document.write("factorial(5) = " + factorial(5) + "<br>");
+
+var fact = factorial;
+document.write("fact(5) = " + fact(5) + "<br>");
+factorial = null;
+document.write("fact(5) = " + fact(5) + "<br>");
+
+var factorial = function(n){		// 以遞迴方式進行階乘函數的計算
+	if (n==0) return(1);	// 結束條件
+	return(n*factorial(n-1));	// 遞迴呼叫
+}
+document.write("factorial(5) = " + factorial(5) + "<br>");
+var fact=factorial;
+document.write("1st:fact(5)=" + fact(5) + "<br>");
+factorial=null;
+document.write("2nd:fact(5)=" + fact(5) + "<br>");
+
+var factorial = function inside(n){		// 以遞迴方式進行階乘函數的計算
+	if (n==0) return(1);	// 結束條件
+	return(n*inside(n-1));	// 遞迴呼叫
+}
+var fact=factorial;
+document.write("1st:fact(5)=" + fact(5) + "<br>");
+factorial=null;
+document.write("2nd:fact(5)=" + fact(5) + "<br>");
+//document.write("inside(5)=" + inside(5)); // IE8 work, Chrome not work
+
+for (i=10; i<19; i++)
+document.write(i+"! = "+factorial(i)+"<br>");
+
+function non-recursive(n) {
+	var r = 1;
+	for (i=n; i>0; i--) r = r*i;
+	return r;
+}
+
+
+</script>
+<hr>
+</body>
+</html>

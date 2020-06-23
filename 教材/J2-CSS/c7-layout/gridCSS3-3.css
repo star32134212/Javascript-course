@@ -1,0 +1,21 @@
+.grid {
+	display: grid;
+	/*
+	grid-template:
+	grid-template-areas: "a a b" "c d e" "f g g";
+	grid-template-rows:
+	grid-template-columns:
+	grid-auto-flow:
+	grid-auto-columns:
+	grid-auto-rows:
+	*/
+	grid: "a a b" "c d e" "f g g"; /* shorthand */
+}
+.grid div:nth-child(1) { grid-area: c; }
+.grid div:nth-child(2) { grid-area: a; }
+.grid div:nth-child(3) { grid-area: d; }
+.grid div:nth-child(4) { grid-area: e; }
+.grid div:nth-child(5) { grid-area: g; }
+.grid div:nth-child(8) { grid-area: f; }
+
+

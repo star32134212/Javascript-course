@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>getRules</title>
+<link href="cssRulesGet.css" rel="stylesheet" type="text/css">
+<!--
+ 若使用 chrome 存取本網頁，因 chrome 存取 local css file 有問題,
+ 此網頁需放在 server 端, chrome  方可正常執行!
+-->
+<style type="text/css">
+body{font-family : Arial, sans-serif; color: red;}
+p	{font-family : Courier, monospace; color: purple;}
+body{font-size: 12pt}
+p	{font-size: 24pt; color: blue;}
+h1	{font-size: 64px; color: green;}
+h2	{font-size: 48px; color: olive;}
+</style>
+<script>
+var text = "";
+
+// 巡迴網頁文件的所有CSS樣式表
+for (var i = 0; i < document.styleSheets.length; i++) 
+{
+  text += "第 " + i + " 張樣式表: <br>";
+  // 目前的CSS樣式表
+  var ss = document.styleSheets[i];
+  // 使用W3C或IE來取得樣式表的規則
+  var rules = ss.cssRules ? ss.cssRules : ss.rules;
+  // // 巡迴目前CSS樣式表所有規則
+  for (var j = 0; j < rules.length; j++) 
+  {
+    // 目前的規則
+    var rule = rules[j];
+    // 捨棄 @import 與其他非格式的規則
+	if (!rule.selectorText) continue;
+    
+	// 規則的文字
+    var ruleText = rule.selectorText +" { "+ rule.style.cssText +" }<br />"; 
+    text += ruleText;
+  }
+}
+
+document.writeln(text);
+document.writeln("<br /><br />");
+</script>
+</head>
+<body>
+	樣式和樣式表物件(這是 body 元素的文字)
+	<p>使用 rules/cssRules 取得樣式表 (這是 p 元素的文字)</p> 
+	<h1>這是 h1 元素的文字</h1>
+	<h2>這是 h2 元素的文字</h2>
+	<br><a>link</a>
+</body>
+</html>

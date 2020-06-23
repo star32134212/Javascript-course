@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 align=center>動態下拉式選單：兩框連動</h2>
+<hr>
+
+<script>
+province=new Array();
+province[0]=["武漢市","黃石市","襄樊市","天門市","黃岡市"];	// 湖北
+province[1]=["長沙市","株洲市","湘潭市","吉首市","岳陽市"];	// 湖南
+province[2]=["廣州市","深圳市","珠海市","汕頭市","湛江市"];	// 廣東
+province[3]=["昆明市","大理市","昭通市","曲靖市","宣威市"];	// 雲南
+
+function renew(index){
+	var o = document.getElementById("city");
+	for(var i=0;i<province[index].length;i++)
+		o.options[i]=new Option(province[index][i], province[index][i]);	// 設定新選項
+	o.length=province[index].length;	// 刪除多餘的選項
+}
+</script>
+
+<form name="myForm">
+省份：
+<select size="1" onChange="renew(this.selectedIndex-1);">
+    <option value="chooseProvince" selected="selected">--選擇省份--</option>
+    <option value="湖北">湖北省</option>
+    <option value="湖南">湖南省</option>
+    <option value="廣東">廣東省</option>
+    <option value="雲南">雲南省</option>
+</select>
+
+城市：
+<select id="city" size="1">
+	<option value="">請由左方選取省份
+</select>
+</form>
+
+<hr>
+</body>
+</html>

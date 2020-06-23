@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>表格</title>
+</head>
+<body>
+<!-- 很長的表格, 可搭配用 thead, tfoot 來重覆標題列 -->
+  <!-- 將表格的列分組 -->
+  <table border="1">
+    <caption>學生資料</caption>
+    <!-- thead元素 -->
+    <thead>      
+      <tr>
+        <th colspan="3">人社系</th>
+      </tr>
+      <tr>
+        <th>姓名</th>
+        <th>年齡</th>
+        <th>性別</th>
+      </tr>
+    </thead> 
+    <!-- tfoot元素 -->
+    <tfoot>    
+      <tr>
+        <td colspan="3">交通大學 Copyright(c) 2018 版權所有</td>
+      </tr>
+    </tfoot> 
+    <!-- tbody 元素 -->
+    <tbody>
+      <tr>
+        <td>李大昭</td>
+        <td>25</td>
+        <td>男</td>
+      </tr>
+      <tr>
+        <td>陳一生</td>
+        <td>40</td>
+        <td>男</td>
+      </tr>
+      <tr>
+        <td>王小珍</td>
+        <td>21</td>
+        <td>女</td>
+      </tr>
+      <tr>
+        <td>李小玉</td>
+        <td>28</td>
+	    <td>女</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

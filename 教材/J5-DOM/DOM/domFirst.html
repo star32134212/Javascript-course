@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Tutorial</title>
+</head>
+<body>
+<body>
+<a href="url">DOM Lesson one</a>
+<p>Welcome to <em>DOM</em> World!</p>
+<script language="JavaScript" type="text/javascript">
+  var i,origlength,msg;
+  origlength=document.all.length;
+  msg="物件陣列長度: "+origlength+"\n";
+  for(i=0;i<origlength;i++)
+  {
+    if(i<10)
+    {
+      msg+="型別:"+typeof(document.all[i])+"編號:  "+i+"名稱:"+document.all[i].tagName+"\n";
+    }
+    else
+    {  
+      msg+="型別:"+typeof(document.all[i])+"編號:"+i+"名稱:"+document.all[i].tagName+"\n";
+    }
+  }
+  window.alert(msg);
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<style>
+h2 {text-align: center;}
+.key {color:red;}
+.value {color:green;}
+</style>
+<body>
+<h2>"location" 的性質列表</h2>
+<hr>
+<script>
+for (var i in location)
+	document.writeln('location.<span class="key">'+i+'</span> = <span class="value">'+location[i]+'</span><br>');
+</script>
+<hr>
+</body>
+</html>

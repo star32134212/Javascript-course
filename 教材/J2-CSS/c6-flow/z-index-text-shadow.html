@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>文字的陰影</title>
+<style type="text/css">
+body {
+	font-size:60pt;
+	font-family:標楷體;
+	background-color:#fffff0;
+	}
+.z3 {color:#8b0000; 
+	position:absolute; top:2cm; left:2cm; z-index:3} /*設定文字的主體*/
+.z2 {color:#c0c0c0;
+    position:absolute; top:2.08cm; left:2.08cm; z-index:2} /*設定文字的陰影部份*/
+.z1 {color:#eee;
+    position:absolute; top:2.16cm; left:2.16cm; z-index:1} /*設定文字的陰影部份*/
+p {
+	text-shadow: 4px 4px 8px green;
+	color:#8b0000;
+}
+</style>
+</head>
+<body>
+<div class="z3">網頁設計</div>
+<div class="z2">網頁設計</div>
+<div class="z1">網頁設計</div>
+<br><br>
+<li>CSS3 直接使用 text-shadow 設定</li>
+<p>文字陰影</p>
+</body>
+</html>

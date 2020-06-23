@@ -1,0 +1,26 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Sample Page!</title>
+</head>
+<body>
+<script>
+  var i;
+  var myArray=new Array("First","Second","Third","Forth");
+  for (i=0; i<myArray.length; i++) {
+		document.write("myArray["+i+"] = ");
+		document.write('<span style="color:green">'+myArray[i]+'</span><br>');
+  }
+  document.write("原始陣列(大小:"+myArray.length+")："+myArray+"<br>");
+  myArray.length=3;
+  document.write("after myArray.length=3 : "+myArray+"<br>");
+  myArray.length=4;
+  document.write("after myArray.length=4 : "+myArray+"<br>");
+  myArray[3]="Fifth";
+  document.write('after myArray[3]="Fifth" :'+myArray+"<br>");
+  myArray[9]="tenth";
+  document.write('after myArray[9]="Fifth" :'+myArray+"<br>");
+</script>
+</body>
+</html>

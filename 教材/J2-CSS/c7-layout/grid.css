@@ -1,0 +1,13 @@
+body {
+	width: 80%;
+	margin: auto;
+}
+div {
+	background-color: rgba(0,90,100,0.8);
+	color: white;
+	margin: 20px;
+	padding: 20px;
+	/*border: 1px solid blue;*/
+	border-radius: 5px;
+	text-align: center;
+}

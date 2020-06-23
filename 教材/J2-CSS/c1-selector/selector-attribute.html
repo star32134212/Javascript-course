@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>attribute</title>
+<style type="text/css">
+div#header {}
+div[id^="head"] {}
+div.standard {}
+div[class~="standard"] {}
+
+img[title] {border: 4px solid green;}
+img[title="first image"] {border: 10px dotted red;}
+img[title~="fish"] {border: 6px dashed blue;}
+
+span.aa {color:red;}
+span[class~="aa"] {color:green;}
+
+a[href $= '.pdf'] {
+	padding-right: 24px;
+	background: url(pdf.ico) no-repeat right center;
+	}
+a[href $= '.docx'] {
+	padding-right: 24px;
+	background: url(docx.ico) no-repeat right center;
+	}
+input[type="submit"] {
+	background-color: pink;
+	border-radius: 3px;
+}
+</style>
+</head>
+<body>
+  <img src="image/fish.jpg" alt="大魚" />
+  <img src="image/fish.jpg" alt="大魚" title="first image" />
+  <img src="image/fish.jpg" alt="大魚" title="second fish" />
+  <img src="image/fish.jpg" alt="大魚" title="third fish" />
+  <img src="image/fish.jpg" alt="大魚" title="fourth figure" /><br />
+  <span class="aa bb">abc</span><br />
+  <span class="aa cc">def</span><br />
+  <a href="data.pdf">PDF Download</a><br>
+  <a href="data2.pdf">PDF Download</a><br>
+  <a href="data3.pdf">PDF Download</a><br>
+  <a href="data4.pdf">PDF Download</a><br>
+  <a href="data.pdf">PDF Download</a><br>
+  <a href="data.docx">Word Download</a><br>
+  <input type="submit" value="test">
+</body>
+</html>

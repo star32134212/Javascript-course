@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Node Creationi</title>
+<style>
+body {font-size: xx-large;}
+</style>
+<script type="text/javascript">
+function switchNode() {
+	var node1 = document.getElementById("p1");
+	var parent = node1.parentNode;
+	var node3 = document.getElementById("p3");
+	var node1next = node1.nextSibling;
+	parent.insertBefore( node1, node3 );
+	if ( node1next == null ) parent.appendChild( node3 )
+	else parent.insertBefore( node3, node1next );
+}
+</script>
+</head>
+<body>
+<p id="p1">paragraph1</p>
+<p id="p2">paragraph2</p>
+<p id="p3">paragraph3</p>
+<p id="p4">paragraph4</p>
+<input type="button" value="switch node" onClick="switchNode()" />
+</body>
+</html>

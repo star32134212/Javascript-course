@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>Refresh Page!</title>
+		<script language="JavaScript" type="text/javascript">
+			function softRefresh() { history.go(0); }
+			function hardRefresh() { location.reload(true); }
+		</script>
+	</head>
+	<body style="text-align:center;">
+		<p>網頁更新</p>
+		<form name="myForm">
+		  <p>姓名 : <input type="text" name="myText" id="myText" value="WebApp"></p>
+		  <p>性別 : <input type="radio" name="myRadio" id="myRadio" value=1 checked>Male  
+					<input type="radio" name="myRadio" id="myRadio" value=2>Female</p>
+		  <p>年級 :  
+		  <select name="myClass" id="myClass">
+			<option selected>Freshman</option>
+			<option>Sophomore</option>
+			<option>Junior</option>
+			<option>Senior</option>
+		  </select></p>
+		  <p><input type="button" name="soft" value="使用history.go(0)方法更新網頁"
+					onclick="softRefresh()"></p>
+		  <p><input type="button" name="hard" value="使用location.reload()方法更新網頁" 
+					onclick="hardRefresh()"></p>
+		</form>
+	</body>
+</html>

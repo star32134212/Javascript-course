@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Rounded Corner</title>
+<style type="text/css">
+div {
+	border: 2px solid green;
+	}
+
+.container {
+  border-radius: 32px; /* 左上 右上 右下 左下 / 左上 右上 右下 左下 (前半水平半徑, 後半垂直半徑)*/
+  -moz-border-radius: 32px;
+  -webkit-border-radius: 32px;
+
+  width: 400px;
+  margin-left: 40px;
+  padding: 10px;
+  color: green;
+  background-color: yellow;
+}
+
+.rounded {
+	width: 400px;
+	height: 200px;
+  	margin-left: 40px;
+	
+  	border-top-left-radius: 10px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 70px;
+	font-size: 72px;
+}
+h2 {text-align: center;}
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>圓角的方框</h2>
+    <p>
+      瀏覽器顯示方框的方式，預設上是使用直角。
+      如果您想要改用圓角的方框，CSS3 標準下用 border-radius 設定
+      CSS 2.1 以前，若是在 Mozilla 系列的瀏覽器(例如 Firefox) 上顯示，您可以使用 Mozilla 自定的屬性 -moz-border-radius。
+      WebKit 系列 (e.g. Chrome, Safari)則使用 -webkit-border-radius
+    </p>
+</div>
+<br />
+<div class="rounded">
+	Rounded Corner
+</div>
+</body>
+</html>

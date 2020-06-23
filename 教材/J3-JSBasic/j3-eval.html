@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8;">
+</head>
+
+<body>
+<h2 align=center>如何使用 eval()</h2>
+<hr>
+
+<script>
+	command = "x1=10";
+	eval(command);
+	command = "x2=20";
+	eval(command);
+	command = "x3=30";
+	eval(command);
+	
+document.write("x1 = " + x1 + "<br>");
+document.write("x2 = " + x2 + "<br>");
+document.write("x3 = " + x3 + "<br>");
+
+for (i=4; i<=6; i++){
+	command = "x" + i + "=" + i*i*i;
+	eval(command);
+}
+
+</script>
+
+<hr>
+</body>
+</html>

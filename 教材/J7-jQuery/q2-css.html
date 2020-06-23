@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>First jQuery Example</title>
+<style>
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('body').css('text-align','center').css('width','640px');
+	$('div').css({
+		width:'640px',
+		margin:'auto',
+		'background-color': 'skyblue',
+		color: 'blue',
+		fontSize: '24px' // font-size
+	});
+	$('blockquote').css('text-align','left');
+});
+</script>
+</head>
+<body>
+USING SELECTORS AND EVENTS
+	<div>
+	jQuery 使用 .CSS() 直接設定 element 的樣式表
+	只設定單一 declaration 時，直接使用 string 參數，e.g. $('body').css('text-align','center');
+	若需同時設定多個 declarations，則可使用 object literal，</div>
+	<blockquote><pre>e.g.
+	$('div').css({
+		width:'640px',
+		margin:'auto',
+		'background-color': 'skyblue',
+		color: 'green',
+		fontSize: '24px'
+	});
+	</pre></blockquote>
+	</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Image 物件的性質</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h2 style="text-align:center;">Image 物件的性質</h2>
+<hr>
+<!--img id="myImage" src="water.jpg" height=200-->
+<script>
+myImage = new Image();
+myImage.src = "image.jpg";
+// 列舉影像物件的所有性質
+for (prop in myImage)
+	document.write("<br>myImage." + prop + " = " + myImage[prop]);
+</script>
+
+<hr>
+</body>
+</html>

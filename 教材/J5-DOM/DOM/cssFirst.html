@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>First Example</title>
+<style>
+	body {text-align:center;}
+</style>
+<script type="text/javascript">
+// <![CDATA[
+function hideImage()
+{
+  // 取得按鈕 
+  var myButton = document.getElementById('imgButton');
+  
+  // 取得圖片
+  var myImgs = document.getElementsByTagName("img");
+  var myImg = myImgs[0];
+  
+  // 顯示圖片
+  if (myImg.style.visibility == "hidden")
+  {
+    myImg.style.visibility = "visible";
+    myImg.style.display = "inline";
+	myButton.value = "隱藏圖片";
+  }
+  // 隱藏圖片
+  else
+  {
+    myImg.style.visibility = "hidden";
+    //myImg.style.display = "none";
+	myButton.value = "顯示圖片";
+  }
+}
+function menuExpand(){
+	if (child.style.display == '')	
+		child.style.display = 'none';
+	else				
+		child.style.display = '';
+}// ]]>
+</script>
+</head>
+<body>
+  圖片
+  <input type="button" id="imgButton" value="隱藏圖片" 
+    style="font-size: 28px; color: blue;" 
+    onclick="hideImage(); return false;" />
+  <br /><br />
+  <img src="image/bird0.jpg" width="100" alt="" />
+  <br /><br />
+  
+	<div id="mother" style="cursor: pointer; cursor: hand;" onclick="menuExpand()">搜尋引擎</div>
+	<!-- cursor: pointer; cursor: hand; // cross browser  -->
+	<div id="child"  style="display: none; text-indent: 20pt">
+	   <li><a href="http://tw.yahoo.com">YAHOO</a>
+	   <li><a href="http://www.google.com">Google</a>
+	</div>
+</body>
+</html>

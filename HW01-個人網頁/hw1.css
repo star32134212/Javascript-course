@@ -1,0 +1,126 @@
+body {
+	background-color: 	#000000	;
+}
+
+
+#menu_id
+{
+	background: 	#66B3FF;
+}
+
+#hw_id
+{
+	background: 	#930093;
+	width: 51%;
+	margin:0px auto; /*div置中*/
+}
+
+#menu {
+	overflow: hidden;
+	height: auto;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+	text-align: center;
+}
+
+#menu li {
+	display: inline-block;
+}
+
+#menu a {
+	display: block;
+	letter-spacing: 1px;
+	padding: 0px 40px;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1em;
+	line-height: auto;
+	border: none;
+	color: #FFF;
+}
+
+#menu .current_page_item a {
+	text-decoration: none;
+}
+
+a:hover { /*滑鼠經過變色*/
+	background-color: #0066CC;
+	}
+
+#menu .current_page a {
+	background: 	#0066CC;
+}
+
+
+#footer_id {
+
+    height: 55px;
+    width: 100%;
+    box-sizing: border-box;
+    /* 放在底部 */
+    position: absolute;
+	bottom: 0;
+	text-align: center;
+
+}
+
+#hr_id{
+    color: 	#FCFCFC;   
+    height: 3px;
+	border-width: 0;
+	width: 100%;
+    color: 	#FCFCFC;
+    background-color: 	#FCFCFC;
+}
+
+#myphoto{
+
+    height: 300px;
+    width: 300px;
+    position:absolute;
+    top:100px;
+	left:30px;
+	border-color: #007979;
+}
+#cover{
+	height: 60%;
+	width: 60%;
+}
+
+#aboutme{
+	color: 	#FCFCFC;   
+	position:absolute;
+	top: 100px;
+	left: 350px;
+	width: 50%;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+  }
+
+.content {
+	color: #FCFCFC;
+}
+
+
+.snsimg{
+	width: 30%;
+	height: 30%;
+	align-items: center;
+	margin-left: -4px;
+}
+
+#snstable{
+	width: 90%;
+	text-align: center;
+}
+

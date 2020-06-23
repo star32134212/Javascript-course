@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html140/strict.dtd">
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=Big5">
+<title>Sample Page!</title>
+</head>
+<body>
+<p title="1st Sample">
+  This is the first Sample!
+</p>
+<p title="2nd Sample">
+  This is the second Sample!
+</p>
+<script language="JavaScript" type="text/javascript">
+<!--
+var objSample=document.getElementsByTagName("p");
+for(var i=0;i<objSample.length;i++)
+{
+  document.writeln("<br>"+objSample[i].getAttribute("title"));
+}
+-->
+</script>
+</body>
+</html>

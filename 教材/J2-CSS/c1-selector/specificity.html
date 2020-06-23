@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<title>Specificity</title>
+<style type="text/css">
+	#banner p { color: green; } /* 0, 1, 0, 1} */
+	div .red { color: red; } /* {0, 0, 1, 1} */
+	p {color: yellow;} /* {0, 0, 0, 1} */
+</style>
+</head>
+<body>
+<div id="banner">
+	<p class="red">Banner</p>
+</div>
+</body>
+</html>

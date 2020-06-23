@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.0//EN"
+"http://www.w3.org/TR/REC-html140/strict.dtd">
+<html>
+<head>
+<meta http-equiv=content-type content="text/html; charset=Big5">
+<title>Sample Page!</title>
+</head>
+<body>
+<ul id="purchases">
+  <li>Beans</li>
+  <li>Cheese</li>
+  <li>Milk</li>
+</ul>
+<script language="JavaScript" type="text/javascript">
+<!--
+  var shoplist=document.getElementById("purchases");
+  document.writeln("<br>"+shoplist.getAttribute("id"));
+  shoplist.setAttribute("id", "NewID");
+  document.writeln("<br>"+shoplist.getAttribute("id"));
+//-->
+</script>
+</body>
+</html>

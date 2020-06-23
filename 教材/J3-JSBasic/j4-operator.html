@@ -1,0 +1,47 @@
+<script>
+document.writeln("123"+1+"<br>"); // = 1231, no error
+document.writeln("ABC"-1+"<br>"); // = NaN, no error
+
+// number testing
+// Arithmetic operators work, but bitwise/shifts only operate on 32-bit integer
+var x = 9007199254740992;
+document.writeln(x+"<br>");
+document.writeln((x+1)+"<br>");
+var y = -x;
+document.writeln("var x = 9007199254740992;<br>");
+document.writeln("var y = -x;<br>");
+document.writeln("x / 2 : ", x / 2, "<br>");      // 4503599627370496
+document.writeln("x == x + 1; ==>", x == x + 1, "<br>"); // true !
+document.writeln("y == y - 1; ==>", y == y - 1, "<br>"); // also true !
+document.writeln("x >> 1; ==>", x>>1, "<br>"); // 0
+document.writeln("x | 1; ==>", x | 1, "<br>"); // 1
+//  shift testing 
+document.writeln( "2 >> 3 ==>", 2 >> 3, "<BR>" );
+document.writeln( "2 << 3 ==>", 2 << 3, "<BR>" ); 
+document.writeln( "-1 >> 1 ==>", -1 >> 1, "<BR>" ); // = -1
+document.writeln( "-1 >>> 1 ==>", -1 >>> 1 , "<BR>"); // = 2147483647
+// interger range testing
+document.writeln( "1 << 30 ==> ",1 << 30, "<BR>" ); // = 1073741824
+document.writeln( "1 << 31 ==> ",1 << 31, "<BR>" ); // = -2147483648
+document.writeln( "1 << 32 ==> ",1 << 32, "<BR>" ); // = 1
+// conclusion 
+// >> : signed bit extention
+// >>> : always filled by 0
+// interger : 32 bits, range -2147483648 ~ 2147483647
+
+// exactly match testing
+x = 5;
+document.writeln( x == "5", "<BR>" ); // true
+document.writeln( x === "5", "<BR>" ); // false
+document.writeln( "abc" === "abcde", "<BR>" ); // false
+document.writeln( "abc" === "abc", "<BR>" ); // true
+
+var x=0;
+if (x = 0 || x == 0) document.write("x="+x+"<br>"); //true
+document.write("x="+x+"<br>"); //true
+// comma operator
+c = (a=5, b=6);
+document.writeln(c);
+c=b=a;
+document.writeln(c);
+</script>

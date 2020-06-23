@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery Effect</title>
+<style>
+div { width: 320px; margin: auto; padding:2cm 0;}
+#moreLink {
+	display: block;
+	text-decoration: underline;
+	text-align: right;
+	cursor: pointer;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('#moreContent').hide();
+	$('#moreLink').toggle(
+		function() {
+			//$('#moreContent').show();
+			//$('#moreContent').show('slow');
+			//$('#moreContent').fadeIn(2000);
+			//$('#moreContent').slideDown('slow');
+			//$('#moreContent').show('slow').css('color','red').css('background-color','green').delay(5000).hide('slow');
+			//*
+			$('#moreContent').fadeIn().animate(
+				{ paddingLeft: '200px', opacity: 0.5, color: '#0000FF' },
+				6000,
+				'swing'
+			);
+			//*/
+			$(this).text('abstract');			
+		},
+		function() {
+			$('#moreContent').hide();
+			//$('#moreContent').hide('slow');
+			//$('#moreContent').fadeOut(2000);
+			//$('#moreContent').slideUp('slow');
+			$(this).text('more');			
+		}
+	);
+});
+
+</script>
+</head>
+<body>
+<div>jQuery是一個JavaScript函數庫，
+   提供網頁設計者另一種更簡潔的方式來
+   撰寫JavaScript程式碼和擴充JavaScript的功能。
+   <p id="moreContent">jQuery是在2006年1月由John Resig在
+   BarCamp NYC發表的網頁技術，
+   這是一種高效率和簡潔的JavaScript函數庫，
+   目前是MIT和GPL授權的免費軟體，
+   可供個人或商業專案使用。</p>
+   <a id="moreLink">more</a>
+</div>
+</body>
+</html>

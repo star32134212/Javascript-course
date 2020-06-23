@@ -1,0 +1,42 @@
+body {;
+margin: 0px;
+padding: 0px;
+font: 1em verdana, arial, helvetica, sans-serif; /* set the baseline font and font-size */ 
+}
+
+div#header {
+  font-size: 28px;
+  color: blue;
+  background-color: lime;
+  padding: 6px;
+  text-align: center;
+}
+
+div#content { 
+float: left;
+left:0px; top:0px; width:150px;
+padding:.5em 0 0 0; /* push the list down from the top of the nav div */
+margin: 22px 0 0 15px; /* move the nav div down and in from edge */
+border-top:2px solid #069; /* add a rule across the top and bottom of the nav */
+border-bottom:1px solid #069;
+}
+div#content ul { margin-top:0px; margin-bottom:.8em; } /* positioin list vertically within containing div */
+
+div#content li {
+margin-bottom:.5em; /* add space below each list item */
+font-weight:bold; /* style links */
+font-size:.75em;
+}
+div#tree {
+margin:20px 10px 20px 165px; /*(width (150) + left-margin(15) in div#nav )  move content div down and to left to clear nav */
+padding: 0 1em; /* push the content in on the left and right */
+}
+
+div#footer {
+  clear: left;
+  font-size: 28px;
+  color: blue;
+  background-color: lime;
+  padding: 6px;
+  text-align: center;
+}

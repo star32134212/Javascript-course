@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv=content-type content="text/html; charset=utf-8">
+<title>get element by document property</title>
+<script language="JavaScript" type="text/javascript">
+var msg="\nDocument 物件資訊 : \n\n";
+//get Document Element Information
+function getElement()
+{
+	// get links 物件陣列
+	var myLinks=document.links;
+	msg+="links陣列 : \n";
+	msg+="長度 : "+myLinks.length+"\n";
+	for(i=0;i<myLinks.length;i++)
+	{
+		msg+="links[" +i+ "].name : " +myLinks[i].name+ "\n";
+	}
+	//document images 物件陣列
+	var myImages=document.images;
+	msg+="images陣列 : \n";
+	msg+="長度 : "+myImages.length+"\n";
+	for(i=0;i<myImages.length;i++)
+	{
+		msg+="images[" +i+ "].name : " +myImages[i].name+ "\n";
+	}
+	//get forms 物件陣列
+	var myForms=document.forms;
+	msg+="forms陣列 : \n";
+	msg+="長度 : "+myForms.length+"\n";
+	for(i=0;i<myForms.length;i++)
+	{
+		msg+="forms[" +i+ "].name : " +myForms[i].name+ "\n";
+	}
+	msg += document.image1.src;
+	//輸出文檔資訊
+	alert(msg+"   ");
+}
+</script>
+</head>
+<body>
+<center>
+<p>獲取文檔Document物件資訊</p>
+</center>
+<table border=1 borderColor="#c0c0c0" align=center>
+  <tr>
+    <td>連結:<a name="linka" href="http://www.google.com/" target="_blank">Google</a></td>
+    <td>連結:<a name="linkb" href="http://www.yahoo.com/" target="_blank" >Yahoo</a></td>
+    <td>連結:<a name="linkc" href="http://www.bing.com/" target="_blank" >Bing</a></td>
+  </tr>
+  <tr>
+    <td>
+      圖片一 :<br>
+      <img name="image1" src="image/bird1.jpg" width="84" height="98" border=1></img>
+    </td>
+    <td>
+      圖片二 :<br>
+      <img name="image2" src="image/bird2.jpg" width="84" height="98" border=1></img>
+	</td>
+    <td align=middle>
+      圖片三 :<br>
+      <img name="image3" src="image/bird3.jpg" width="84" height="98" border=1></img>
+    </td>
+  </tr>
+  <tr>
+    <td align=left>
+      <center>表單一 :</center><br>
+      <form name="myForm1">
+        username:<input type="text" name="username"><br>  
+        password:<input type="password" name="password"><br>  
+      </form>
+    </td>
+    <td align=left>
+      <center>表單二 :</center><br>
+      <form name="myForm2">
+        單選框 : <input type="radio" name="myRadio" value="yes" checked>是  
+                 <input type="radio" name="myRadio" value="no">否
+        核取方塊 : <input type="checkbox" name="myCheckbox"value="yes" checked><br>
+        下拉清單 : <select name="mySelect" id="mySelect">
+                   <option value="black" selected>黑色</option>
+                   <option value="green">綠色</option>
+                 </select><br>
+      </form>
+    </td>
+    <td align=left>
+      <center>表單三 :</center><br>
+      <form name="myForm3">
+		<input type="submit" name="mySure" value="獲取資訊" onClick="getElement()">
+      </form>
+    </td>
+  </tr>
+</table>
+</body></html>

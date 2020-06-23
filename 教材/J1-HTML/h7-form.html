@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!--meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" -->
+<title>Form Example</title>
+</head>
+<body>
+<h3 align="center"></h3>
+<h3 align="center">Form Example&nbsp;</h3>
+<form id="formId" name="formName" method="GET" action="someURL.php" target=_blank>
+	<fieldset>
+		<legend>Form 1</legend>
+		<label id="no">准考證號碼：</label>
+		<input type="text" id="userID" name="userID" label="no" value="2010102" >
+		<input type="submit"> <input type="reset">
+	</fieldset>
+</form>
+
+<form id="formExample" name="formExample" action="another.php" method="get">
+	<fieldset>
+		<legend>Form 2</legend>
+		First name:
+		<input type="text" name="firstname" id="firstname" value="default">
+		Last name:
+		<input type="text" name="lastname" >
+		<br>Password:
+		<input type="password" name="password" >
+		<input type="hidden" name="hidden_value" value="secret">
+		<br><br>
+		Gender :
+		<input type="radio" name="gender" value="male" >Male&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="gender" value="female" checked>Female&nbsp;&nbsp;&nbsp;
+		<br>
+		Blood :
+		<input type="radio" name="blood" value="O" >O&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="blood" value="A" >A&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="blood" value="B" >B&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="blood" value="AB" >AB&nbsp;&nbsp;&nbsp;
+		<br><br>
+		I have a bike:
+		<input type="checkbox" name="vehicle1" value="Bike" checked>&nbsp;&nbsp;&nbsp;
+		I have a car:
+		<input type="checkbox" name="vehicle2" value="Car" >&nbsp;&nbsp;&nbsp;
+		I have an airplane:
+		<input type="checkbox" name="vehicle3" value="Airplane" >&nbsp;&nbsp;&nbsp;
+		<br><br>
+		Department:
+		<select name="admin" id="admin" size="5" multiple cols="40" >
+			<option value="&#25945;&#21209;&#34389;">&#25945;&#21209;&#34389;</option>
+			<option value="&#23416;&#21209;&#34389;" selected>&#23416;&#21209;&#34389;</option>
+			<option value="&#32317;&#21209;&#34389;">&#32317;&#21209;&#34389;</option>
+			<option value="&#30740;&#30332;&#34389;">&#30740;&#30332;&#34389;</option>
+			<option value="&#22283;&#38555;&#34389;">&#22283;&#38555;&#34389;</option>
+			<option value="&#22294;&#26360;&#39208;">&#22294;&#26360;&#39208;</option>
+		</select>
+		<br>
+		comment :<br>
+		&nbsp;
+		<textarea cols="30" rows="3" name="ta">寶貴意見</textarea>
+		<br><br>
+		<input type="button" value="普通按鈕" >
+		<input type="hidden" name="secret" value="xxxx" >
+		<button type="submit">文字按鈕</button>
+		<input type="reset"  value="重填" >
+		<input type="submit" value="送出表單" >
+	</fieldset>
+	<fieldset>
+		<legend>Image Button</legend>
+		<input type="button" value="最新消息" >
+		<input type="image" src="image/news.gif" alt="news" name="news" >
+		<button type="submit"><img src="image/news.gif" alt="news"></button>
+	</fieldset>
+	<fieldset>
+		<legend>File Upload</legend>
+		<input type="file" name="upload">
+	</fieldset>
+</form>
+</body>
+</html>

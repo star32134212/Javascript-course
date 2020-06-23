@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>margin</title>
+<style type="text/css">
+<!--
+body {margin: auto; width:80%; border:solid;}
+/* body {margin: 2cm} */
+/* body {margin:1cm 2cm} /*上與下邊界的值為1cm，右與左邊界的值為2cm*/
+/* body {margin: 20pt 30% 30px 2cm} /*上邊界為20pt，右邊界為30%，下邊界為30px，左邊界為2cm*/
+div#outer {
+	margin: auto;
+	width:80%;
+	font-size: 48px;
+	color: red; border:
+	2px solid blue;
+	}
+div#inner1 {
+  border: 2px dotted blue; 
+  margin-top: 40px; 
+  margin-right: 25%; 
+  margin-bottom: 40px; 
+  margin-left: 30px;
+}
+div#inner2 {
+  border: 2px dotted blue; 
+  margin-top: -60px; 
+  margin-right: 25%; 
+  margin-bottom: 15px; 
+  margin-left: -30px;
+}
+-->
+</style>
+</head>
+<body>
+<div id="outer">
+  <div id="inner1">CSS方框1</div>
+  <div id="inner2">CSS方框2</div>
+</div>
+</body>
+</html>

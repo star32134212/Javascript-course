@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>設定元素溢位的處理方式</title>
+<style type="text/css">
+div {border: 2px solid red; color: green; position: absolute;}
+p#line {
+	position: absolute;
+	top: 320px;
+	left: 0px;
+	width: 100%;
+	height: 0;
+	padding: 10px 0 0 0;
+	overflow: hidden;
+	background-image: url(bg.jpg);
+}
+</style>
+</head>
+<body>
+<div style="top: 20px; left: 20px; height: 110px; width: 250px; overflow: visible;">
+ 當元素的內容超過元素方框的範圍時，您使用overflow屬性用來指定元素溢位的處理方式：visible (顯示)：讓元素內容能夠顯示在元素方框的外面，這是預設值。hidden(隱藏)：超出元素方框範圍的元素內容會被裁切掉，不會顯示出來。
+ </div>
+<div style="top: 20px; left: 300px; height: 110px; width: 250px; overflow: hidden;">
+  當元素的內容超過元素方框的範圍時，您使用overflow屬性用來指定元素溢位的處理方式：visible (顯示)：讓元素內容能夠顯示在元素方框的外面，這是預設值。hidden(隱藏)：超出元素方框範圍的元素內容會被裁切掉，不會顯示出來。
+</div>
+<div style="top: 180px; left: 20px; height: 110px; width: 250px; overflow: scroll;">
+  當元素的內容超過元素方框的範圍時，您使用overflow屬性用來指定元素溢位的處理方式：visible (顯示)：讓元素內容能夠顯示在元素方框的外面，這是預設值。hidden(隱藏)：超出元素方框範圍的元素內容會被裁切掉，不會顯示出來。
+</div>
+<div style="top: 180px; left: 300px; height: 110px; width: 250px; overflow: auto;">
+  當元素的內容超過元素方框的範圍時，您使用overflow屬性用來指定元素溢位的處理方式：visible (顯示)：讓元素內容能夠顯示在元素方框的外面，這是預設值。hidden(隱藏)：超出元素方框範圍的元素內容會被裁切掉，不會顯示出來。
+</div>
+<p id="line">image line</p>
+<hr>
+</body>
+</html>

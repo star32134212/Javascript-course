@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h2>鍵盤事件：偵測複合鍵</h2>
+<hr>
+<script>
+function keyFunction(e) {
+	// use the event parameter if passed, otherwise use the global window.event object
+	e = e || window.event;
+	console.log("asd");
+	// Shift 的鍵盤代碼是 16，Ctrl 的鍵盤代碼是 17，Alt 的鍵盤代碼是 18
+	if ((e.shiftKey) && (e.keyCode!=16)) console.log("Shift + "+e.keyCode);
+	// 若不加第二個條件，會印出兩次警告視窗
+	// 一次是按 Shift，第二次是按其他鍵
+	if ((e.ctrlKey) && (e.keyCode!=17))	console.log("Ctrl + "+e.keyCode);
+	if ((e.altKey) && (e.keyCode!=18)) console.log("Alt + "+e.keyCode);
+	// if (e.metaKey) alert("The meta key was pressed!");
+	// meta key is a special key on MIT keyboards
+	//...and on Sun Microsystems keyboards, marked as a solid diamond.
+	return false;
+}
+if (window.addEventListener)
+	window.addEventListener("keydown", keyFunction);
+else if (window.attachEvent) 
+	window.attachEvent("onkeydown", keyFunction);
+else
+	window.onkeydown=keyFunction;
+</script>
+請按下鍵盤任意複合鍵（先按 Shift 或 Ctrl 或 Alt 不放，再按任意鍵），以顯示按鍵代碼！
+<hr>
+</body>
+</html>
