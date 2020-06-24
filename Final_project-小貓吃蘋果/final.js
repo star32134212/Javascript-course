@@ -77,40 +77,40 @@ function loaded(){
     init();
     var interval = setInterval(draw, level); //每10微秒執行移動一次
 }
-
-function init(){
-    //初始化先推一些牆壁進去
-    stairs_arr = [];
-    stairs_arr2 = [];
-    apple_arr = [];
-    apple_arr2 = [];
     /*
+    //初始化先推一些牆壁進去
     for(var s=0; s<540/130; s++){
 
         stairs_arr.push(new Wall(Math.random()*410+540, Math.random()*520, parseInt(Math.random()*6))); //右
         stairs_arr2.push(new Wall(Math.random()*410, Math.random()*520, parseInt(Math.random()*6))); //左
     }
     */
+
+function init(){
+    stairs_arr = [];
+    stairs_arr2 = [];
+    apple_arr = [];
+    apple_arr2 = [];
     cat1 = new Player();   
 }
 
 //玩家物件
 class Player{
     constructor(args){
-        this.cat_x = 500;
-        this.cat_y = 45;
-        this.cat_w = 37; //25
-        this.cat_h = 45; //30
-        this.live = 10;
-        this.power = 10;
-        this.max_live = 10;
-        this.max_power = 10;
+        this.cat_x = 500; //初始x座標
+        this.cat_y = 45; //初始y座標
+        this.cat_w = 37; //初始肥度
+        this.cat_h = 45; //初始身高
+        this.live = 10; //初始血量
+        this.power = 10; //初始能量
+        this.max_live = 10; //最大血量
+        this.max_power = 10; //最大能量
         this.height = 0; //離地面高度
-        this.touch = 1;
-        this.status = 0;
-        this.hurt = 0;
-        this.heal = 0;
-        this.addpower = 0;
+        this.touch = 1; //是否有觸碰到東西
+        this.status = 0; //小貓的動作
+        this.hurt = 0; //防止連續扣血的flag
+        this.heal = 0; //防止連續補血的flag
+        this.addpower = 0; //防止連續補能量的flag
     }
     draw(status){
         if(this.status == 0){
@@ -133,6 +133,7 @@ class Player{
         ctx.fillStyle = "#FF2D2D";
         ctx.fillText("cat_y: " + this.cat_y, 970, 100);
     }
+
     gravity(){
         //console.log(this.touch )
         if(this.touch == 0){
@@ -159,18 +160,20 @@ class Player{
     }
     
 }  
+
 class Wall{
     constructor(x,y,type){
-        this.wall_x = x;
-        this.wall_y = y;
-        this.v = 3;
-        this.width =  120;
-        this.height = 20; 
-        this.extraHeight = 0;
-        this.wall_type = type;
-        this.active = true;
-        this.touch = 0;
+        this.wall_x = x; //初始x座標
+        this.wall_y = y; //初始y座標
+        this.v = 3; //移動速度
+        this.width =  120; //平台寬度
+        this.height = 20; //平台高度
+        this.extraHeight = 0; //最高能到的邊界
+        this.wall_type = type; //平台種類
+        this.active = true; //是否還在遊戲畫面中
+        this.touch = 0; //是否有是否有觸碰到東西
     }
+
     update(){ //右邊 往上跑
         this.wall_y = this.wall_y - this.v; 
         if(this.touch == 1){
@@ -276,14 +279,13 @@ class Wall{
 
   class Apple{
     constructor(x,y,apple_score){
-        this.apple_x = x;
-        this.apple_y = y;
-        this.apple_w =  30;
-        this.apple_h = 30; 
-        this.active = true;
-        this.touch = 0;
-        this.total = 0;
-        this.score = apple_score;
+        this.apple_x = x; //初始x座標
+        this.apple_y = y; //初始y座標
+        this.apple_w =  30; //蘋果寬度
+        this.apple_h = 30; //蘋果高度
+        this.active = true; //是否有缺蘋果，預設是左右各三顆，有缺就隨機生成新的
+        this.touch = 0; //是否有是否有觸碰到東西
+        this.score = apple_score; //左右的蘋果分數不同
     }
     draw(){
         ctx.drawImage(apple,this.apple_x ,this.apple_y, this.apple_w, this.apple_h);
@@ -300,6 +302,7 @@ class Wall{
         }
     }
 }
+
 function keyDownHandler(e) { //判斷按下的鍵是哪個
     if(e.key == "Right" || e.key == "ArrowRight") {
         cat1.status = 2;
@@ -330,6 +333,7 @@ function keyUpHandler(e) { //判斷放開的鍵是哪個
         upPressed = false;
     }
 }
+
 function drawstage() {
     ctx.drawImage(ceiling,0,0,1080,15);
     ctx.drawImage(left_wall,0,0,wall_w,540);
@@ -377,68 +381,63 @@ function jump(){
         }
     }
 }
+
 function touch(eachwall){
     
-    if(touch_count == 1){
+    if(touch_count == 1){ //目前已在某平台上
         if(eachwall.touch == 1){
-            if(cat1.cat_x >= 510 - cat1.cat_w && cat1.cat_x <=510 + wall_w * 3 ){ 
-                if (cat1.cat_y + cat1.cat_h <= 100 && cat1.cat_y + cat1.cat_h >= 100 - G - eachwall.v){ 
+            if(cat1.cat_x >= 510 - cat1.cat_w && cat1.cat_x <=510 + wall_w * 3 ){ //x座標是否在初始平台範圍內
+                if (cat1.cat_y + cat1.cat_h <= 100 && cat1.cat_y + cat1.cat_h >= 100 - G - eachwall.v){  //ｙ座標是否離初始平台面算接觸
                     cat1.cat_y = 100 - cat1.cat_h ;
                     cat1.touch = 1;
-                    //cat1.status = -1;
-                    //console.log(3);
-                }else if(cat1.cat_y + cat1.cat_h <= 470 && cat1.cat_y + cat1.cat_h >= 470 - G ){
+
+                }else if(cat1.cat_y + cat1.cat_h <= 470 && cat1.cat_y + cat1.cat_h >= 470 - G ){ //ｙ座標是否離中下平台面算接觸
                     cat1.cat_y = 470 - cat1.cat_h ;
                     cat1.touch = 1;
                     down_stair = 1;
-                    //cat1.status = -1;
-                }else{
+
+                }else{ //確定不在中間兩個固定平台
                     console.log(3);
                     cat1.touch = 0;
                     eachwall.touch = 0;
-                    //touch_count = 0;
-                    //cat1.status = 0;
+                    touch_count = 0;
+
                 }
-            }else if (cat1.cat_x >= eachwall.wall_x - cat1.cat_w && cat1.cat_x <= eachwall.wall_x + eachwall.width ){
-              if (cat1.cat_y + cat1.cat_h <= eachwall.wall_y && cat1.cat_y + cat1.cat_h >= eachwall.wall_y - G - eachwall.v){ 
+            }else if (cat1.cat_x >= eachwall.wall_x - cat1.cat_w && cat1.cat_x <= eachwall.wall_x + eachwall.width ){ //x座標是否在平台範圍內
+              if (cat1.cat_y + cat1.cat_h <= eachwall.wall_y && cat1.cat_y + cat1.cat_h >= eachwall.wall_y - G - eachwall.v){ //y座標
                 cat1.cat_y = eachwall.wall_y - cat1.cat_h ;
                 cat1.touch = 1;
                 eachwall.touch = 1;
                 touch_count = 1;
                 eachwall.step();
-                //console.log(12345);
-        
-                //wall.step(this.player)
-                //cat1.status = -2;
+
               }else{ //在平台x座標範圍但高度不對
-                //console.log(3);
                 cat1.touch = 0; 
                 eachwall.touch = 0;
                 touch_count = 0;
               }
             }else{ //不在平台x座標範圍也不在中柱
-                //console.log(4);
                 cat1.touch = 0; 
                 eachwall.touch = 0;
                 touch_count = 0;
             }
         }
-    }else if(touch_count == 0){
+    }else if(touch_count == 0){ //目前不在任何平台上 剩下的與上面部分邏輯相同
         //因為角色下半身窄 加上誤差看起來比較合理 
         if(cat1.cat_x >= 510 - cat1.cat_w  && cat1.cat_x <=510 + wall_w * 3 ){ 
             if (cat1.cat_y + cat1.cat_h <= 100 && cat1.cat_y + cat1.cat_h >= 100 - G ){ 
                 cat1.cat_y = 100 - cat1.cat_h ;
                 cat1.touch = 1;
-                //cat1.status = -1;
+
             }else if(cat1.cat_y + cat1.cat_h <= 470 && cat1.cat_y + cat1.cat_h >= 470 - G ){
                 cat1.cat_y = 470 - cat1.cat_h ;
                 cat1.touch = 1;
                 down_stair = 1;
-                //cat1.status = -1;
+            
             }else{
                 cat1.touch = 0;
                 eachwall.touch = 0;
-                //cat1.status = 0;
+            
             }
         }else if (cat1.cat_x >= eachwall.wall_x - cat1.cat_w  && cat1.cat_x <= eachwall.wall_x + eachwall.width){
         if (cat1.cat_y + cat1.cat_h <= eachwall.wall_y && cat1.cat_y + cat1.cat_h >= eachwall.wall_y - G){ 
@@ -447,19 +446,14 @@ function touch(eachwall){
             eachwall.touch = 1;
             touch_count = 1;
             eachwall.step();
-            console.log(12345);
 
-            //wall.step(this.player)
-            //cat1.status = -2;
         }else{
-            //console.log(3);
             cat1.touch = 0; 
             eachwall.touch = 0;
             //console.log(cat1.cat_x)
             //console.log(cat1.cat_y)
         }
         }else{
-            //console.log(4);
             cat1.touch = 0; 
             eachwall.touch = 0;
             //console.log(cat1.cat_x)
@@ -497,14 +491,12 @@ function draw() {
     update();
     jump();
     console.log(touch_count)
-
     apple_arr = apple_arr.filter(apple=>apple.active);
     apple_arr.forEach(apple=>apple.draw());
     apple_arr.forEach(apple=>apple.touch_detection());
     apple_arr2 = apple_arr2.filter(apple=>apple.active);
     apple_arr2.forEach(apple=>apple.draw());
     apple_arr2.forEach(apple=>apple.touch_detection());
-
     //鍵盤操作
     if(rightPressed) {
         cat1.cat_x += 5;
